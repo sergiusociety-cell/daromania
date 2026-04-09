@@ -1733,12 +1733,14 @@ onClick={() => {}} className="hidden" />
                             <span className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border ${catClass}`}>
                               {job.category}
                             </span>
-                            <span className="text-2xl">{job.icon}</span>
+                            <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${job.automationRisk > 80 ? 'bg-rose-100 text-rose-600' : job.automationRisk > 50 ? 'bg-amber-100 text-amber-600' : 'bg-green-100 text-green-600'}`}>
+                              {job.level === 'critical' ? '🔴 Critic' : job.level === 'high' ? '🟠 Ridicat' : '🟡 Moderat'}
+                            </span>
                           </div>
                           <h3 className="text-base font-bold text-slate-800 mb-1 group-hover:text-indigo-600 transition-colors">
                             {job.title}
                           </h3>
-                          <p className="text-xs text-slate-500 mb-3 line-clamp-2">{job.description}</p>
+                          <p className="text-xs text-slate-500 mb-3 line-clamp-2">{job.pivot1}</p>
                           <div className="flex items-center gap-2 mt-auto">
                             <div className="flex-1 bg-slate-100 h-2 rounded-full overflow-hidden">
                               <motion.div 

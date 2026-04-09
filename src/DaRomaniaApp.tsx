@@ -2344,9 +2344,6 @@ export default function App() {
                     
                     <div className="prose prose-base md:prose-lg prose-indigo max-w-none mb-16">
                       <div className="markdown-body">
-          </div>
-        </section>
-
 
                         <Markdown>{pivotData?.pivotStrategy}</Markdown>
 

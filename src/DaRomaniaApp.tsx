@@ -938,7 +938,41 @@ export default function App() {
     })).sort((a, b) => b.risk - a.risk);
   }, []);
 
+  // --- Browser back button support ---
+  const goHome = useCallback(() => {
+    setSelectedJob(null);
+    setPivotData(null);
+    setShowAcademia(false);
+    setShowOpenClaw(false);
+    setShowArsenal(false);
+    setShowAfacere(false);
+    setModalJob(null);
+    setActiveModal(null);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
+  useEffect(() => {
+    const onPopState = (e: PopStateEvent) => {
+      // If any sub-view is open, close it instead of leaving
+      if (modalJob) { setModalJob(null); return; }
+      if (activeModal) { setActiveModal(null); return; }
+      if (pivotData) { setPivotData(null); return; }
+      if (selectedJob) { setSelectedJob(null); setPivotData(null); return; }
+      if (showAcademia || showOpenClaw || showArsenal || showAfacere) {
+        setShowAcademia(false); setShowOpenClaw(false); setShowArsenal(false); setShowAfacere(false);
+        return;
+      }
+    };
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, [selectedJob, pivotData, modalJob, activeModal, showAcademia, showOpenClaw, showArsenal, showAfacere]);
+
+  const pushHistoryState = useCallback(() => {
+    window.history.pushState({ daromania: true }, '');
+  }, []);
+
   const handleJobSelect = (job: JobData) => {
+    pushHistoryState();
     setSelectedJob(job);
     setPivotData(null);
     setContextAnswers({ q1: '', q2: '', q3: '' });

@@ -1117,10 +1117,12 @@ export default function App() {
         throw new Error("Empty response");
       }
       
-      // Scroll to projects after a delay
-      setTimeout(() => {
-        projectsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 100);
+      // Keep desktop behavior, but don't force-scroll mobile users while they browse the page.
+      if (window.innerWidth >= 768) {
+        setTimeout(() => {
+          projectsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
     } catch (error) {
       console.error("Error generating strategy:", error);
       setPivotData(buildUniversalBusinessPipelines(job.title, context));
@@ -1154,7 +1156,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-indigo-100 snap-y snap-mandatory scroll-smooth">
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-indigo-100 md:snap-y md:snap-mandatory scroll-smooth">
       {/* Header */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-14 md:h-20 flex items-center justify-between">
@@ -1815,7 +1817,7 @@ export default function App() {
               </div>
             </div>
           ) : (
-            <div className="fixed inset-0 z-50 md:relative md:inset-auto max-w-5xl mx-auto bg-white md:rounded-[3rem] shadow-2xl md:border border-slate-200 overflow-hidden flex flex-col h-[100dvh] md:h-[90vh]">
+            <div className="relative max-w-5xl mx-auto bg-white md:rounded-[3rem] shadow-2xl md:border border-slate-200 overflow-visible md:overflow-hidden flex flex-col min-h-screen md:h-[90vh]">
               {/* Header with Back Button */}
               <div className="p-4 md:p-6 border-b border-slate-100 flex items-center justify-between bg-white sticky top-0 z-20 shadow-sm">
                 <button 
@@ -1827,7 +1829,7 @@ export default function App() {
                 <div className="font-black text-slate-900 text-sm md:text-xl text-right truncate ml-2">{selectedJob.title}</div>
               </div>
 
-              <div className="flex-1 overflow-y-auto p-4 md:p-12 relative">
+              <div className="flex-1 overflow-visible md:overflow-y-auto p-4 md:p-12 relative">
                 {isGenerating ? (
                   <div className="max-w-4xl mx-auto pb-32 w-full animate-pulse">
                     <div className="flex items-center justify-between mb-12">

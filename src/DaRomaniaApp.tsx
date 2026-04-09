@@ -1168,16 +1168,16 @@ export default function App() {
           <div className="flex items-center gap-2 md:gap-4">
             <div className="flex items-center gap-1.5 cursor-pointer" onClick={() => { setSelectedJob(null); setPivotData(null); setShowAcademia(false); setShowOpenClaw(false); setShowArsenal(false); setShowAfacere(false); window.scrollTo({top: 0, behavior: 'smooth'}); }}>
               <img src={logoDaRomania} alt="DaRomania" className="w-8 h-8 md:w-10 md:h-10 rounded-lg object-cover" />
-              <span className="text-sm md:text-base font-black tracking-tight text-slate-900 hidden sm:inline">Da<span className="text-indigo-600">Romania</span></span>
+              <span className="text-sm md:text-base font-black tracking-tight hidden sm:inline"><span className="text-slate-900">Da</span><span className="text-blue-600">Romania</span></span>
             </div>
             <div className="w-px h-6 bg-slate-200 hidden sm:block" />
             <a href="https://daeu.online" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:opacity-80 transition-opacity">
               <img src={logoDaEu} alt="DaEU" className="w-7 h-7 md:w-9 md:h-9 rounded-lg object-cover" />
-              <span className="text-xs md:text-sm font-bold text-slate-600 hidden md:inline">DaEU</span>
+              <span className="text-xs md:text-sm font-bold hidden md:inline"><span className="text-slate-900">Da</span><span className="text-blue-600">EU</span></span>
             </a>
             <a href="https://dausa.online" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:opacity-80 transition-opacity">
               <img src={logoDaUsa} alt="DaUSA" className="w-7 h-7 md:w-9 md:h-9 rounded-lg object-cover" />
-              <span className="text-xs md:text-sm font-bold text-slate-600 hidden md:inline">DaUSA</span>
+              <span className="text-xs md:text-sm font-bold hidden md:inline"><span className="text-slate-900">Da</span><span className="text-blue-600">USA</span></span>
             </a>
           </div>
           

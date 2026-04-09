@@ -1112,6 +1112,7 @@ export default function App() {
   };
 
   return (
+    <>
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-indigo-100 snap-y snap-mandatory scroll-smooth">
       {/* Header */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-50">

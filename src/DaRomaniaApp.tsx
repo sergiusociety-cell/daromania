@@ -1,4 +1,6 @@
 import ProfilePage from './auth/ProfilePage';
+import AuthModal from './auth/AuthModal';
+import { useAuth } from './auth/AuthContext';
 import JobBusinessModal from './components/JobBusinessModal';
 import AfacereLaCheiePage from './AfacereLaCheiePage';
 import ArsenalPage from './ArsenalPage';

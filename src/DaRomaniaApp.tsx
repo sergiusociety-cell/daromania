@@ -1661,10 +1661,10 @@ export default function App() {
             transition={{ duration: 0.6 }}
             className="max-w-5xl mx-auto"
           >
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-50 text-indigo-700 text-sm font-semibold mb-6 border border-indigo-100">
-              <Rocket className="w-4 h-4" /> Călătoria succesului tău este motivația noastră!
+            <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-indigo-50 text-indigo-700 text-base md:text-lg font-bold mb-6 border border-indigo-100">
+              <Rocket className="w-5 h-5" /> Călătoria succesului tău este motivația noastră!
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-8 tracking-tight leading-tight">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-8 tracking-tight leading-tight">
               {t.hero_title1} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">să nu mai simți că muncești o zi din viață!</span>
             </h1>

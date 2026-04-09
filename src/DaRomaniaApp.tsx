@@ -604,14 +604,6 @@ function PlatformChatbot() {
       <span className="font-bold pr-2 hidden md:inline">Discută LIVE cu Sergiu</span>
     </a>
   );
-                <Send className="w-5 h-5" />
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-    </>
-  );
 }
 
 

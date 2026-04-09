@@ -1167,10 +1167,10 @@ export default function App() {
           
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-            <button onClick={() => setShowAcademia(true)} className="hover:text-indigo-600 transition-colors font-black text-indigo-600">{t.nav_academy}</button>
-            <button onClick={() => setShowOpenClaw(true)} className="hover:text-purple-600 transition-colors font-black text-purple-600">{t.nav_openclaw}</button>
-            <button onClick={() => setShowArsenal(true)} className="hover:text-amber-500 transition-colors font-black text-amber-500">{t.nav_arsenal}</button>
-            <button onClick={() => setShowAfacere(true)} className="hover:text-green-600 transition-colors font-black text-green-600">{t.nav_afacere}</button>
+            <button onClick={() => { pushHistoryState(); setShowAcademia(true); }} className="hover:text-indigo-600 transition-colors font-black text-indigo-600">{t.nav_academy}</button>
+            <button onClick={() => { pushHistoryState(); setShowOpenClaw(true); }} className="hover:text-purple-600 transition-colors font-black text-purple-600">{t.nav_openclaw}</button>
+            <button onClick={() => { pushHistoryState(); setShowArsenal(true); }} className="hover:text-amber-500 transition-colors font-black text-amber-500">{t.nav_arsenal}</button>
+            <button onClick={() => { pushHistoryState(); setShowAfacere(true); }} className="hover:text-green-600 transition-colors font-black text-green-600">{t.nav_afacere}</button>
             <div className="relative">
               <button onClick={() => setShowLangMenu(p => !p)} className="flex items-center gap-1 text-slate-500 hover:text-slate-800 transition-colors text-sm font-semibold px-2 py-1 rounded-lg hover:bg-slate-100">
                 {BRANDS[lang].flag} {lang.toUpperCase()} <span className="text-xs">▾</span>

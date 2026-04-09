@@ -1247,7 +1247,7 @@ export default function App() {
         {/* OPENCLAW PAGE */}
         {showArsenal && <ArsenalPage onClose={() => setShowArsenal(false)} />}
         {showAfacere && <AfacereLaCheiePage onClose={() => setShowAfacere(false)} />}
-        {showYoutube && <YouTubePage onClose={() => setShowYoutube(false)} />}
+        {showYoutube && <div className="fixed inset-0 z-50 bg-white overflow-y-auto"><YouTubePage onClose={() => setShowYoutube(false)} /></div>}
         
         
         {showOpenClaw && (

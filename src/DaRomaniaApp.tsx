@@ -1977,8 +1977,53 @@ export default function App() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
+
+            {/* Arsenal API — Tool Revoluționar */}
+            <div className="mt-8 border-2 border-purple-300 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-3xl p-8 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-purple-200/30 rounded-full -translate-y-1/2 translate-x-1/2" />
+              <div className="relative">
+                <div className="flex items-start justify-between mb-4">
+                  <span className="text-5xl">⚡</span>
+                  <span className="text-xs font-black px-4 py-1.5 rounded-full bg-purple-600 text-white uppercase tracking-wider">Revoluționar</span>
+                </div>
+                <h3 className="text-2xl md:text-3xl font-black text-slate-900 mb-3">Arsenal API — Construiește Orice Sistem</h3>
+                <p className="text-slate-600 leading-relaxed mb-4 max-w-3xl">
+                  Accesează <span className="font-black text-purple-700">peste 150 de API-uri gratuite</span> și construiește exact sistemul de care ai nevoie. 
+                  De la email marketing la procesare plăți, de la AI la social media — toate instrumentele într-un singur loc. 
+                  Tu alegi, tu combini, tu creezi. Fără limite, fără costuri ascunse.
+                </p>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+                  {['📧 Email & CRM', '🤖 AI & Machine Learning', '📱 Social Media', '💳 Plăți & Facturare', '📊 Analytics', '🗄️ Stocare & Baze de date', '🔐 Autentificare', '🌍 Traduceri & NLP'].map((api, i) => (
+                    <div key={i} className="bg-white/80 rounded-xl px-3 py-2 text-sm text-slate-700 font-medium text-center border border-purple-100">
+                      {api}
+                    </div>
+                  ))}
+                </div>
+                <button 
+                  onClick={() => { pushHistoryState(); setShowArsenal(true); }}
+                  className="bg-purple-600 text-white font-black px-8 py-3 rounded-xl hover:bg-purple-700 transition-all inline-flex items-center gap-2"
+                >
+                  Explorează Arsenal API →
+                </button>
+              </div>
+            </div>
+
+            {/* Link către Afacere la Cheie */}
+            <div className="mt-8 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-3xl p-8 text-center text-white relative overflow-hidden">
+              <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvc3ZnPg==')] opacity-50" />
+              <div className="relative">
+                <h3 className="text-2xl md:text-3xl font-black mb-3">💼 Toate Proiectele & Ideile de Business</h3>
+                <p className="text-indigo-200 mb-6 text-lg max-w-2xl mx-auto">
+                  Descoperă biblioteca completă de proiecte validate, idei de business și modele de monetizare gata de implementat.
+                </p>
+                <button 
+                  onClick={() => { pushHistoryState(); setShowAfacere(true); }}
+                  className="bg-white text-indigo-700 font-black px-8 py-4 rounded-xl hover:bg-indigo-50 transition-all text-lg inline-flex items-center gap-2"
+                >
+                  Vezi Afacere la Cheie →
+                </button>
+              </div>
+            </div>
 
         {/* SECTIUNEA 4 — PLANUL IN 4 FAZE */}
         <section className="py-24 md:py-32 bg-[#FAFAF7] snap-start px-4 border-t border-[#EDE5C8]/40">

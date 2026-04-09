@@ -113,20 +113,20 @@ export default function JobBusinessModal({ job, onClose }: Props) {
 
         {/* Panel */}
         <motion.div
-          className="relative w-full max-w-3xl h-full bg-slate-950 overflow-y-auto shadow-2xl border-l border-slate-800"
+          className="relative w-full md:max-w-3xl h-full bg-slate-950 overflow-y-auto shadow-2xl md:border-l border-slate-800"
           initial={{ x: '100%' }}
           animate={{ x: 0 }}
           exit={{ x: '100%' }}
           transition={{ type: 'spring', damping: 30, stiffness: 300 }}
         >
           {/* Header */}
-          <div className="sticky top-0 z-10 bg-slate-950/95 backdrop-blur-md border-b border-slate-800 p-5 flex items-center justify-between">
-            <div>
-              <h2 className="text-xl font-black text-white">{job.title}</h2>
-              <div className="flex items-center gap-3 mt-1">
-                <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">{job.category}</span>
-                <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${job.automationRisk > 80 ? 'bg-rose-500/20 text-rose-400' : job.automationRisk > 50 ? 'bg-amber-500/20 text-amber-400' : 'bg-green-500/20 text-green-400'}`}>
-                  {job.automationRisk}% risc automatizare
+          <div className="sticky top-0 z-10 bg-slate-950/95 backdrop-blur-md border-b border-slate-800 p-3 md:p-5 flex items-center justify-between">
+            <div className="min-w-0 flex-1 mr-2">
+              <h2 className="text-base md:text-xl font-black text-white truncate">{job.title}</h2>
+              <div className="flex items-center gap-2 mt-0.5">
+                <span className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-wider">{job.category}</span>
+                <span className={`text-[10px] md:text-xs font-bold px-1.5 md:px-2 py-0.5 rounded-full ${job.automationRisk > 80 ? 'bg-rose-500/20 text-rose-400' : job.automationRisk > 50 ? 'bg-amber-500/20 text-amber-400' : 'bg-green-500/20 text-green-400'}`}>
+                  {job.automationRisk}%
                 </span>
               </div>
             </div>
@@ -139,8 +139,8 @@ export default function JobBusinessModal({ job, onClose }: Props) {
           </div>
 
           {/* Cards */}
-          <div className="p-5 space-y-5">
-            <p className="text-slate-400 text-sm">5 modele de business construite pe expertiza ta în <span className="text-white font-bold">{job.title}</span>. Copiază ideea preferată și începe azi.</p>
+          <div className="p-3 md:p-5 space-y-4 md:space-y-5">
+            <p className="text-slate-400 text-xs md:text-sm">5 modele de business construite pe expertiza ta în <span className="text-white font-bold">{job.title}</span>.</p>
 
             {cards.map((card, idx) => (
               <motion.div
@@ -151,25 +151,25 @@ export default function JobBusinessModal({ job, onClose }: Props) {
                 className={`rounded-2xl border ${card.border} overflow-hidden`}
               >
                 {/* Card header */}
-                <div className={`bg-gradient-to-r ${card.gradient} p-5 flex items-center justify-between`}>
-                  <div className="flex items-center gap-3">
-                    <span className="text-3xl">{card.emoji}</span>
-                    <h3 className="text-lg font-black text-white">{card.title}</h3>
+                <div className={`bg-gradient-to-r ${card.gradient} p-3 md:p-5 flex items-center justify-between`}>
+                  <div className="flex items-center gap-2 md:gap-3 min-w-0">
+                    <span className="text-xl md:text-3xl">{card.emoji}</span>
+                    <h3 className="text-sm md:text-lg font-black text-white truncate">{card.title}</h3>
                   </div>
                   <button
                     onClick={() => handleCopy(idx)}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/20 hover:bg-white/30 text-white text-xs font-bold transition-colors"
+                    className="flex-shrink-0 flex items-center gap-1 px-2 md:px-3 py-1 md:py-1.5 rounded-full bg-white/20 hover:bg-white/30 text-white text-[10px] md:text-xs font-bold transition-colors"
                   >
                     {copiedIdx === idx ? <><Check className="w-3.5 h-3.5" /> Copiat!</> : <><Copy className="w-3.5 h-3.5" /> Copiază ideea</>}
                   </button>
                 </div>
 
                 {/* Card content */}
-                <div className="bg-slate-900/80 p-5 space-y-4">
+                <div className="bg-slate-900/80 p-3 md:p-5 space-y-3 md:space-y-4">
                   {card.sections.map((section, si) => (
                     <div key={si}>
-                      <h4 className="text-sm font-bold text-slate-300 mb-1">{section.label}</h4>
-                      <p className="text-sm text-slate-400 whitespace-pre-line leading-relaxed">{section.text}</p>
+                      <h4 className="text-xs md:text-sm font-bold text-slate-300 mb-0.5 md:mb-1">{section.label}</h4>
+                      <p className="text-[11px] md:text-sm text-slate-400 whitespace-pre-line leading-relaxed">{section.text}</p>
                     </div>
                   ))}
                 </div>

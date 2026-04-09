@@ -1781,16 +1781,16 @@ export default function App() {
               </button>
             </div>
             
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex items-center justify-center gap-3">
               <button 
                 onClick={() => pivotRef.current?.scrollIntoView({ behavior: 'smooth' })}
-                className="w-full sm:w-auto bg-indigo-600 text-white px-10 py-5 rounded-full text-xl font-black hover:bg-indigo-700 transition-all shadow-2xl shadow-indigo-200 flex items-center justify-center gap-3"
+                className="bg-blue-600 text-white px-6 py-2.5 rounded-lg text-sm font-bold hover:bg-blue-700 transition-all shadow-md flex items-center gap-2"
               >
-                {t.hero_cta} <ArrowRight className="w-6 h-6" />
+                {t.hero_cta} <ArrowRight className="w-4 h-4" />
               </button>
               <button 
                 onClick={() => methodologyRef.current?.scrollIntoView({ behavior: 'smooth' })}
-                className="w-full sm:w-auto bg-white text-slate-900 border-2 border-slate-200 px-10 py-5 rounded-full text-xl font-black hover:border-indigo-600 hover:text-indigo-600 transition-all flex items-center justify-center gap-3"
+                className="bg-white text-blue-700 border border-blue-200 px-6 py-2.5 rounded-lg text-sm font-bold hover:border-blue-500 hover:bg-blue-50 transition-all flex items-center gap-2"
               >
                 Vezi cum funcționează
               </button>

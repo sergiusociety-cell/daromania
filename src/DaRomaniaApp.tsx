@@ -1079,6 +1079,25 @@ export default function App() {
     document.body.removeChild(element);
   };
 
+  const handleCheckout = async (jobTitle?: string) => {
+    if (!isAuthenticated) {
+      setAuthMode('signin');
+      setShowAuthModal(true);
+      return;
+    }
+    try {
+      const { supabase } = await import('@/integrations/supabase/client');
+      const { data, error } = await supabase.functions.invoke('create-checkout', {
+        body: { jobTitle: jobTitle || selectedJob?.title || '' },
+      });
+      if (error) throw error;
+      if (data?.url) window.open(data.url, '_blank');
+    } catch (err: any) {
+      console.error('Checkout error:', err);
+      alert('Eroare la procesarea plății. Încearcă din nou.');
+    }
+  };
+
   const scrollTo = (ref: React.RefObject<HTMLDivElement | null>) => {
     ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
@@ -2157,7 +2176,7 @@ export default function App() {
                     <span className="text-sm text-slate-300">Agent Openclaw.ai inclus pentru execuție</span>
                   </li>
                 </ul>
-                <button className="w-full py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold transition-colors mt-auto">Alege Pachetul</button>
+                <button onClick={() => handleCheckout()} className="w-full py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold transition-colors mt-auto">Alege Pachetul</button>
               </div>
 
               {/* Pachet 2 */}
@@ -2484,7 +2503,7 @@ export default function App() {
                             </div>
                           </div>
                           <button 
-                            onClick={() => setActiveModal('join')}
+                            onClick={() => handleCheckout(pivotData?.monetizationProjects?.[idx]?.title)}
                             className="w-full bg-white text-slate-900 py-3 md:py-4 rounded-xl md:rounded-[1.5rem] text-sm md:text-lg font-black hover:bg-indigo-50 transition-all flex items-center justify-center gap-2 shadow-2xl shadow-black/20"
                           >
                             Lansează — $9 <ArrowRight className="w-5 h-5" />

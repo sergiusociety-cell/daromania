@@ -1698,7 +1698,7 @@ onClick={() => {}} className="hidden" />
               </div>
 
               <div className="flex-1 overflow-y-auto pb-20">
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   <AnimatePresence mode="popLayout">
                     {filteredJobs.map((job) => {
                       const catColors: Record<string, string> = {
@@ -1727,23 +1727,31 @@ onClick={() => {}} className="hidden" />
                           animate={{ opacity: 1, scale: 1 }}
                           exit={{ opacity: 0, scale: 0.95 }}
                           onClick={() => handleJobSelect(job)}
-                          className="w-full p-3 rounded-xl border border-slate-200 bg-white hover:border-indigo-300 hover:shadow-lg text-left transition-all group flex flex-col h-full"
+                          className="w-full p-5 rounded-2xl border border-slate-200 bg-white hover:border-indigo-300 hover:shadow-lg text-left transition-all group flex flex-col"
                         >
-                          <span className={`inline-block text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border mb-2 self-start ${catClass}`}>
-                            {job.category}
-                          </span>
-                          <h3 className="text-sm font-bold text-slate-800 mb-1.5 group-hover:text-indigo-600 transition-colors leading-snug">
+                          <div className="flex items-center justify-between mb-3">
+                            <span className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border ${catClass}`}>
+                              {job.category}
+                            </span>
+                            <span className="text-2xl">{job.icon}</span>
+                          </div>
+                          <h3 className="text-base font-bold text-slate-800 mb-1 group-hover:text-indigo-600 transition-colors">
                             {job.title}
                           </h3>
-                          <div className="flex items-center gap-1 mt-auto">
-                            <div className="flex-1 bg-slate-100 h-1.5 rounded-full overflow-hidden">
+                          <p className="text-xs text-slate-500 mb-3 line-clamp-2">{job.description}</p>
+                          <div className="flex items-center gap-2 mt-auto">
+                            <div className="flex-1 bg-slate-100 h-2 rounded-full overflow-hidden">
                               <motion.div 
                                 initial={{ width: 0 }}
                                 animate={{ width: `${job.automationRisk}%` }}
-                                className={`h-full ${job.automationRisk > 80 ? 'bg-gradient-to-r from-rose-400 to-pink-500' : 'bg-gradient-to-r from-amber-400 to-orange-500'}`}
+                                className={`h-full rounded-full ${job.automationRisk > 80 ? 'bg-gradient-to-r from-rose-400 to-pink-500' : job.automationRisk > 50 ? 'bg-gradient-to-r from-amber-400 to-orange-500' : 'bg-gradient-to-r from-emerald-400 to-green-500'}`}
                               />
                             </div>
-                            <span className="text-[10px] font-bold text-slate-500">{job.automationRisk}%</span>
+                            <span className="text-xs font-bold text-slate-500">{job.automationRisk}%</span>
+                          </div>
+                          <div className="flex items-center justify-between mt-3 pt-3 border-t border-slate-100">
+                            <span className="text-xs text-slate-400">Risc automatizare</span>
+                            <span className="text-xs font-semibold text-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity">Explorează →</span>
                           </div>
                         </motion.button>
                       );

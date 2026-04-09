@@ -1089,7 +1089,7 @@ export default function App() {
     document.body.removeChild(element);
   };
 
-  const handleCheckout = async (jobTitle?: string) => {
+  const handleCheckout = async (jobTitle?: string, priceId?: string, mode?: string) => {
     if (!isAuthenticated) {
       setAuthMode('signin');
       setShowAuthModal(true);
@@ -1098,7 +1098,7 @@ export default function App() {
     try {
       const { supabase } = await import('@/integrations/supabase/client');
       const { data, error } = await supabase.functions.invoke('create-checkout', {
-        body: { jobTitle: jobTitle || selectedJob?.title || '' },
+        body: { jobTitle: jobTitle || selectedJob?.title || '', priceId, mode },
       });
       if (error) throw error;
       if (data?.url) window.open(data.url, '_blank');
@@ -2212,7 +2212,7 @@ export default function App() {
                     <span className="text-sm text-white">Vezi proiectele și succesul monetizat al rețelei</span>
                   </li>
                 </ul>
-                <button className="w-full py-4 rounded-full bg-white text-indigo-600 hover:bg-indigo-50 font-black transition-colors mt-auto">Alege Pachetul</button>
+                <button onClick={() => handleCheckout(undefined, 'price_1TKHL2LDo9sXtuKJSzlNPZA4', 'subscription')} className="w-full py-4 rounded-full bg-white text-indigo-600 hover:bg-indigo-50 font-black transition-colors mt-auto">Alege Pachetul</button>
               </div>
 
               {/* Pachet 3 */}
@@ -2237,7 +2237,7 @@ export default function App() {
                     <span className="text-sm text-slate-300">Sesiuni cu un colaborator din academie</span>
                   </li>
                 </ul>
-                <button className="w-full py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold transition-colors mt-auto">Alege Pachetul</button>
+                <button onClick={() => handleCheckout(undefined, 'price_1TKHLNLDo9sXtuKJpgudoEO2', 'subscription')} className="w-full py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold transition-colors mt-auto">Alege Pachetul</button>
               </div>
 
               {/* Pachet 4 */}
@@ -2262,7 +2262,7 @@ export default function App() {
                     <span className="text-sm text-slate-300">Sesiuni 1:1 direct cu Sergiu</span>
                   </li>
                 </ul>
-                <button className="w-full py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold transition-colors mt-auto">Alege Pachetul</button>
+                <button onClick={() => handleCheckout(undefined, 'price_1TKHLkLDo9sXtuKJkqEcQYle', 'subscription')} className="w-full py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold transition-colors mt-auto">Alege Pachetul</button>
               </div>
             </div>
 

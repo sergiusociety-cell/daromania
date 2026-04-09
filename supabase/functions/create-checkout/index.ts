@@ -34,18 +34,20 @@ serve(async (req) => {
       customerId = customers.data[0].id;
     }
 
-    const { jobTitle } = await req.json().catch(() => ({}));
+    const { priceId, mode, jobTitle } = await req.json().catch(() => ({}));
+    const checkoutMode = mode || "payment";
+    const selectedPrice = priceId || "price_1TKHDVLDo9sXtuKJQvka6gr9";
 
     const session = await stripe.checkout.sessions.create({
       customer: customerId,
       customer_email: customerId ? undefined : user.email,
       line_items: [
         {
-          price: "price_1TKHDVLDo9sXtuKJQvka6gr9",
+          price: selectedPrice,
           quantity: 1,
         },
       ],
-      mode: "payment",
+      mode: checkoutMode,
       success_url: `${req.headers.get("origin")}/?payment=success`,
       cancel_url: `${req.headers.get("origin")}/?payment=canceled`,
       metadata: {

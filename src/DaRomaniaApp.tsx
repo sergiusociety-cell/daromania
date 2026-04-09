@@ -58,9 +58,11 @@ import {
 import { JOBS_LIST, JobData } from './constants';
 import Markdown from 'react-markdown';
 
+const API_BASE = 'https://daromania.online';
+
 // Initialize Gemini
 const callAI = async (prompt: string, system?: string, lucky?: boolean): Promise<string> => {
-  const res = await fetch('/api/chat', {
+  const res = await fetch(`${API_BASE}/api/chat`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ messages: [{ role: 'user', content: prompt }], systemPrompt: system, lucky: lucky ?? false })
@@ -778,7 +780,7 @@ export default function App() {
         ];
         const results = [];
         for (const prompt of prompts) {
-          const res = await fetch('/api/generate-image', {
+          const res = await fetch(`${API_BASE}/api/generate-image`, {
             method: 'POST', headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ prompt, aspect_ratio: '16:9' })
           });
@@ -787,7 +789,7 @@ export default function App() {
             let attempts = 0;
             while (attempts < 20) {
               await new Promise(r => setTimeout(r, 3000));
-              const s = await fetch('/api/task-status?taskId=' + data.taskId);
+              const s = await fetch(`${API_BASE}/api/task-status?taskId=` + data.taskId);
               const sd = await s.json();
               if (sd.state === 'success' && sd.resultUrl) { results.push({ prompt, url: sd.resultUrl }); break; }
               if (sd.state === 'fail') break;

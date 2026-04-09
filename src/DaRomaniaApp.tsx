@@ -831,6 +831,16 @@ export default function App() {
   const [showUserMenu, setShowUserMenu] = useState(false);
   const { user, isAuthenticated, logout } = useAuth();
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const [showPaymentSuccess, setShowPaymentSuccess] = useState(false);
+
+  // Detect payment success from Stripe redirect
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('payment') === 'success') {
+      setShowPaymentSuccess(true);
+      window.history.replaceState({}, '', window.location.pathname);
+    }
+  }, []);
   const [contextAnswers, setContextAnswers] = useState({ q1: '', q2: '', q3: '' });
   const [luckyLoading, setLuckyLoading] = useState({ q1: false, q2: false, q3: false });
   
@@ -2299,7 +2309,62 @@ export default function App() {
           />
         )}
 
-        {/* AI Dividend Section - FULL SCREEN */}
+        {/* Payment Success Modal */}
+        {showPaymentSuccess && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center px-4">
+            <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setShowPaymentSuccess(false)} />
+            <div className="relative bg-white rounded-3xl shadow-2xl w-full max-w-lg p-8 md:p-10 z-10 text-center">
+              <button onClick={() => setShowPaymentSuccess(false)}
+                className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 text-sm font-black transition-all">
+                ✕
+              </button>
+              
+              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <CheckCircle2 className="w-10 h-10 text-green-600" />
+              </div>
+              
+              <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-2">Plata confirmată! 🎉</h2>
+              <p className="text-slate-500 mb-8">Proiectul tău a fost lansat cu succes. Iată pașii următori:</p>
+              
+              <div className="space-y-4 text-left mb-8">
+                <div className="flex items-start gap-4 bg-blue-50 border border-blue-200 rounded-2xl p-4">
+                  <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-black shrink-0">1</div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 text-sm">Verifică emailul</h4>
+                    <p className="text-slate-500 text-xs mt-0.5">Vei primi confirmarea plății și detaliile proiectului pe email.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4 bg-green-50 border border-green-200 rounded-2xl p-4">
+                  <div className="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm font-black shrink-0">2</div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 text-sm">Sergiu te contactează</h4>
+                    <p className="text-slate-500 text-xs mt-0.5">În maxim 24h, Sergiu te contactează pe WhatsApp pentru a configura totul.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4 bg-purple-50 border border-purple-200 rounded-2xl p-4">
+                  <div className="w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center text-sm font-black shrink-0">3</div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 text-sm">Primești proiectul complet</h4>
+                    <p className="text-slate-500 text-xs mt-0.5">Strategie + pipeline-uri + agentul OpenClaw configurat, gata de utilizat.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a href={"https://wa.me/40768676141?text=" + encodeURIComponent("Salut Sergiu! Tocmai am plătit pentru proiectul meu. Abia aștept să începem!")}
+                  target="_blank" rel="noopener noreferrer"
+                  className="flex-1 bg-green-500 hover:bg-green-600 text-white font-bold py-3.5 rounded-2xl transition-all flex items-center justify-center gap-2 no-underline text-sm">
+                  💬 Scrie-i lui Sergiu
+                </a>
+                <button onClick={() => setShowPaymentSuccess(false)}
+                  className="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-3.5 rounded-2xl transition-all text-sm">
+                  Continuă pe platformă
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
         <section ref={dividendRef} className="min-h-screen w-full bg-indigo-600 flex items-center justify-center snap-start py-20 px-4 md:px-12">
           <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center gap-16">
             <div className="flex-1 text-white">

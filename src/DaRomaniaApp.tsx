@@ -1170,20 +1170,23 @@ export default function App() {
               exit={{ height: 0, opacity: 0 }}
               className="md:hidden bg-white border-b border-slate-200 overflow-hidden"
             >
-              <div className="px-4 py-6 flex flex-col gap-4">
-                <button onClick={() => { setShowAcademia(true); setIsMobileMenuOpen(false); }} className="text-left text-lg font-black text-indigo-600 py-2">🎓 Academia DaRomania</button>
-                <button onClick={() => { setShowOpenClaw(true); setIsMobileMenuOpen(false); }} className="text-left text-lg font-black text-purple-600 py-2">🤖 OpenClaw — Ghid Instalare</button>
-                <button onClick={() => { setShowArsenal(true); setIsMobileMenuOpen(false); }} className="text-left text-lg font-black text-amber-500 py-2">⚡ Arsenal API — Transformă-ți Jobul</button>
-                <button onClick={() => { setShowAfacere(true); setIsMobileMenuOpen(false); }} className="text-left text-lg font-black text-green-600 py-2">💼 Afacere la Cheie — $99/lună</button>
-                <button onClick={() => { scrollTo(missionRef); setIsMobileMenuOpen(false); }} className="text-left text-lg font-medium text-slate-600 hover:text-indigo-600 py-2">Misiune</button>
-
-                <button onClick={() => { scrollTo(pricingRef); setIsMobileMenuOpen(false); }} className="text-left text-lg font-medium text-slate-600 hover:text-indigo-600 py-2">Prețuri</button>
-                <button 
-                  onClick={() => { setIsMobileMenuOpen(false); }}
-                  className="bg-slate-900 text-white px-5 py-3 rounded-xl hover:bg-slate-800 transition-all shadow-sm mt-2 font-bold"
-                >
-                  Intra in cont
-                </button>
+              <div className="px-3 py-4 flex flex-col gap-2">
+                <button onClick={() => { setShowAcademia(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-indigo-600 py-2.5 px-3 rounded-xl hover:bg-indigo-50 transition-colors">🎓 Academia</button>
+                <button onClick={() => { setShowOpenClaw(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-purple-600 py-2.5 px-3 rounded-xl hover:bg-purple-50 transition-colors">🤖 OpenClaw</button>
+                <button onClick={() => { setShowArsenal(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-amber-500 py-2.5 px-3 rounded-xl hover:bg-amber-50 transition-colors">⚡ Arsenal API</button>
+                <button onClick={() => { setShowAfacere(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-green-600 py-2.5 px-3 rounded-xl hover:bg-green-50 transition-colors">💼 Afacere la Cheie</button>
+                <div className="border-t border-slate-100 mt-1 pt-2 flex flex-col gap-1">
+                  <button onClick={() => { scrollTo(missionRef); setIsMobileMenuOpen(false); }} className="text-left text-sm font-medium text-slate-600 py-2 px-3 rounded-xl hover:bg-slate-50">Misiune</button>
+                  <button onClick={() => { scrollTo(pricingRef); setIsMobileMenuOpen(false); }} className="text-left text-sm font-medium text-slate-600 py-2 px-3 rounded-xl hover:bg-slate-50">Prețuri</button>
+                </div>
+                <div className="border-t border-slate-100 mt-1 pt-2 flex gap-2">
+                  {(['ro','en','es'] as Lang[]).map(l => (
+                    <button key={l} onClick={() => { setLang(l); setIsMobileMenuOpen(false); }}
+                      className={"flex-1 text-center py-2 text-xs font-bold rounded-lg transition-colors " + (lang === l ? "bg-indigo-100 text-indigo-700" : "bg-slate-50 text-slate-500")}>
+                      {BRANDS[l].flag} {l.toUpperCase()}
+                    </button>
+                  ))}
+                </div>
               </div>
             </motion.div>
           )}

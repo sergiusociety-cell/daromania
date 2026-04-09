@@ -1729,7 +1729,7 @@ export default function App() {
                           animate={{ opacity: 1, scale: 1 }}
                           exit={{ opacity: 0, scale: 0.95 }}
                           onClick={() => handleJobSelect(job)}
-                          className="w-full p-5 rounded-2xl border border-slate-200 bg-white hover:border-indigo-300 hover:shadow-lg text-left transition-all group flex flex-col"
+                          className="w-full p-3 md:p-5 rounded-xl md:rounded-2xl border border-slate-200 bg-white hover:border-indigo-300 hover:shadow-lg text-left transition-all group flex flex-col"
                         >
                           <div className="flex items-center justify-between mb-3">
                             <span className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border ${catClass}`}>
@@ -1739,10 +1739,10 @@ export default function App() {
                               {job.level === 'critical' ? '🔴 Critic' : job.level === 'high' ? '🟠 Ridicat' : '🟡 Moderat'}
                             </span>
                           </div>
-                          <h3 className="text-base font-bold text-slate-800 mb-1 group-hover:text-indigo-600 transition-colors">
+                          <h3 className="text-sm md:text-base font-bold text-slate-800 mb-1 group-hover:text-indigo-600 transition-colors">
                             {job.title}
                           </h3>
-                          <ul className="text-xs text-slate-600 space-y-1.5 mb-3">
+                          <ul className="text-[10px] md:text-xs text-slate-600 space-y-1 md:space-y-1.5 mb-2 md:mb-3">
                             <li className="flex gap-1.5"><span className="text-indigo-400">1.</span> {job.pivot1}</li>
                             <li className="flex gap-1.5"><span className="text-indigo-400">2.</span> {job.pivot2}</li>
                             <li className="flex gap-1.5"><span className="text-indigo-400">3.</span> {job.pivot3}</li>

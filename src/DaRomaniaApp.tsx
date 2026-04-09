@@ -59,15 +59,22 @@ import {
 import { JOBS_LIST, JobData } from './constants';
 import Markdown from 'react-markdown';
 
-const API_BASE = 'https://daromania.online';
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
+const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
 
-// Initialize Gemini
 const callAI = async (prompt: string, system?: string, lucky?: boolean): Promise<string> => {
-  const res = await fetch(`${API_BASE}/api/chat`, {
+  const res = await fetch(`${SUPABASE_URL}/functions/v1/chat`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: { 
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${SUPABASE_KEY}`,
+    },
     body: JSON.stringify({ messages: [{ role: 'user', content: prompt }], systemPrompt: system, lucky: lucky ?? false })
   });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.error || `AI request failed: ${res.status}`);
+  }
   const d = await res.json();
   return d.text || '';
 };

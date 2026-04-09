@@ -83,6 +83,24 @@ const callAI = async (prompt: string, system?: string, lucky?: boolean): Promise
   return d.text || '';
 };
 
+type GeoRegion = 'ro' | 'us' | 'eu';
+
+const useGeoRegion = (): GeoRegion => {
+  const [region, setRegion] = useState<GeoRegion>('ro');
+  useEffect(() => {
+    fetch('https://ipapi.co/json/')
+      .then(r => r.json())
+      .then(data => {
+        const code = (data.country_code || '').toUpperCase();
+        if (code === 'RO') setRegion('ro');
+        else if (code === 'US') setRegion('us');
+        else setRegion('eu');
+      })
+      .catch(() => setRegion('ro'));
+  }, []);
+  return region;
+};
+
 type ModalType = 'join' | 'eligibility' | 'download' | null;
 
 interface MonetizationProject {
@@ -760,6 +778,7 @@ const RadarChart = ({ job }: { job: any }) => {
 
 export default function App() {
   const [searchTerm, setSearchTerm] = useState('');
+  const geoRegion = useGeoRegion();
 
   const getArsenalButtons = (project) => {
     return [
@@ -1166,19 +1185,24 @@ export default function App() {
       <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-14 md:h-20 flex items-center justify-between">
           <div className="flex items-center gap-2 md:gap-4">
-            <div className="flex items-center gap-1.5 cursor-pointer" onClick={() => { setSelectedJob(null); setPivotData(null); setShowAcademia(false); setShowOpenClaw(false); setShowArsenal(false); setShowAfacere(false); window.scrollTo({top: 0, behavior: 'smooth'}); }}>
-              <img src={logoDaRomania} alt="DaRomania" className="w-8 h-8 md:w-10 md:h-10 rounded-lg object-cover" />
-              <span className="text-sm md:text-base font-black tracking-tight hidden sm:inline"><span className="text-slate-900">Da</span><span className="text-blue-600">Romania</span></span>
-            </div>
-            <div className="w-px h-6 bg-slate-200 hidden sm:block" />
-            <a href="https://daeu.online" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:opacity-80 transition-opacity">
-              <img src={logoDaEu} alt="DaEU" className="w-7 h-7 md:w-9 md:h-9 rounded-lg object-cover" />
-              <span className="text-xs md:text-sm font-bold hidden md:inline"><span className="text-slate-900">Da</span><span className="text-blue-600">EU</span></span>
-            </a>
-            <a href="https://dausa.online" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:opacity-80 transition-opacity">
-              <img src={logoDaUsa} alt="DaUSA" className="w-7 h-7 md:w-9 md:h-9 rounded-lg object-cover" />
-              <span className="text-xs md:text-sm font-bold hidden md:inline"><span className="text-slate-900">Da</span><span className="text-blue-600">USA</span></span>
-            </a>
+            {geoRegion === 'ro' && (
+              <div className="flex items-center gap-1.5 cursor-pointer" onClick={() => { setSelectedJob(null); setPivotData(null); setShowAcademia(false); setShowOpenClaw(false); setShowArsenal(false); setShowAfacere(false); window.scrollTo({top: 0, behavior: 'smooth'}); }}>
+                <img src={logoDaRomania} alt="DaRomania" className="w-8 h-8 md:w-10 md:h-10 rounded-lg object-cover" />
+                <span className="text-sm md:text-base font-black tracking-tight"><span className="text-slate-900">Da</span><span className="text-blue-600">Romania</span></span>
+              </div>
+            )}
+            {geoRegion === 'us' && (
+              <a href="https://dausa.online" className="flex items-center gap-1.5 cursor-pointer hover:opacity-80 transition-opacity">
+                <img src={logoDaUsa} alt="DaUSA" className="w-8 h-8 md:w-10 md:h-10 rounded-lg object-cover" />
+                <span className="text-sm md:text-base font-black tracking-tight"><span className="text-slate-900">Da</span><span className="text-blue-600">USA</span></span>
+              </a>
+            )}
+            {geoRegion === 'eu' && (
+              <a href="https://daeu.online" className="flex items-center gap-1.5 cursor-pointer hover:opacity-80 transition-opacity">
+                <img src={logoDaEu} alt="DaEU" className="w-8 h-8 md:w-10 md:h-10 rounded-lg object-cover" />
+                <span className="text-sm md:text-base font-black tracking-tight"><span className="text-slate-900">Da</span><span className="text-blue-600">EU</span></span>
+              </a>
+            )}
           </div>
           
           {/* Desktop Nav */}

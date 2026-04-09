@@ -1,4 +1,5 @@
 import ProfilePage from './auth/ProfilePage';
+import JobBusinessModal from './components/JobBusinessModal';
 import AfacereLaCheiePage from './AfacereLaCheiePage';
 import ArsenalPage from './ArsenalPage';
 import { T, BRANDS, LANG_NAMES, type Lang } from './i18n';

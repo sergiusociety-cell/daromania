@@ -1671,19 +1671,31 @@ export default function App() {
               {t.hero_title1} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">să nu mai simți că muncești o zi din viață!</span>
             </h1>
-            <div className="max-w-3xl mx-auto mb-10 space-y-3 text-center">
-              <p className="text-slate-600 text-base md:text-lg leading-relaxed">
-                85% din sarcinile tale repetitive pot fi automatizate cu AI — emailuri, rapoarte, programări, follow-up-uri. Tu te concentrezi pe cei 15% care contează: relații, strategie, expertiză.
-              </p>
-              <p className="text-slate-600 text-base md:text-lg leading-relaxed">
-                Nu îți schimbăm cariera. Îți dăm un sistem complet care lucrează 22h/zi în locul tău, cu un cost real de $3–9/lună în API-uri.
-              </p>
-              <p className="text-slate-600 text-base md:text-lg leading-relaxed">
-                Rezultatul? Un business scalabil, fără angajați, cu venituri recurente estimate între €2.000–€12.000/lună — construit pe expertiza ta unică, imposibil de replicat.
-              </p>
-              <p className="text-slate-700 text-base md:text-lg font-semibold leading-relaxed">
-                Începi gratuit cu Arsenal API. Când ești gata, lansezi cu $9. Simplu.
-              </p>
+            <div className="max-w-4xl mx-auto mb-12 grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200/60 rounded-2xl p-5 flex gap-3 items-start">
+                <span className="text-2xl mt-0.5">🤖</span>
+                <p className="text-slate-700 text-sm md:text-base leading-relaxed">
+                  <span className="font-bold text-blue-700">85% din sarcini automatizate</span> — emailuri, rapoarte, programări, follow-up-uri. Tu te concentrezi pe cei <span className="font-bold">15% care contează</span>: relații, strategie, expertiză.
+                </p>
+              </div>
+              <div className="bg-gradient-to-br from-emerald-50 to-green-50 border border-emerald-200/60 rounded-2xl p-5 flex gap-3 items-start">
+                <span className="text-2xl mt-0.5">⚙️</span>
+                <p className="text-slate-700 text-sm md:text-base leading-relaxed">
+                  <span className="font-bold text-emerald-700">Nu îți schimbăm cariera.</span> Îți dăm un sistem complet care lucrează <span className="font-bold">22h/zi</span> în locul tău, cu un cost real de <span className="font-bold text-emerald-700">$3–9/lună</span> în API-uri.
+                </p>
+              </div>
+              <div className="bg-gradient-to-br from-violet-50 to-purple-50 border border-violet-200/60 rounded-2xl p-5 flex gap-3 items-start">
+                <span className="text-2xl mt-0.5">📈</span>
+                <p className="text-slate-700 text-sm md:text-base leading-relaxed">
+                  <span className="font-bold text-violet-700">Rezultatul?</span> Un business scalabil, fără angajați, cu venituri recurente <span className="font-bold">€2.000–€12.000/lună</span> — construit pe expertiza ta unică.
+                </p>
+              </div>
+              <div className="bg-gradient-to-br from-amber-50 to-yellow-50 border border-amber-200/60 rounded-2xl p-5 flex gap-3 items-start">
+                <span className="text-2xl mt-0.5">🚀</span>
+                <p className="text-slate-700 text-sm md:text-base leading-relaxed">
+                  <span className="font-bold text-amber-700">Începi gratuit</span> cu Arsenal API. Când ești gata, lansezi cu <span className="font-bold">$9</span>. Simplu.
+                </p>
+              </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-5xl w-full mx-auto mb-10">
               {/* Arsenal API - GRATUIT - Albastru premium */}

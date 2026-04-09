@@ -2192,7 +2192,7 @@ export default function App() {
                             <span className="text-[10px] font-bold text-slate-400">{job.automationRisk}%</span>
                           </div>
                           <div
-                            className="mt-auto w-full text-center py-2 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 text-white text-xs font-bold hover:from-indigo-600 hover:to-violet-600 transition-all"
+                            className="mt-auto w-full text-center py-2 rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 text-white text-xs font-bold hover:from-blue-600 hover:to-blue-700 transition-all"
                             onClick={(e) => { e.stopPropagation(); handleJobSelect(job); }}
                           >
                             🚀 Lansează proiect — $9

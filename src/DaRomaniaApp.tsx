@@ -2237,7 +2237,7 @@ export default function App() {
                     <span className="text-sm text-slate-300">Sesiuni cu un colaborator din academie</span>
                   </li>
                 </ul>
-                <button className="w-full py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold transition-colors mt-auto">Alege Pachetul</button>
+                <button onClick={() => handleCheckout(undefined, 'price_1TKHLNLDo9sXtuKJpgudoEO2', 'subscription')} className="w-full py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold transition-colors mt-auto">Alege Pachetul</button>
               </div>
 
               {/* Pachet 4 */}
@@ -2262,7 +2262,7 @@ export default function App() {
                     <span className="text-sm text-slate-300">Sesiuni 1:1 direct cu Sergiu</span>
                   </li>
                 </ul>
-                <button className="w-full py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold transition-colors mt-auto">Alege Pachetul</button>
+                <button onClick={() => handleCheckout(undefined, 'price_1TKHLkLDo9sXtuKJkqEcQYle', 'subscription')} className="w-full py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold transition-colors mt-auto">Alege Pachetul</button>
               </div>
             </div>
 

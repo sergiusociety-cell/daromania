@@ -2091,11 +2091,11 @@ export default function App() {
         {/* 5 Business Idea Cards - before pricing */}
         <AnimatePresence>
           {pivotData && selectedJob && (
-            <section className="snap-start py-10 md:py-20 px-3 md:px-4 bg-slate-50">
+            <section className="snap-start min-h-screen md:min-h-0 py-6 md:py-20 px-3 md:px-4 bg-slate-50">
               <div className="max-w-6xl mx-auto">
-                <h2 className="text-2xl md:text-6xl font-black text-center mb-2 md:mb-4 text-slate-900">5 Modele de Business</h2>
-                <p className="text-center text-slate-500 mb-6 md:mb-12 text-sm md:text-lg">Construite pe expertiza ta în <span className="font-bold text-slate-800">{selectedJob.title}</span></p>
-                <div className="grid grid-cols-2 md:grid-cols-5 gap-2 md:gap-4">
+                <h2 className="text-xl md:text-6xl font-black text-center mb-1 md:mb-4 text-slate-900">5 Modele de Business</h2>
+                <p className="text-center text-slate-500 mb-4 md:mb-12 text-xs md:text-lg">Construite pe expertiza ta în <span className="font-bold text-slate-800">{selectedJob.title}</span></p>
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-3 md:gap-4">
                   {[
                     { emoji: '🎬', title: 'Media Empire', subtitle: 'YouTube + Blotato', gradient: 'from-purple-600 to-violet-700', desc: selectedJob.pivot1 },
                     { emoji: '🛠️', title: 'SaaS Expert', subtitle: 'Software B2B', gradient: 'from-blue-600 to-cyan-600', desc: selectedJob.pivot2 },
@@ -2105,20 +2105,22 @@ export default function App() {
                   ].map((card, idx) => (
                     <motion.button
                       key={idx}
-                      initial={{ opacity: 0, y: 30 }}
+                      initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: idx * 0.1 }}
+                      transition={{ delay: idx * 0.08 }}
                       onClick={() => { pushHistoryState(); setModalJob(selectedJob); }}
-                      className="group text-left rounded-2xl overflow-hidden border border-slate-200 hover:shadow-2xl transition-all"
+                      className="group text-left rounded-xl md:rounded-2xl overflow-hidden border border-slate-200 hover:shadow-2xl transition-all"
                     >
-                      <div className={`bg-gradient-to-br ${card.gradient} p-3 md:p-5 text-white`}>
-                        <span className="text-xl md:text-3xl block mb-1 md:mb-2">{card.emoji}</span>
-                        <h3 className="text-xs md:text-base font-black leading-tight">{card.title}</h3>
-                        <p className="text-white/70 text-[10px] md:text-xs font-semibold">{card.subtitle}</p>
+                      <div className={`bg-gradient-to-br ${card.gradient} p-3 md:p-5 text-white flex items-center gap-3 md:block`}>
+                        <span className="text-2xl md:text-3xl md:block md:mb-2">{card.emoji}</span>
+                        <div>
+                          <h3 className="text-sm md:text-base font-black leading-tight">{card.title}</h3>
+                          <p className="text-white/70 text-[10px] md:text-xs font-semibold">{card.subtitle}</p>
+                        </div>
                       </div>
-                      <div className="bg-white p-2 md:p-4">
-                        <p className="text-[10px] md:text-xs text-slate-600 leading-relaxed">{card.desc}</p>
-                        <span className="text-[10px] md:text-xs font-bold text-indigo-500 mt-1 md:mt-2 block">Detalii →</span>
+                      <div className="bg-white p-3 md:p-4">
+                        <p className="text-[11px] md:text-xs text-slate-600 leading-relaxed line-clamp-3 md:line-clamp-none">{card.desc}</p>
+                        <span className="text-[11px] md:text-xs font-bold text-indigo-500 mt-1.5 md:mt-2 block group-hover:translate-x-1 transition-transform">Detalii →</span>
                       </div>
                     </motion.button>
                   ))}

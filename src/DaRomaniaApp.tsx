@@ -470,22 +470,6 @@ function ChatAgent({ job, onClose }: { job: JobData, onClose: () => void }) {
   }, []);
 
 
-
-  const generateTools = async (project: any, idx: number) => {
-    setGeneratingTools(idx);
-    try {
-      const prompt = 'Expert tooluri digitale si AI. DOAR JSON fara markdown: [{"category":"Cercetare & Analiza","tools":["tool1","tool2","tool3"],"usage":"cum le folosesti","signup":"unde te inregistrezi gratuit"},{"category":"Creare Continut AI","tools":["tool1","tool2"],"usage":"cum le folosesti","signup":"link inregistrare"},{"category":"Marketing & Outreach","tools":["tool1","tool2"],"usage":"cum le folosesti","signup":"link"},{"category":"Automatizare","tools":["tool1","tool2"],"usage":"cum le folosesti","signup":"link"},{"category":"Monetizare & Plati","tools":["tool1","tool2"],"usage":"cum le folosesti","signup":"link"},{"category":"Analytics","tools":["tool1","tool2"],"usage":"cum le folosesti","signup":"link"}] pentru business: ' + project.title + ' pe ' + (project.platform||'');
-      const response = await callAI(prompt);
-      const clean = response.replace(/```json/g,'').replace(/```/g,'').trim();
-      const data = JSON.parse(clean);
-      setProjectTools((prev: any) => ({ ...prev, [idx]: data }));
-    } catch(err) {
-      console.error('Tools error:', err);
-    } finally {
-      setGeneratingTools(null);
-    }
-  };
-
   return (
     <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 w-[calc(100vw-2rem)] md:w-[400px] h-[80vh] md:h-[600px] bg-white rounded-3xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden z-50">
       {/* Header */}

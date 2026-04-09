@@ -2951,7 +2951,7 @@ export default function App() {
           )}
         </AnimatePresence>
 
-      </main>
+      
 
       {/* Modals */}
       <AnimatePresence>
@@ -3188,6 +3188,8 @@ export default function App() {
             </div>
           </div>
         </section>
+
+      </main>
 
       {/* Footer */}
       <footer className="bg-white border-t border-slate-200 py-12">

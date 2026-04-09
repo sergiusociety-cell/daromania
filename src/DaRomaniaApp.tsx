@@ -2165,7 +2165,7 @@ export default function App() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
               {/* Pachet 1 */}
-              <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl md:rounded-[2.5rem] p-5 md:p-8 flex flex-col hover:bg-white/10 transition-colors">
+              <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl md:rounded-[2.5rem] p-5 md:p-8 flex flex-col hover:bg-indigo-600/20 hover:border-indigo-500 transition-all duration-300 cursor-pointer">
                 <h3 className="text-xl md:text-2xl font-black mb-2">Lansare Proiect</h3>
                 <p className="text-slate-400 mb-6 flex-1">Singura și unica taxă pentru a lansa un proiect real.</p>
                 <div className="mb-8">

@@ -1686,7 +1686,7 @@ export default function App() {
                   <li className="flex items-start gap-2"><span className="text-sky-500 mt-0.5">✓</span> Fluxuri complete de lucru</li>
                   <li className="flex items-start gap-2"><span className="text-sky-500 mt-0.5">✓</span> Zero costuri, putere maximă</li>
                 </ul>
-                <span className="w-full text-center py-2.5 rounded-xl border border-sky-300 text-sky-600 font-semibold text-sm group-hover:bg-sky-600 group-hover:text-white transition-all">Explorează →</span>
+                <span className="w-full text-center py-2.5 rounded-xl border border-sky-300 text-sky-600 font-semibold text-sm group-hover:bg-sky-600 group-hover:text-white transition-all">Vezi Detalii →</span>
               </button>
 
               {/* OpenClaw - $9 */}
@@ -1704,7 +1704,7 @@ export default function App() {
                   <li className="flex items-start gap-2"><span className="text-violet-500 mt-0.5">✓</span> Execuție automată 24/7</li>
                   <li className="flex items-start gap-2"><span className="text-violet-500 mt-0.5">✓</span> $9/lună per proiect adițional</li>
                 </ul>
-                <span className="w-full text-center py-2.5 rounded-xl border border-violet-300 text-violet-600 font-semibold text-sm group-hover:bg-violet-600 group-hover:text-white transition-all">Alege Pachetul</span>
+                <span className="w-full text-center py-2.5 rounded-xl border border-violet-300 text-violet-600 font-semibold text-sm group-hover:bg-violet-600 group-hover:text-white transition-all">Vezi Detalii →</span>
               </button>
 
               {/* Academia - $19 - Recomandat */}
@@ -1723,7 +1723,7 @@ export default function App() {
                   <li className="flex items-start gap-2"><span className="text-indigo-500 mt-0.5">✓</span> 71 proiecte practice pas cu pas</li>
                   <li className="flex items-start gap-2"><span className="text-indigo-500 mt-0.5">✓</span> Vezi succesul monetizat al rețelei</li>
                 </ul>
-                <span className="w-full text-center py-2.5 rounded-xl bg-indigo-600 text-white font-semibold text-sm group-hover:bg-indigo-700 transition-all">Alege Pachetul</span>
+                <span className="w-full text-center py-2.5 rounded-xl bg-indigo-600 text-white font-semibold text-sm group-hover:bg-indigo-700 transition-all">Vezi Detalii →</span>
               </button>
 
               {/* Afacere la Cheie - $99 */}
@@ -1741,7 +1741,7 @@ export default function App() {
                   <li className="flex items-start gap-2"><span className="text-amber-500 mt-0.5">✓</span> Strategie completă de monetizare</li>
                   <li className="flex items-start gap-2"><span className="text-amber-500 mt-0.5">✓</span> Tu alegi nișa, noi livrăm totul</li>
                 </ul>
-                <span className="w-full text-center py-2.5 rounded-xl border border-amber-300 text-amber-600 font-semibold text-sm group-hover:bg-amber-600 group-hover:text-white transition-all">Alege Pachetul</span>
+                <span className="w-full text-center py-2.5 rounded-xl border border-amber-300 text-amber-600 font-semibold text-sm group-hover:bg-amber-600 group-hover:text-white transition-all">Vezi Detalii →</span>
               </button>
             </div>
             

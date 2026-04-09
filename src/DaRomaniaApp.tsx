@@ -1698,52 +1698,56 @@ onClick={() => {}} className="hidden" />
               </div>
 
               <div className="flex-1 overflow-y-auto pb-20">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
                   <AnimatePresence mode="popLayout">
-                    {filteredJobs.map((job) => (
-                      <motion.button
-                        key={job.id}
-                        layout
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.95 }}
-                        onClick={() => handleJobSelect(job)}
-                        className="w-full p-5 md:p-8 rounded-2xl md:rounded-[2rem] border-2 border-slate-200 bg-white hover:border-indigo-300 hover:shadow-xl text-left transition-all group flex flex-col h-full"
-                      >
-                        <div className="flex justify-between items-start mb-6">
-                          <span className="text-sm font-black uppercase tracking-widest text-slate-400 group-hover:text-indigo-500 transition-colors">
+                    {filteredJobs.map((job) => {
+                      const catColors: Record<string, string> = {
+                        'Comunicare': 'bg-blue-100 text-blue-700 border-blue-200',
+                        'Cercetare': 'bg-purple-100 text-purple-700 border-purple-200',
+                        'Stiinta': 'bg-emerald-100 text-emerald-700 border-emerald-200',
+                        'Scriere': 'bg-pink-100 text-pink-700 border-pink-200',
+                        'Tehnologie': 'bg-cyan-100 text-cyan-700 border-cyan-200',
+                        'Creativitate': 'bg-rose-100 text-rose-700 border-rose-200',
+                        'Date': 'bg-indigo-100 text-indigo-700 border-indigo-200',
+                        'Business': 'bg-amber-100 text-amber-700 border-amber-200',
+                        'Media': 'bg-orange-100 text-orange-700 border-orange-200',
+                        'Servicii': 'bg-teal-100 text-teal-700 border-teal-200',
+                        'Sanatate': 'bg-green-100 text-green-700 border-green-200',
+                        'Educatie': 'bg-violet-100 text-violet-700 border-violet-200',
+                        'Finante': 'bg-yellow-100 text-yellow-700 border-yellow-200',
+                        'Legal': 'bg-slate-100 text-slate-700 border-slate-200',
+                        'Design': 'bg-fuchsia-100 text-fuchsia-700 border-fuchsia-200',
+                      };
+                      const catClass = catColors[job.category] || 'bg-slate-100 text-slate-600 border-slate-200';
+                      return (
+                        <motion.button
+                          key={job.id}
+                          layout
+                          initial={{ opacity: 0, scale: 0.95 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0.95 }}
+                          onClick={() => handleJobSelect(job)}
+                          className="w-full p-3 rounded-xl border border-slate-200 bg-white hover:border-indigo-300 hover:shadow-lg text-left transition-all group flex flex-col h-full"
+                        >
+                          <span className={`inline-block text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border mb-2 self-start ${catClass}`}>
                             {job.category}
                           </span>
-                          <div className="flex items-center gap-1 text-amber-600 font-black text-xl bg-amber-50 px-3 py-1 rounded-full">
-                            <TrendingUp className="w-5 h-5" />
-                            {job.automationRisk}%
+                          <h3 className="text-sm font-bold text-slate-800 mb-1.5 group-hover:text-indigo-600 transition-colors leading-snug">
+                            {job.title}
+                          </h3>
+                          <div className="flex items-center gap-1 mt-auto">
+                            <div className="flex-1 bg-slate-100 h-1.5 rounded-full overflow-hidden">
+                              <motion.div 
+                                initial={{ width: 0 }}
+                                animate={{ width: `${job.automationRisk}%` }}
+                                className={`h-full ${job.automationRisk > 80 ? 'bg-gradient-to-r from-rose-400 to-pink-500' : 'bg-gradient-to-r from-amber-400 to-orange-500'}`}
+                              />
+                            </div>
+                            <span className="text-[10px] font-bold text-slate-500">{job.automationRisk}%</span>
                           </div>
-                        </div>
-                        <h3 className="text-2xl font-black text-slate-800 mb-4 group-hover:text-indigo-700 transition-colors leading-tight">
-                          {job.title}
-                        </h3>
-                        <p className="text-slate-500 font-medium mb-6 flex-1">
-                          Descoperă cum poți transforma experiența ta de {job.title.toLowerCase()} într-un business profitabil în era AI.
-                        </p>
-                        <div className="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden shadow-inner mb-6">
-                          <motion.div 
-                            initial={{ width: 0 }}
-                            animate={{ width: `${job.automationRisk}%` }}
-                            className={`h-full shadow-sm ${job.automationRisk > 80 ? 'bg-gradient-to-r from-rose-500 to-pink-500' : 'bg-gradient-to-r from-amber-500 to-orange-500'}`}
-                          />
-                        </div>
-                        <div className="border-t border-slate-100 pt-4 mb-2">
-                          <RadarChart job={job} />
-                        </div>
-                        <div className="text-xs text-slate-400 flex justify-between px-1 mb-3">
-                          <span>Structură</span><span>Logică</span><span>Senzorial</span><span>Social</span><span>Creativitate</span>
-                        </div>
-                        <div className="text-sm text-slate-600 font-bold flex items-center gap-2 border-t border-slate-100 pt-4">
-                          <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
-                          5 idei de business incluse
-                        </div>
-                      </motion.button>
-                    ))}
+                        </motion.button>
+                      );
+                    })}
                   </AnimatePresence>
                 </div>
               </div>

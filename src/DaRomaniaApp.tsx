@@ -1620,42 +1620,30 @@ onClick={() => {}} className="hidden" />
               {t.hero_title1} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">să nu mai simți că muncești o zi din viață!</span>
             </h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
-              <button onClick={() => setShowAcademia(true)} className="group relative bg-white/90 backdrop-blur-sm border-2 border-indigo-200 rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:shadow-indigo-200/60 transition-all duration-300 hover:-translate-y-2 cursor-pointer text-left">
-                <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-violet-50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="relative">
-                  <div className="text-4xl mb-4">🎓</div>
-                  <h3 className="text-xl font-black text-slate-900 mb-3">Academia</h3>
-                  <p className="text-slate-700 text-base leading-relaxed font-medium">71 de proiecte practice. Alege unul și monetizează pentru <span className="text-indigo-600 font-black">99$/lună</span> cu 1:1 support.</p>
-                  <span className="inline-block mt-4 text-indigo-600 font-bold text-sm group-hover:translate-x-1 transition-transform">Explorează →</span>
-                </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto mb-10">
+              <button onClick={() => setShowAcademia(true)} className="group relative border border-indigo-200/60 rounded-xl p-4 hover:shadow-md hover:border-indigo-300 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm">
+                <div className="text-2xl mb-2">🎓</div>
+                <h3 className="text-sm font-bold text-slate-800 mb-1">Academia</h3>
+                <p className="text-slate-500 text-xs leading-snug">71 proiecte practice · <span className="text-indigo-600 font-semibold">99$/lună</span></p>
+                <span className="inline-block mt-2 text-indigo-500 font-medium text-xs opacity-0 group-hover:opacity-100 transition-opacity">Explorează →</span>
               </button>
-              <button onClick={() => setShowOpenClaw(true)} className="group relative bg-white/90 backdrop-blur-sm border-2 border-violet-200 rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:shadow-violet-200/60 transition-all duration-300 hover:-translate-y-2 cursor-pointer text-left">
-                <div className="absolute inset-0 bg-gradient-to-br from-violet-50 to-purple-50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="relative">
-                  <div className="text-4xl mb-4">🤖</div>
-                  <h3 className="text-xl font-black text-slate-900 mb-3">OpenClaw</h3>
-                  <p className="text-slate-700 text-base leading-relaxed font-medium">Agentul AI viral. Creează flota ta de <span className="text-violet-600 font-black">CTO, CFO, SEO, CEO</span> care să îți conducă businessul.</p>
-                  <span className="inline-block mt-4 text-violet-600 font-bold text-sm group-hover:translate-x-1 transition-transform">Explorează →</span>
-                </div>
+              <button onClick={() => setShowOpenClaw(true)} className="group relative border border-violet-200/60 rounded-xl p-4 hover:shadow-md hover:border-violet-300 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm">
+                <div className="text-2xl mb-2">🤖</div>
+                <h3 className="text-sm font-bold text-slate-800 mb-1">OpenClaw</h3>
+                <p className="text-slate-500 text-xs leading-snug">Flota AI: <span className="text-violet-600 font-semibold">CTO, CFO, CEO</span></p>
+                <span className="inline-block mt-2 text-violet-500 font-medium text-xs opacity-0 group-hover:opacity-100 transition-opacity">Explorează →</span>
               </button>
-              <button onClick={() => setShowArsenal(true)} className="group relative bg-white/90 backdrop-blur-sm border-2 border-sky-200 rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:shadow-sky-200/60 transition-all duration-300 hover:-translate-y-2 cursor-pointer text-left">
-                <div className="absolute inset-0 bg-gradient-to-br from-sky-50 to-cyan-50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="relative">
-                  <div className="text-4xl mb-4">⚡</div>
-                  <h3 className="text-xl font-black text-slate-900 mb-3">Arsenal API</h3>
-                  <p className="text-slate-700 text-base leading-relaxed font-medium">12 pași de lansare. Top 150 API-uri gratuite. Lasă imaginația liberă și construiește <span className="text-sky-600 font-black">GRATUIT!</span></p>
-                  <span className="inline-block mt-4 text-sky-600 font-bold text-sm group-hover:translate-x-1 transition-transform">Explorează →</span>
-                </div>
+              <button onClick={() => setShowArsenal(true)} className="group relative border border-sky-200/60 rounded-xl p-4 hover:shadow-md hover:border-sky-300 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm">
+                <div className="text-2xl mb-2">⚡</div>
+                <h3 className="text-sm font-bold text-slate-800 mb-1">Arsenal API</h3>
+                <p className="text-slate-500 text-xs leading-snug">150 API-uri · <span className="text-sky-600 font-semibold">GRATUIT</span></p>
+                <span className="inline-block mt-2 text-sky-500 font-medium text-xs opacity-0 group-hover:opacity-100 transition-opacity">Explorează →</span>
               </button>
-              <button onClick={() => setShowAfacere(true)} className="group relative bg-white/90 backdrop-blur-sm border-2 border-amber-200 rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:shadow-amber-200/60 transition-all duration-300 hover:-translate-y-2 cursor-pointer text-left">
-                <div className="absolute inset-0 bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="relative">
-                  <div className="text-4xl mb-4">💼</div>
-                  <h3 className="text-xl font-black text-slate-900 mb-3">Afacere la Cheie</h3>
-                  <p className="text-slate-700 text-base leading-relaxed font-medium">De la doar <span className="text-amber-600 font-black">$9/lună</span>. Succesul tău profesional începe aici.</p>
-                  <span className="inline-block mt-4 text-amber-600 font-bold text-sm group-hover:translate-x-1 transition-transform">Explorează →</span>
-                </div>
+              <button onClick={() => setShowAfacere(true)} className="group relative border border-amber-200/60 rounded-xl p-4 hover:shadow-md hover:border-amber-300 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm">
+                <div className="text-2xl mb-2">💼</div>
+                <h3 className="text-sm font-bold text-slate-800 mb-1">Afacere la Cheie</h3>
+                <p className="text-slate-500 text-xs leading-snug">De la <span className="text-amber-600 font-semibold">$9/lună</span></p>
+                <span className="inline-block mt-2 text-amber-500 font-medium text-xs opacity-0 group-hover:opacity-100 transition-opacity">Explorează →</span>
               </button>
             </div>
             

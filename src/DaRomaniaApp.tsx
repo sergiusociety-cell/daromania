@@ -1740,20 +1740,28 @@ onClick={() => {}} className="hidden" />
                           <h3 className="text-base font-bold text-slate-800 mb-1 group-hover:text-indigo-600 transition-colors">
                             {job.title}
                           </h3>
-                          <p className="text-xs text-slate-500 mb-3 line-clamp-2">{job.pivot1}</p>
-                          <div className="flex items-center gap-2 mt-auto">
-                            <div className="flex-1 bg-slate-100 h-2 rounded-full overflow-hidden">
+                          <ul className="text-xs text-slate-600 space-y-1.5 mb-3">
+                            <li className="flex gap-1.5"><span className="text-indigo-400">1.</span> {job.pivot1}</li>
+                            <li className="flex gap-1.5"><span className="text-indigo-400">2.</span> {job.pivot2}</li>
+                            <li className="flex gap-1.5"><span className="text-indigo-400">3.</span> {job.pivot3}</li>
+                            <li className="flex gap-1.5"><span className="text-indigo-400">4.</span> {job.pivot4}</li>
+                            <li className="flex gap-1.5"><span className="text-indigo-400">5.</span> {job.pivot5}</li>
+                          </ul>
+                          <div className="flex items-center gap-2 mb-3">
+                            <div className="flex-1 bg-slate-100 h-1.5 rounded-full overflow-hidden">
                               <motion.div 
                                 initial={{ width: 0 }}
                                 animate={{ width: `${job.automationRisk}%` }}
                                 className={`h-full rounded-full ${job.automationRisk > 80 ? 'bg-gradient-to-r from-rose-400 to-pink-500' : job.automationRisk > 50 ? 'bg-gradient-to-r from-amber-400 to-orange-500' : 'bg-gradient-to-r from-emerald-400 to-green-500'}`}
                               />
                             </div>
-                            <span className="text-xs font-bold text-slate-500">{job.automationRisk}%</span>
+                            <span className="text-[10px] font-bold text-slate-400">{job.automationRisk}%</span>
                           </div>
-                          <div className="flex items-center justify-between mt-3 pt-3 border-t border-slate-100">
-                            <span className="text-xs text-slate-400">Risc automatizare</span>
-                            <span className="text-xs font-semibold text-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity">Explorează →</span>
+                          <div
+                            className="mt-auto w-full text-center py-2 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 text-white text-xs font-bold hover:from-indigo-600 hover:to-violet-600 transition-all"
+                            onClick={(e) => { e.stopPropagation(); handleJobSelect(job); }}
+                          >
+                            🚀 Lansează proiect — $9
                           </div>
                         </motion.button>
                       );

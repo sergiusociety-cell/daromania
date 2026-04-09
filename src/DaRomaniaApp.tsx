@@ -1140,30 +1140,12 @@ export default function App() {
           
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-            <button onClick={() => { pushHistoryState(); setShowAcademia(true); }} className="hover:scale-105 hover:text-slate-600 transition-all duration-200 font-black text-slate-900">{t.nav_academy}</button>
-            <button onClick={() => { pushHistoryState(); setShowOpenClaw(true); }} className="hover:scale-105 hover:text-slate-600 transition-all duration-200 font-black text-slate-900">{t.nav_openclaw}</button>
-            <button onClick={() => { pushHistoryState(); setShowArsenal(true); }} className="hover:scale-105 hover:text-slate-600 transition-all duration-200 font-black text-slate-900">{t.nav_arsenal}</button>
-            <button onClick={() => { pushHistoryState(); setShowAfacere(true); }} className="hover:scale-105 hover:text-slate-600 transition-all duration-200 font-black text-slate-900">{t.nav_afacere}</button>
-            <div className="relative">
-              <button onClick={() => setShowLangMenu(p => !p)} className="flex items-center gap-1 text-slate-500 hover:text-slate-800 transition-colors text-sm font-semibold px-2 py-1 rounded-lg hover:bg-slate-100">
-                {BRANDS[lang].flag} {lang.toUpperCase()} <span className="text-xs">▾</span>
-              </button>
-              {showLangMenu && (
-                <>
-                  <div className="fixed inset-0 z-40" onClick={() => setShowLangMenu(false)} />
-                  <div className="absolute right-0 top-10 bg-white border border-slate-200 rounded-xl shadow-xl overflow-hidden z-50 min-w-[150px]">
-                    {(['ro','en','es'] as Lang[]).map(l => (
-                      <button key={l} onClick={() => { setLang(l); setShowLangMenu(false); }}
-                        className={"w-full text-left px-4 py-3 text-sm flex items-center gap-2 transition-colors " + (lang === l ? "bg-indigo-50 text-indigo-700 font-black" : "hover:bg-slate-50 text-slate-700 font-medium")}>
-                        {BRANDS[l].flag} {LANG_NAMES[l]}
-                      </button>
-                    ))}
-                  </div>
-                </>
-              )}
-            </div>
-            <button onClick={() => scrollTo(missionRef)} className="hover:scale-105 hover:text-slate-600 transition-all duration-200 font-black text-slate-900">Misiune</button>
-            <button onClick={() => scrollTo(pricingRef)} className="hover:scale-105 hover:text-slate-600 transition-all duration-200 font-black text-slate-900">Prețuri</button>
+            <button onClick={() => { pushHistoryState(); setShowAcademia(true); }} className="hover:scale-105 transition-all duration-200 font-black text-blue-600">{t.nav_academy}</button>
+            <button onClick={() => { pushHistoryState(); setShowOpenClaw(true); }} className="hover:scale-105 transition-all duration-200 font-black text-red-500">{t.nav_openclaw}</button>
+            <button onClick={() => { pushHistoryState(); setShowArsenal(true); }} className="hover:scale-105 transition-all duration-200 font-black text-amber-500">{t.nav_arsenal}</button>
+            <button onClick={() => { pushHistoryState(); setShowAfacere(true); }} className="hover:scale-105 transition-all duration-200 font-black text-green-700">{t.nav_afacere}</button>
+            <button onClick={() => scrollTo(missionRef)} className="hover:scale-105 transition-all duration-200 font-black text-blue-400">Misiune</button>
+            <button onClick={() => scrollTo(pricingRef)} className="hover:scale-105 transition-all duration-200 font-black text-blue-400">Prețuri</button>
             {/* Auth Button Desktop */}
             {isAuthenticated ? (
               <div className="relative">

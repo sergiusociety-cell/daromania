@@ -3,7 +3,7 @@ import JobBusinessModal from './components/JobBusinessModal';
 import AfacereLaCheiePage from './AfacereLaCheiePage';
 import ArsenalPage from './ArsenalPage';
 import { T, BRANDS, LANG_NAMES, type Lang } from './i18n';
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -938,7 +938,41 @@ export default function App() {
     })).sort((a, b) => b.risk - a.risk);
   }, []);
 
+  // --- Browser back button support ---
+  const goHome = useCallback(() => {
+    setSelectedJob(null);
+    setPivotData(null);
+    setShowAcademia(false);
+    setShowOpenClaw(false);
+    setShowArsenal(false);
+    setShowAfacere(false);
+    setModalJob(null);
+    setActiveModal(null);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
+  useEffect(() => {
+    const onPopState = (e: PopStateEvent) => {
+      // If any sub-view is open, close it instead of leaving
+      if (modalJob) { setModalJob(null); return; }
+      if (activeModal) { setActiveModal(null); return; }
+      if (pivotData) { setPivotData(null); return; }
+      if (selectedJob) { setSelectedJob(null); setPivotData(null); return; }
+      if (showAcademia || showOpenClaw || showArsenal || showAfacere) {
+        setShowAcademia(false); setShowOpenClaw(false); setShowArsenal(false); setShowAfacere(false);
+        return;
+      }
+    };
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, [selectedJob, pivotData, modalJob, activeModal, showAcademia, showOpenClaw, showArsenal, showAfacere]);
+
+  const pushHistoryState = useCallback(() => {
+    window.history.pushState({ daromania: true }, '');
+  }, []);
+
   const handleJobSelect = (job: JobData) => {
+    pushHistoryState();
     setSelectedJob(job);
     setPivotData(null);
     setContextAnswers({ q1: '', q2: '', q3: '' });
@@ -1133,10 +1167,10 @@ export default function App() {
           
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-            <button onClick={() => setShowAcademia(true)} className="hover:text-indigo-600 transition-colors font-black text-indigo-600">{t.nav_academy}</button>
-            <button onClick={() => setShowOpenClaw(true)} className="hover:text-purple-600 transition-colors font-black text-purple-600">{t.nav_openclaw}</button>
-            <button onClick={() => setShowArsenal(true)} className="hover:text-amber-500 transition-colors font-black text-amber-500">{t.nav_arsenal}</button>
-            <button onClick={() => setShowAfacere(true)} className="hover:text-green-600 transition-colors font-black text-green-600">{t.nav_afacere}</button>
+            <button onClick={() => { pushHistoryState(); setShowAcademia(true); }} className="hover:text-indigo-600 transition-colors font-black text-indigo-600">{t.nav_academy}</button>
+            <button onClick={() => { pushHistoryState(); setShowOpenClaw(true); }} className="hover:text-purple-600 transition-colors font-black text-purple-600">{t.nav_openclaw}</button>
+            <button onClick={() => { pushHistoryState(); setShowArsenal(true); }} className="hover:text-amber-500 transition-colors font-black text-amber-500">{t.nav_arsenal}</button>
+            <button onClick={() => { pushHistoryState(); setShowAfacere(true); }} className="hover:text-green-600 transition-colors font-black text-green-600">{t.nav_afacere}</button>
             <div className="relative">
               <button onClick={() => setShowLangMenu(p => !p)} className="flex items-center gap-1 text-slate-500 hover:text-slate-800 transition-colors text-sm font-semibold px-2 py-1 rounded-lg hover:bg-slate-100">
                 {BRANDS[lang].flag} {lang.toUpperCase()} <span className="text-xs">▾</span>
@@ -1179,10 +1213,10 @@ export default function App() {
               className="md:hidden bg-white border-b border-slate-200 overflow-hidden"
             >
               <div className="px-3 py-4 flex flex-col gap-2">
-                <button onClick={() => { setShowAcademia(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-indigo-600 py-2.5 px-3 rounded-xl hover:bg-indigo-50 transition-colors">🎓 Academia</button>
-                <button onClick={() => { setShowOpenClaw(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-purple-600 py-2.5 px-3 rounded-xl hover:bg-purple-50 transition-colors">🤖 OpenClaw</button>
-                <button onClick={() => { setShowArsenal(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-amber-500 py-2.5 px-3 rounded-xl hover:bg-amber-50 transition-colors">⚡ Arsenal API</button>
-                <button onClick={() => { setShowAfacere(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-green-600 py-2.5 px-3 rounded-xl hover:bg-green-50 transition-colors">💼 Afacere la Cheie</button>
+                <button onClick={() => { pushHistoryState(); setShowAcademia(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-indigo-600 py-2.5 px-3 rounded-xl hover:bg-indigo-50 transition-colors">🎓 Academia</button>
+                <button onClick={() => { pushHistoryState(); setShowOpenClaw(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-purple-600 py-2.5 px-3 rounded-xl hover:bg-purple-50 transition-colors">🤖 OpenClaw</button>
+                <button onClick={() => { pushHistoryState(); setShowArsenal(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-amber-500 py-2.5 px-3 rounded-xl hover:bg-amber-50 transition-colors">⚡ Arsenal API</button>
+                <button onClick={() => { pushHistoryState(); setShowAfacere(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-green-600 py-2.5 px-3 rounded-xl hover:bg-green-50 transition-colors">💼 Afacere la Cheie</button>
                 <div className="border-t border-slate-100 mt-1 pt-2 flex flex-col gap-1">
                   <button onClick={() => { scrollTo(missionRef); setIsMobileMenuOpen(false); }} className="text-left text-sm font-medium text-slate-600 py-2 px-3 rounded-xl hover:bg-slate-50">Misiune</button>
                   <button onClick={() => { scrollTo(pricingRef); setIsMobileMenuOpen(false); }} className="text-left text-sm font-medium text-slate-600 py-2 px-3 rounded-xl hover:bg-slate-50">Prețuri</button>
@@ -1631,25 +1665,25 @@ export default function App() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">să nu mai simți că muncești o zi din viață!</span>
             </h1>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto mb-10">
-              <button onClick={() => setShowAcademia(true)} className="group relative border border-indigo-200/60 rounded-xl p-4 hover:shadow-md hover:border-indigo-300 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm">
+              <button onClick={() => { pushHistoryState(); setShowAcademia(true); }} className="group relative border border-indigo-200/60 rounded-xl p-4 hover:shadow-md hover:border-indigo-300 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm">
                 <div className="text-2xl mb-2">🎓</div>
                 <h3 className="text-sm font-bold text-slate-800 mb-1">Academia</h3>
                 <p className="text-slate-500 text-xs leading-snug">71 proiecte practice · <span className="text-indigo-600 font-semibold">99$/lună</span></p>
                 <span className="inline-block mt-2 text-indigo-500 font-medium text-xs opacity-0 group-hover:opacity-100 transition-opacity">Explorează →</span>
               </button>
-              <button onClick={() => setShowOpenClaw(true)} className="group relative border border-violet-200/60 rounded-xl p-4 hover:shadow-md hover:border-violet-300 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm">
+              <button onClick={() => { pushHistoryState(); setShowOpenClaw(true); }} className="group relative border border-violet-200/60 rounded-xl p-4 hover:shadow-md hover:border-violet-300 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm">
                 <div className="text-2xl mb-2">🤖</div>
                 <h3 className="text-sm font-bold text-slate-800 mb-1">OpenClaw</h3>
                 <p className="text-slate-500 text-xs leading-snug">Flota AI: <span className="text-violet-600 font-semibold">CTO, CFO, CEO</span></p>
                 <span className="inline-block mt-2 text-violet-500 font-medium text-xs opacity-0 group-hover:opacity-100 transition-opacity">Explorează →</span>
               </button>
-              <button onClick={() => setShowArsenal(true)} className="group relative border border-sky-200/60 rounded-xl p-4 hover:shadow-md hover:border-sky-300 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm">
+              <button onClick={() => { pushHistoryState(); setShowArsenal(true); }} className="group relative border border-sky-200/60 rounded-xl p-4 hover:shadow-md hover:border-sky-300 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm">
                 <div className="text-2xl mb-2">⚡</div>
                 <h3 className="text-sm font-bold text-slate-800 mb-1">Arsenal API</h3>
                 <p className="text-slate-500 text-xs leading-snug">150 API-uri · <span className="text-sky-600 font-semibold">GRATUIT</span></p>
                 <span className="inline-block mt-2 text-sky-500 font-medium text-xs opacity-0 group-hover:opacity-100 transition-opacity">Explorează →</span>
               </button>
-              <button onClick={() => setShowAfacere(true)} className="group relative border border-amber-200/60 rounded-xl p-4 hover:shadow-md hover:border-amber-300 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm">
+              <button onClick={() => { pushHistoryState(); setShowAfacere(true); }} className="group relative border border-amber-200/60 rounded-xl p-4 hover:shadow-md hover:border-amber-300 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm">
                 <div className="text-2xl mb-2">💼</div>
                 <h3 className="text-sm font-bold text-slate-800 mb-1">Afacere la Cheie</h3>
                 <p className="text-slate-500 text-xs leading-snug">De la <span className="text-amber-600 font-semibold">$9/lună</span></p>
@@ -2072,7 +2106,7 @@ export default function App() {
                       initial={{ opacity: 0, y: 30 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: idx * 0.1 }}
-                      onClick={() => setModalJob(selectedJob)}
+                      onClick={() => { pushHistoryState(); setModalJob(selectedJob); }}
                       className="group text-left rounded-2xl overflow-hidden border border-slate-200 hover:shadow-2xl transition-all"
                     >
                       <div className={`bg-gradient-to-br ${card.gradient} p-3 md:p-5 text-white`}>

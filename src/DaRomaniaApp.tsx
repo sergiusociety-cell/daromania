@@ -2190,7 +2190,7 @@ export default function App() {
               </div>
 
               {/* Pachet 2 */}
-              <div className="bg-indigo-600 rounded-2xl md:rounded-[2.5rem] p-5 md:p-8 flex flex-col relative transform md:-translate-y-4 shadow-2xl shadow-indigo-900/50">
+              <div className="bg-indigo-600 rounded-2xl md:rounded-[2.5rem] p-5 md:p-8 flex flex-col relative transform md:-translate-y-4 shadow-2xl shadow-indigo-900/50 hover:bg-indigo-500 transition-all duration-300 cursor-pointer">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-amber-400 text-amber-950 text-xs font-black px-4 py-1 rounded-full uppercase tracking-widest">Recomandat</div>
                 <h3 className="text-xl md:text-2xl font-black mb-2 text-white">Academy DaRomania</h3>
                 <p className="text-indigo-200 mb-6 flex-1">Acces complet la rețeaua de succes.</p>
@@ -2216,7 +2216,7 @@ export default function App() {
               </div>
 
               {/* Pachet 3 */}
-              <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl md:rounded-[2.5rem] p-5 md:p-8 flex flex-col hover:bg-white/10 transition-colors">
+              <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl md:rounded-[2.5rem] p-5 md:p-8 flex flex-col hover:bg-indigo-600/20 hover:border-indigo-500 transition-all duration-300 cursor-pointer">
                 <h3 className="text-xl md:text-2xl font-black mb-2">Mentor 1:1</h3>
                 <p className="text-slate-400 mb-6 flex-1">Îndrumare directă de la experți.</p>
                 <div className="mb-8">
@@ -2241,7 +2241,7 @@ export default function App() {
               </div>
 
               {/* Pachet 4 */}
-              <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl md:rounded-[2.5rem] p-5 md:p-8 flex flex-col hover:bg-white/10 transition-colors">
+              <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl md:rounded-[2.5rem] p-5 md:p-8 flex flex-col hover:bg-indigo-600/20 hover:border-indigo-500 transition-all duration-300 cursor-pointer">
                 <h3 className="text-xl md:text-2xl font-black mb-2">Sergiu Live 1:1</h3>
                 <p className="text-slate-400 mb-6 flex-1">Experiența supremă de mentorat.</p>
                 <div className="mb-8">

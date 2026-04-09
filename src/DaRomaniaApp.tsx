@@ -1686,7 +1686,7 @@ export default function App() {
                   <li className="flex items-start gap-2"><span className="text-sky-500 mt-0.5">✓</span> Fluxuri complete de lucru</li>
                   <li className="flex items-start gap-2"><span className="text-sky-500 mt-0.5">✓</span> Zero costuri, putere maximă</li>
                 </ul>
-                <span className="w-full text-center py-2.5 rounded-xl border border-sky-300 text-sky-600 font-semibold text-sm group-hover:bg-sky-600 group-hover:text-white transition-all">Explorează →</span>
+                <span className="w-full text-center py-2.5 rounded-xl border border-sky-300 text-sky-600 font-semibold text-sm group-hover:bg-sky-600 group-hover:text-white transition-all">Vezi Detalii →</span>
               </button>
 
               {/* OpenClaw - $9 */}

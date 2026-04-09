@@ -1765,19 +1765,20 @@ export default function App() {
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-5xl w-full mx-auto mb-10">
-              {/* Arsenal API - GRATUIT - Albastru premium */}
+              {/* Arsenal API - $9 - Albastru premium */}
               <button onClick={() => { pushHistoryState(); setShowArsenal(true); }} className="group relative border border-blue-200/60 rounded-2xl p-6 hover:shadow-xl hover:border-blue-400 transition-all duration-300 hover:-translate-y-1 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex flex-col">
                 <div className="text-3xl mb-3">⚡</div>
                 <h3 className="text-base font-bold text-slate-900 mb-1">Arsenal API</h3>
                 <p className="text-slate-500 text-xs mb-4">Construiește orice sistem</p>
                 <div className="mb-4">
-                  <span className="text-blue-600 font-black text-2xl">GRATUIT</span>
+                  <span className="text-blue-600 font-black text-2xl">$9</span>
+                  <span className="text-slate-400 text-sm"> o singură dată</span>
                 </div>
                 <ul className="text-slate-600 text-xs space-y-2 flex-1 mb-4">
-                  <li className="flex items-start gap-2"><span className="text-blue-500 mt-0.5">✓</span> 150+ API-uri gratuite</li>
+                  <li className="flex items-start gap-2"><span className="text-blue-500 mt-0.5">✓</span> 150+ API-uri incluse</li>
                   <li className="flex items-start gap-2"><span className="text-blue-500 mt-0.5">✓</span> Automatizări & integrări</li>
                   <li className="flex items-start gap-2"><span className="text-blue-500 mt-0.5">✓</span> Fluxuri complete de lucru</li>
-                  <li className="flex items-start gap-2"><span className="text-blue-500 mt-0.5">✓</span> Zero costuri, putere maximă</li>
+                  <li className="flex items-start gap-2"><span className="text-blue-500 mt-0.5">✓</span> Structură completă de proiect</li>
                 </ul>
                 <span className="w-full text-center py-2.5 rounded-xl border border-blue-300 text-blue-600 font-semibold text-sm group-hover:bg-blue-600 group-hover:text-white transition-all">Vezi Detalii →</span>
               </button>
@@ -2267,19 +2268,20 @@ export default function App() {
             <h2 className="text-3xl md:text-5xl font-black text-center mb-4 text-slate-900">Investiția în Viitorul Tău</h2>
             <p className="text-center text-slate-500 text-lg mb-12 max-w-2xl mx-auto">Totul este gratuit până în momentul în care decizi să lansezi un proiect. Fără taxe ascunse, fără surprize.</p>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              {/* Arsenal API - GRATUIT */}
+              {/* Arsenal API - $9 */}
               <button onClick={() => { pushHistoryState(); setShowArsenal(true); }} className="group relative border border-blue-200/60 rounded-2xl p-6 hover:shadow-xl hover:border-blue-400 transition-all duration-300 hover:-translate-y-1 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex flex-col">
                 <div className="text-3xl mb-3">⚡</div>
                 <h3 className="text-base font-bold text-slate-900 mb-1">Arsenal API</h3>
                 <p className="text-slate-500 text-xs mb-4">Construiește orice sistem</p>
                 <div className="mb-4">
-                  <span className="text-blue-600 font-black text-2xl">GRATUIT</span>
+                  <span className="text-blue-600 font-black text-2xl">$9</span>
+                  <span className="text-slate-400 text-sm"> o singură dată</span>
                 </div>
                 <ul className="text-slate-600 text-xs space-y-2 flex-1 mb-4">
-                  <li className="flex items-start gap-2"><span className="text-blue-500 mt-0.5">✓</span> 150+ API-uri gratuite</li>
+                  <li className="flex items-start gap-2"><span className="text-blue-500 mt-0.5">✓</span> 150+ API-uri incluse</li>
                   <li className="flex items-start gap-2"><span className="text-blue-500 mt-0.5">✓</span> Automatizări & integrări</li>
                   <li className="flex items-start gap-2"><span className="text-blue-500 mt-0.5">✓</span> Fluxuri complete de lucru</li>
-                  <li className="flex items-start gap-2"><span className="text-blue-500 mt-0.5">✓</span> Zero costuri, putere maximă</li>
+                  <li className="flex items-start gap-2"><span className="text-blue-500 mt-0.5">✓</span> Structură completă de proiect</li>
                 </ul>
                 <span className="w-full text-center py-2.5 rounded-xl border border-blue-300 text-blue-600 font-semibold text-sm group-hover:bg-blue-600 group-hover:text-white transition-all">Vezi Detalii →</span>
               </button>

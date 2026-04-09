@@ -2416,6 +2416,46 @@ onClick={() => {}} className="hidden" />
           )}
         </AnimatePresence>
 
+        {/* 5 Business Idea Cards */}
+        <AnimatePresence>
+          {pivotData && selectedJob && (
+            <section className="snap-start py-20 px-4">
+              <div className="max-w-6xl mx-auto">
+                <h2 className="text-4xl md:text-6xl font-black text-center mb-4 text-slate-900">5 Modele de Business</h2>
+                <p className="text-center text-slate-500 mb-12 text-lg">Construite pe expertiza ta în <span className="font-bold text-slate-800">{selectedJob.title}</span></p>
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+                  {[
+                    { emoji: '🎬', title: 'Media Empire', subtitle: 'YouTube + Blotato', gradient: 'from-purple-600 to-violet-700', desc: selectedJob.pivot1 },
+                    { emoji: '🛠️', title: 'SaaS Expert', subtitle: 'Software B2B', gradient: 'from-blue-600 to-cyan-600', desc: selectedJob.pivot2 },
+                    { emoji: '📄', title: 'Produs Digital', subtitle: 'PDF Premium', gradient: 'from-emerald-500 to-green-600', desc: selectedJob.pivot3 },
+                    { emoji: '🎓', title: 'Academia Online', subtitle: 'Curs + Comunitate', gradient: 'from-orange-500 to-amber-500', desc: selectedJob.pivot4 },
+                    { emoji: '🤖', title: '6 Agenți AI', subtitle: 'AIOPENCLAW.ai', gradient: 'from-rose-500 to-pink-600', desc: selectedJob.pivot5 },
+                  ].map((card, idx) => (
+                    <motion.button
+                      key={idx}
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: idx * 0.1 }}
+                      onClick={() => setModalJob(selectedJob)}
+                      className="group text-left rounded-2xl overflow-hidden border border-slate-200 hover:shadow-2xl transition-all"
+                    >
+                      <div className={`bg-gradient-to-br ${card.gradient} p-5 text-white`}>
+                        <span className="text-3xl block mb-2">{card.emoji}</span>
+                        <h3 className="text-base font-black leading-tight">{card.title}</h3>
+                        <p className="text-white/70 text-xs font-semibold">{card.subtitle}</p>
+                      </div>
+                      <div className="bg-white p-4">
+                        <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">{card.desc}</p>
+                        <span className="text-xs font-bold text-indigo-500 mt-2 block opacity-0 group-hover:opacity-100 transition-opacity">Detalii →</span>
+                      </div>
+                    </motion.button>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
+        </AnimatePresence>
+
         {/* Features Section - FULL SCREEN */}
         <section ref={missionRef} className="min-h-screen flex flex-col items-center justify-center snap-start py-20 px-4 sm:px-6 lg:px-8 relative">
           <div className="absolute top-0 left-0 right-0 h-px" style={{background:'linear-gradient(90deg,transparent,#D4A017,#E8B84B,#D4A017,transparent)'}} />

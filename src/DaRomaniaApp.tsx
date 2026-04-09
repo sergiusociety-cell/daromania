@@ -2271,6 +2271,15 @@ export default function App() {
         {/* Platform Chatbot */}
         <PlatformChatbot />
 
+        {/* Auth Modal */}
+        {showAuthModal && (
+          <AuthModal
+            mode={authMode}
+            onClose={() => setShowAuthModal(false)}
+            onSwitchMode={(m) => setAuthMode(m)}
+          />
+        )}
+
         {/* AI Dividend Section - FULL SCREEN */}
         <section ref={dividendRef} className="min-h-screen w-full bg-indigo-600 flex items-center justify-center snap-start py-20 px-4 md:px-12">
           <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center gap-16">

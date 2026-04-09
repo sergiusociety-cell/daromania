@@ -2044,6 +2044,46 @@ onClick={() => {}} className="hidden" />
         </section>
 
 
+        {/* 5 Business Idea Cards - before pricing */}
+        <AnimatePresence>
+          {pivotData && selectedJob && (
+            <section className="snap-start py-20 px-4 bg-slate-50">
+              <div className="max-w-6xl mx-auto">
+                <h2 className="text-4xl md:text-6xl font-black text-center mb-4 text-slate-900">5 Modele de Business</h2>
+                <p className="text-center text-slate-500 mb-12 text-lg">Construite pe expertiza ta în <span className="font-bold text-slate-800">{selectedJob.title}</span></p>
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+                  {[
+                    { emoji: '🎬', title: 'Media Empire', subtitle: 'YouTube + Blotato', gradient: 'from-purple-600 to-violet-700', desc: selectedJob.pivot1 },
+                    { emoji: '🛠️', title: 'SaaS Expert', subtitle: 'Software B2B', gradient: 'from-blue-600 to-cyan-600', desc: selectedJob.pivot2 },
+                    { emoji: '📄', title: 'Produs Digital', subtitle: 'PDF Premium', gradient: 'from-emerald-500 to-green-600', desc: selectedJob.pivot3 },
+                    { emoji: '🎓', title: 'Academia Online', subtitle: 'Curs + Comunitate', gradient: 'from-orange-500 to-amber-500', desc: selectedJob.pivot4 },
+                    { emoji: '🤖', title: '6 Agenți AI', subtitle: 'AIOPENCLAW.ai', gradient: 'from-rose-500 to-pink-600', desc: selectedJob.pivot5 },
+                  ].map((card, idx) => (
+                    <motion.button
+                      key={idx}
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: idx * 0.1 }}
+                      onClick={() => setModalJob(selectedJob)}
+                      className="group text-left rounded-2xl overflow-hidden border border-slate-200 hover:shadow-2xl transition-all"
+                    >
+                      <div className={`bg-gradient-to-br ${card.gradient} p-5 text-white`}>
+                        <span className="text-3xl block mb-2">{card.emoji}</span>
+                        <h3 className="text-base font-black leading-tight">{card.title}</h3>
+                        <p className="text-white/70 text-xs font-semibold">{card.subtitle}</p>
+                      </div>
+                      <div className="bg-white p-4">
+                        <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">{card.desc}</p>
+                        <span className="text-xs font-bold text-indigo-500 mt-2 block opacity-0 group-hover:opacity-100 transition-opacity">Detalii →</span>
+                      </div>
+                    </motion.button>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
+        </AnimatePresence>
+
         {/* PRICING SECTION */}
         <section ref={pricingRef} className="py-24 md:py-32 bg-slate-900 text-white snap-start px-4 relative overflow-hidden">
           <div className="max-w-7xl mx-auto relative z-10">
@@ -2416,46 +2456,6 @@ onClick={() => {}} className="hidden" />
           )}
         </AnimatePresence>
 
-        {/* 5 Business Idea Cards */}
-        <AnimatePresence>
-          {pivotData && selectedJob && (
-            <section className="snap-start py-20 px-4">
-              <div className="max-w-6xl mx-auto">
-                <h2 className="text-4xl md:text-6xl font-black text-center mb-4 text-slate-900">5 Modele de Business</h2>
-                <p className="text-center text-slate-500 mb-12 text-lg">Construite pe expertiza ta în <span className="font-bold text-slate-800">{selectedJob.title}</span></p>
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-                  {[
-                    { emoji: '🎬', title: 'Media Empire', subtitle: 'YouTube + Blotato', gradient: 'from-purple-600 to-violet-700', desc: selectedJob.pivot1 },
-                    { emoji: '🛠️', title: 'SaaS Expert', subtitle: 'Software B2B', gradient: 'from-blue-600 to-cyan-600', desc: selectedJob.pivot2 },
-                    { emoji: '📄', title: 'Produs Digital', subtitle: 'PDF Premium', gradient: 'from-emerald-500 to-green-600', desc: selectedJob.pivot3 },
-                    { emoji: '🎓', title: 'Academia Online', subtitle: 'Curs + Comunitate', gradient: 'from-orange-500 to-amber-500', desc: selectedJob.pivot4 },
-                    { emoji: '🤖', title: '6 Agenți AI', subtitle: 'AIOPENCLAW.ai', gradient: 'from-rose-500 to-pink-600', desc: selectedJob.pivot5 },
-                  ].map((card, idx) => (
-                    <motion.button
-                      key={idx}
-                      initial={{ opacity: 0, y: 30 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: idx * 0.1 }}
-                      onClick={() => setModalJob(selectedJob)}
-                      className="group text-left rounded-2xl overflow-hidden border border-slate-200 hover:shadow-2xl transition-all"
-                    >
-                      <div className={`bg-gradient-to-br ${card.gradient} p-5 text-white`}>
-                        <span className="text-3xl block mb-2">{card.emoji}</span>
-                        <h3 className="text-base font-black leading-tight">{card.title}</h3>
-                        <p className="text-white/70 text-xs font-semibold">{card.subtitle}</p>
-                      </div>
-                      <div className="bg-white p-4">
-                        <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">{card.desc}</p>
-                        <span className="text-xs font-bold text-indigo-500 mt-2 block opacity-0 group-hover:opacity-100 transition-opacity">Detalii →</span>
-                      </div>
-                    </motion.button>
-                  ))}
-                </div>
-              </div>
-            </section>
-          )}
-        </AnimatePresence>
-
         {/* Features Section - FULL SCREEN */}
         <section ref={missionRef} className="min-h-screen flex flex-col items-center justify-center snap-start py-20 px-4 sm:px-6 lg:px-8 relative">
           <div className="absolute top-0 left-0 right-0 h-px" style={{background:'linear-gradient(90deg,transparent,#D4A017,#E8B84B,#D4A017,transparent)'}} />
@@ -2518,22 +2518,18 @@ onClick={() => {}} className="hidden" />
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
               onClick={() => setActiveModal(null)}
-              className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"
             />
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative bg-white rounded-3xl shadow-2xl w-full max-w-lg overflow-hidden"
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              className="relative bg-white rounded-3xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto z-10"
             >
-              <button 
-                onClick={() => setActiveModal(null)}
-                className="absolute top-6 right-6 p-2 rounded-full hover:bg-slate-100 transition-colors"
-              >
+              <button onClick={() => setActiveModal(null)} className="absolute top-4 right-4 p-2 hover:bg-slate-100 rounded-full transition-colors z-20">
                 <X className="w-5 h-5 text-slate-400" />
               </button>
-
               {activeModal === 'join' && <JoinForm onClose={() => setActiveModal(null)} />}
               {activeModal === 'eligibility' && <EligibilityCheck onClose={() => setActiveModal(null)} />}
             </motion.div>
@@ -2542,7 +2538,6 @@ onClick={() => {}} className="hidden" />
       </AnimatePresence>
 
 
-        {/* SECTIUNEA 1 — CUM FUNCTIONEAZA TRANSFORMAREA */}
         <section className="py-24 md:py-32 bg-white snap-start px-4 border-t border-slate-200">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">

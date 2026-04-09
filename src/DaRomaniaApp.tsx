@@ -1620,11 +1620,39 @@ onClick={() => {}} className="hidden" />
               {t.hero_title1} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">să nu mai simți că muncești o zi din viață!</span>
             </h1>
-            <div className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-12 leading-relaxed font-medium space-y-3">
-              <p>🎓 Academia cu 71 de proiecte practice. Alege unul și monetizează pentru 99$/lună cu 1:1 support.</p>
-              <p>🤖 OpenClaw — agentul AI viral. Creează flota ta de CTO, CFO, SEO, CEO care să îți conducă businessul.</p>
-              <p>⚡ Arsenal API cu 12 pași de lansare. Top 150 API-uri gratuite. Lasă imaginația liberă și construiește GRATUIT!</p>
-              <p>💼 Afacere la Cheie de la doar $9/lună. Succesul tău profesional începe aici.</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto mb-12">
+              <div className="group relative bg-white/80 backdrop-blur-sm border border-indigo-100 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:shadow-indigo-100/50 transition-all duration-300 hover:-translate-y-1">
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/50 to-violet-50/50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="relative">
+                  <div className="text-3xl mb-3">🎓</div>
+                  <h3 className="text-lg font-bold text-slate-800 mb-2">Academia</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">71 de proiecte practice. Alege unul și monetizează pentru 99$/lună cu 1:1 support.</p>
+                </div>
+              </div>
+              <div className="group relative bg-white/80 backdrop-blur-sm border border-violet-100 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:shadow-violet-100/50 transition-all duration-300 hover:-translate-y-1">
+                <div className="absolute inset-0 bg-gradient-to-br from-violet-50/50 to-purple-50/50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="relative">
+                  <div className="text-3xl mb-3">🤖</div>
+                  <h3 className="text-lg font-bold text-slate-800 mb-2">OpenClaw</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">Agentul AI viral. Creează flota ta de CTO, CFO, SEO, CEO care să îți conducă businessul.</p>
+                </div>
+              </div>
+              <div className="group relative bg-white/80 backdrop-blur-sm border border-sky-100 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:shadow-sky-100/50 transition-all duration-300 hover:-translate-y-1">
+                <div className="absolute inset-0 bg-gradient-to-br from-sky-50/50 to-cyan-50/50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="relative">
+                  <div className="text-3xl mb-3">⚡</div>
+                  <h3 className="text-lg font-bold text-slate-800 mb-2">Arsenal API</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">12 pași de lansare. Top 150 API-uri gratuite. Lasă imaginația liberă și construiește GRATUIT!</p>
+                </div>
+              </div>
+              <div className="group relative bg-white/80 backdrop-blur-sm border border-amber-100 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:shadow-amber-100/50 transition-all duration-300 hover:-translate-y-1">
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-50/50 to-orange-50/50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="relative">
+                  <div className="text-3xl mb-3">💼</div>
+                  <h3 className="text-lg font-bold text-slate-800 mb-2">Afacere la Cheie</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">De la doar $9/lună. Succesul tău profesional începe aici.</p>
+                </div>
+              </div>
             </div>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

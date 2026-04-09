@@ -1089,7 +1089,7 @@ export default function App() {
     document.body.removeChild(element);
   };
 
-  const handleCheckout = async (jobTitle?: string) => {
+  const handleCheckout = async (jobTitle?: string, priceId?: string, mode?: string) => {
     if (!isAuthenticated) {
       setAuthMode('signin');
       setShowAuthModal(true);
@@ -1098,7 +1098,7 @@ export default function App() {
     try {
       const { supabase } = await import('@/integrations/supabase/client');
       const { data, error } = await supabase.functions.invoke('create-checkout', {
-        body: { jobTitle: jobTitle || selectedJob?.title || '' },
+        body: { jobTitle: jobTitle || selectedJob?.title || '', priceId, mode },
       });
       if (error) throw error;
       if (data?.url) window.open(data.url, '_blank');

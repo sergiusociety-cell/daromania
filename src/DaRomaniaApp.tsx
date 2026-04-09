@@ -1671,6 +1671,20 @@ export default function App() {
               {t.hero_title1} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">să nu mai simți că muncești o zi din viață!</span>
             </h1>
+            <div className="max-w-3xl mx-auto mb-10 space-y-3 text-center">
+              <p className="text-slate-600 text-base md:text-lg leading-relaxed">
+                85% din sarcinile tale repetitive pot fi automatizate cu AI — emailuri, rapoarte, programări, follow-up-uri. Tu te concentrezi pe cei 15% care contează: relații, strategie, expertiză.
+              </p>
+              <p className="text-slate-600 text-base md:text-lg leading-relaxed">
+                Nu îți schimbăm cariera. Îți dăm un sistem complet care lucrează 22h/zi în locul tău, cu un cost real de $3–9/lună în API-uri.
+              </p>
+              <p className="text-slate-600 text-base md:text-lg leading-relaxed">
+                Rezultatul? Un business scalabil, fără angajați, cu venituri recurente estimate între €2.000–€12.000/lună — construit pe expertiza ta unică, imposibil de replicat.
+              </p>
+              <p className="text-slate-700 text-base md:text-lg font-semibold leading-relaxed">
+                Începi gratuit cu Arsenal API. Când ești gata, lansezi cu $9. Simplu.
+              </p>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-5xl w-full mx-auto mb-10">
               {/* Arsenal API - GRATUIT - Albastru premium */}
               <button onClick={() => { pushHistoryState(); setShowArsenal(true); }} className="group relative border border-blue-200/60 rounded-2xl p-6 hover:shadow-xl hover:border-blue-400 transition-all duration-300 hover:-translate-y-1 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex flex-col">

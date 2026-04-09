@@ -1620,9 +1620,12 @@ onClick={() => {}} className="hidden" />
               {t.hero_title1} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">să nu mai simți că muncești o zi din viață!</span>
             </h1>
-            <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto mb-12 leading-relaxed font-medium">
-              🎓 Academia cu 71 de proiecte practice. 🤖 OpenClaw — agentul AI viral. ⚡ Arsenal API cu 12 pași de lansare. 💼 Afacere la Cheie de la doar $9/lună. Succesul tău profesional începe aici.
-            </p>
+            <div className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-12 leading-relaxed font-medium space-y-3">
+              <p>🎓 Academia cu 71 de proiecte practice. Alege unul și monetizează pentru 99$/lună cu 1:1 support.</p>
+              <p>🤖 OpenClaw — agentul AI viral. Creează flota ta de CTO, CFO, SEO, CEO care să îți conducă businessul.</p>
+              <p>⚡ Arsenal API cu 12 pași de lansare. Top 150 API-uri gratuite. Lasă imaginația liberă și construiește GRATUIT!</p>
+              <p>💼 Afacere la Cheie de la doar $9/lună. Succesul tău profesional începe aici.</p>
+            </div>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <button 

@@ -1140,10 +1140,10 @@ export default function App() {
           
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-            <button onClick={() => { pushHistoryState(); setShowAcademia(true); }} className="hover:text-red-700 transition-colors font-black text-red-600">{t.nav_academy}</button>
-            <button onClick={() => { pushHistoryState(); setShowOpenClaw(true); }} className="hover:text-yellow-600 transition-colors font-black text-yellow-500">{t.nav_openclaw}</button>
+            <button onClick={() => { pushHistoryState(); setShowAcademia(true); }} className="hover:text-blue-700 transition-colors font-black text-blue-600">{t.nav_academy}</button>
+            <button onClick={() => { pushHistoryState(); setShowOpenClaw(true); }} className="hover:text-blue-700 transition-colors font-black text-blue-600">{t.nav_openclaw}</button>
             <button onClick={() => { pushHistoryState(); setShowArsenal(true); }} className="hover:text-blue-700 transition-colors font-black text-blue-600">{t.nav_arsenal}</button>
-            <button onClick={() => { pushHistoryState(); setShowAfacere(true); }} className="hover:text-green-700 transition-colors font-black text-green-600">{t.nav_afacere}</button>
+            <button onClick={() => { pushHistoryState(); setShowAfacere(true); }} className="hover:text-yellow-600 transition-colors font-black text-yellow-500">{t.nav_afacere}</button>
             <div className="relative">
               <button onClick={() => setShowLangMenu(p => !p)} className="flex items-center gap-1 text-slate-500 hover:text-slate-800 transition-colors text-sm font-semibold px-2 py-1 rounded-lg hover:bg-slate-100">
                 {BRANDS[lang].flag} {lang.toUpperCase()} <span className="text-xs">▾</span>
@@ -1162,8 +1162,8 @@ export default function App() {
                 </>
               )}
             </div>
-            <button onClick={() => scrollTo(missionRef)} className="hover:text-indigo-600 transition-colors">Misiune</button>
-            <button onClick={() => scrollTo(pricingRef)} className="hover:text-indigo-600 transition-colors">Prețuri</button>
+            <button onClick={() => scrollTo(missionRef)} className="hover:text-blue-700 transition-colors font-black text-blue-600">Misiune</button>
+            <button onClick={() => scrollTo(pricingRef)} className="hover:text-blue-700 transition-colors font-black text-blue-600">Prețuri</button>
             {/* Auth Button Desktop */}
             {isAuthenticated ? (
               <div className="relative">
@@ -1238,8 +1238,8 @@ export default function App() {
               className="md:hidden bg-white border-b border-slate-200 overflow-hidden"
             >
               <div className="px-3 py-4 flex flex-col gap-2">
-                <button onClick={() => { pushHistoryState(); setShowAcademia(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-red-600 py-2.5 px-3 rounded-xl hover:bg-red-50 transition-colors">🎓 Academia</button>
-                <button onClick={() => { pushHistoryState(); setShowOpenClaw(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-yellow-500 py-2.5 px-3 rounded-xl hover:bg-yellow-50 transition-colors">🤖 OpenClaw</button>
+                <button onClick={() => { pushHistoryState(); setShowAcademia(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-blue-600 py-2.5 px-3 rounded-xl hover:bg-blue-50 transition-colors">🎓 Academia</button>
+                <button onClick={() => { pushHistoryState(); setShowOpenClaw(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-blue-600 py-2.5 px-3 rounded-xl hover:bg-blue-50 transition-colors">🤖 OpenClaw</button>
                 <button onClick={() => { pushHistoryState(); setShowArsenal(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-blue-600 py-2.5 px-3 rounded-xl hover:bg-blue-50 transition-colors">⚡ Arsenal API</button>
                 <button onClick={() => { pushHistoryState(); setShowAfacere(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-green-600 py-2.5 px-3 rounded-xl hover:bg-green-50 transition-colors">💼 Afacere la Cheie</button>
                 <div className="border-t border-slate-100 mt-1 pt-2 flex flex-col gap-1">

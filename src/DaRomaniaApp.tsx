@@ -1671,30 +1671,50 @@ export default function App() {
               {t.hero_title1} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">să nu mai simți că muncești o zi din viață!</span>
             </h1>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto mb-10">
-              <button onClick={() => { pushHistoryState(); setShowArsenal(true); }} className="group relative border border-sky-200/60 rounded-xl p-4 hover:shadow-md hover:border-sky-300 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm">
-                <div className="text-2xl mb-2">⚡</div>
-                <h3 className="text-sm font-bold text-slate-800 mb-1">Arsenal API</h3>
-                <p className="text-slate-500 text-xs leading-snug">150 API-uri · <span className="text-sky-600 font-semibold">GRATUIT</span></p>
-                <span className="inline-block mt-2 text-sky-500 font-medium text-xs opacity-0 group-hover:opacity-100 transition-opacity">Explorează →</span>
+            <div className="flex flex-col gap-4 max-w-3xl w-full mx-auto mb-10">
+              <button onClick={() => { pushHistoryState(); setShowArsenal(true); }} className="group relative border border-sky-200/60 rounded-2xl p-5 md:p-6 hover:shadow-lg hover:border-sky-400 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex items-center gap-5">
+                <div className="text-4xl flex-shrink-0">⚡</div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-lg font-bold text-slate-800 mb-1">Arsenal API</h3>
+                  <p className="text-slate-500 text-sm leading-snug">Accesezi <span className="font-semibold text-slate-700">150+ API-uri gratuite</span> și construiești exact sistemul de care ai nevoie — automatizări, integrări, fluxuri complete. Zero costuri, putere maximă.</p>
+                </div>
+                <div className="flex-shrink-0 text-right">
+                  <span className="text-sky-600 font-black text-lg">GRATUIT</span>
+                  <span className="block mt-1 text-sky-500 font-medium text-xs opacity-0 group-hover:opacity-100 transition-opacity">Explorează →</span>
+                </div>
               </button>
-              <button onClick={() => { pushHistoryState(); setShowOpenClaw(true); }} className="group relative border border-violet-200/60 rounded-xl p-4 hover:shadow-md hover:border-violet-300 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm">
-                <div className="text-2xl mb-2">🤖</div>
-                <h3 className="text-sm font-bold text-slate-800 mb-1">OpenClaw</h3>
-                <p className="text-slate-500 text-xs leading-snug">Flota AI · <span className="text-violet-600 font-semibold">$9/lună</span></p>
-                <span className="inline-block mt-2 text-violet-500 font-medium text-xs opacity-0 group-hover:opacity-100 transition-opacity">Explorează →</span>
+              <button onClick={() => { pushHistoryState(); setShowOpenClaw(true); }} className="group relative border border-violet-200/60 rounded-2xl p-5 md:p-6 hover:shadow-lg hover:border-violet-400 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex items-center gap-5">
+                <div className="text-4xl flex-shrink-0">🤖</div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-lg font-bold text-slate-800 mb-1">OpenClaw</h3>
+                  <p className="text-slate-500 text-sm leading-snug">Flota ta de agenți AI — <span className="font-semibold text-slate-700">CTO, CFO, CEO virtual</span>. Deleghezi strategie, finanțe și operațiuni către AI care lucrează 24/7 pentru tine.</p>
+                </div>
+                <div className="flex-shrink-0 text-right">
+                  <span className="text-violet-600 font-black text-lg">$9/lună</span>
+                  <span className="block mt-1 text-violet-500 font-medium text-xs opacity-0 group-hover:opacity-100 transition-opacity">Explorează →</span>
+                </div>
               </button>
-              <button onClick={() => { pushHistoryState(); setShowAcademia(true); }} className="group relative border border-indigo-200/60 rounded-xl p-4 hover:shadow-md hover:border-indigo-300 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm">
-                <div className="text-2xl mb-2">🎓</div>
-                <h3 className="text-sm font-bold text-slate-800 mb-1">Academia</h3>
-                <p className="text-slate-500 text-xs leading-snug">71 proiecte practice · <span className="text-indigo-600 font-semibold">$19/lună</span></p>
-                <span className="inline-block mt-2 text-indigo-500 font-medium text-xs opacity-0 group-hover:opacity-100 transition-opacity">Explorează →</span>
+              <button onClick={() => { pushHistoryState(); setShowAcademia(true); }} className="group relative border border-indigo-200/60 rounded-2xl p-5 md:p-6 hover:shadow-lg hover:border-indigo-400 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex items-center gap-5">
+                <div className="text-4xl flex-shrink-0">🎓</div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-lg font-bold text-slate-800 mb-1">Academia</h3>
+                  <p className="text-slate-500 text-sm leading-snug"><span className="font-semibold text-slate-700">71 proiecte practice</span> pas cu pas — de la idee la business automatizat. Fiecare proiect vine cu ghid complet, unelte și strategie de monetizare.</p>
+                </div>
+                <div className="flex-shrink-0 text-right">
+                  <span className="text-indigo-600 font-black text-lg">$19/lună</span>
+                  <span className="block mt-1 text-indigo-500 font-medium text-xs opacity-0 group-hover:opacity-100 transition-opacity">Explorează →</span>
+                </div>
               </button>
-              <button onClick={() => { pushHistoryState(); setShowAfacere(true); }} className="group relative border border-amber-200/60 rounded-xl p-4 hover:shadow-md hover:border-amber-300 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm">
-                <div className="text-2xl mb-2">💼</div>
-                <h3 className="text-sm font-bold text-slate-800 mb-1">Afacere la Cheie</h3>
-                <p className="text-slate-500 text-xs leading-snug">De la <span className="text-amber-600 font-semibold">$99/lună</span></p>
-                <span className="inline-block mt-2 text-amber-500 font-medium text-xs opacity-0 group-hover:opacity-100 transition-opacity">Explorează →</span>
+              <button onClick={() => { pushHistoryState(); setShowAfacere(true); }} className="group relative border border-amber-200/60 rounded-2xl p-5 md:p-6 hover:shadow-lg hover:border-amber-400 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex items-center gap-5">
+                <div className="text-4xl flex-shrink-0">💼</div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-lg font-bold text-slate-800 mb-1">Afacere la Cheie</h3>
+                  <p className="text-slate-500 text-sm leading-snug">Business complet gata de lansare — <span className="font-semibold text-slate-700">brand, site, automatizări, strategie, clienți</span>. Tu doar alegi nișa, noi livrăm totul.</p>
+                </div>
+                <div className="flex-shrink-0 text-right">
+                  <span className="text-amber-600 font-black text-lg">$99/lună</span>
+                  <span className="block mt-1 text-amber-500 font-medium text-xs opacity-0 group-hover:opacity-100 transition-opacity">Explorează →</span>
+                </div>
               </button>
             </div>
             

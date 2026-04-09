@@ -1647,6 +1647,11 @@ export default function App() {
                 </div>
               ))}
 
+              {/* Arsenal API Content — embedded */}
+              <div className="mb-12">
+                <ArsenalContent embedded />
+              </div>
+
               {/* Info Cards + Pricing — duplicated from hero */}
               <div className="mb-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">

@@ -1223,8 +1223,7 @@ export default function App() {
               className="md:hidden bg-white border-b border-slate-200 overflow-hidden"
             >
               <div className="px-3 py-4 flex flex-col gap-2">
-                <button onClick={() => { pushHistoryState(); setShowAcademia(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-blue-600 py-2.5 px-3 rounded-xl hover:bg-blue-50 hover:scale-105 transition-all duration-200">🎓 Academia</button>
-                <button onClick={() => { pushHistoryState(); setShowYoutube(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-red-500 py-2.5 px-3 rounded-xl hover:bg-red-50 hover:scale-105 transition-all duration-200">🎬 YouTube</button>
+                <button onClick={() => { pushHistoryState(); setShowAcademia(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-blue-600 py-2.5 px-3 rounded-xl hover:bg-blue-50 hover:scale-105 transition-all duration-200">🎓 Academy</button>
                 <button onClick={() => { pushHistoryState(); setShowOpenClaw(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-red-500 py-2.5 px-3 rounded-xl hover:bg-red-50 hover:scale-105 transition-all duration-200">🤖 OpenClaw</button>
                 <button onClick={() => { pushHistoryState(); setShowArsenal(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-amber-500 py-2.5 px-3 rounded-xl hover:bg-amber-50 hover:scale-105 transition-all duration-200">⚡ Arsenal API</button>
                 <button onClick={() => { pushHistoryState(); setShowAfacere(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-green-700 py-2.5 px-3 rounded-xl hover:bg-green-50 hover:scale-105 transition-all duration-200">💼 Afacere la Cheie</button>

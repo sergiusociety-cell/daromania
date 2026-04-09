@@ -2176,7 +2176,7 @@ export default function App() {
                     <span className="text-sm text-slate-300">Agent Openclaw.ai inclus pentru execuție</span>
                   </li>
                 </ul>
-                <button className="w-full py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold transition-colors mt-auto">Alege Pachetul</button>
+                <button onClick={() => handleCheckout()} className="w-full py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold transition-colors mt-auto">Alege Pachetul</button>
               </div>
 
               {/* Pachet 2 */}

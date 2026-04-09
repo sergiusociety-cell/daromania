@@ -2503,7 +2503,7 @@ export default function App() {
                             </div>
                           </div>
                           <button 
-                            onClick={() => setActiveModal('join')}
+                            onClick={() => handleCheckout(pivotData?.monetizationProjects?.[idx]?.title)}
                             className="w-full bg-white text-slate-900 py-3 md:py-4 rounded-xl md:rounded-[1.5rem] text-sm md:text-lg font-black hover:bg-indigo-50 transition-all flex items-center justify-center gap-2 shadow-2xl shadow-black/20"
                           >
                             Lansează — $9 <ArrowRight className="w-5 h-5" />

@@ -2416,8 +2416,88 @@ onClick={() => {}} className="hidden" />
           )}
         </AnimatePresence>
 
+        {/* Features Section - FULL SCREEN */}
+        <section ref={missionRef} className="min-h-screen flex flex-col items-center justify-center snap-start py-20 px-4 sm:px-6 lg:px-8 relative">
+          <div className="absolute top-0 left-0 right-0 h-px" style={{background:'linear-gradient(90deg,transparent,#D4A017,#E8B84B,#D4A017,transparent)'}} />
+          <div className="max-w-7xl mx-auto w-full">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-6xl font-black mb-4 text-slate-900">Misiunea Noastră</h2>
+              <div className="h-1 w-16 mx-auto rounded-full mb-4" style={{background:'linear-gradient(90deg,#B8860B,#E8B84B,#B8860B)'}} />
+              <p className="text-[#5A5040] text-xl max-w-2xl mx-auto">Protejăm valoarea umană într-o lume dominată de algoritmi.</p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8 w-full">
+              <div className="p-6 md:p-12 rounded-2xl md:rounded-[3rem] bg-white border border-[#EDE5C8]/50 shadow-[0_4px_32px_rgba(180,134,11,0.08)] hover:shadow-[rgba(210,160,23,0.16)] hover:border-[#D4A017]/30 transition-all">
+                <div className="w-16 h-16 bg-[#FDF8ED] rounded-2xl flex items-center justify-center mb-8 relative group cursor-help">
+                  <ShieldCheck className="text-[#B8860B] w-8 h-8" />
+                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-64 p-3 bg-slate-900 text-white text-sm rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 shadow-xl z-10 text-center">
+                    Verifică și validează deciziile AI pentru a asigura conformitatea etică, lipsa prejudecăților și alinierea cu valorile umane.
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#1A1208]"></div>
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold mb-4">Audit Etic AI</h3>
+                <p className="text-slate-600 text-lg leading-relaxed">
+                  Fostul tău job de corector sau editor devine acum un rol de Auditor Etic pentru conținutul generat de AI.
+                </p>
+              </div>
+              <div className="p-6 md:p-12 rounded-2xl md:rounded-[3rem] bg-white border border-[#E0E0EC]/50 shadow-[0_4px_32px_rgba(140,140,180,0.08)] hover:shadow-[rgba(140,140,180,0.16)] hover:border-[#8A8A9E]/25 transition-all">
+                <div className="w-16 h-16 bg-[#F3F3F9] rounded-2xl flex items-center justify-center mb-8 relative group cursor-help">
+                  <Users className="text-[#8A8A9E] w-8 h-8" />
+                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-64 p-3 bg-slate-900 text-white text-sm rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 shadow-xl z-10 text-center">
+                    Oferă nuanța emoțională și culturală pe care AI-ul nu o poate înțelege. Construiește relații bazate pe încredere și empatie.
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#1A1208]"></div>
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold mb-4">Consultanță Contextuală</h3>
+                <p className="text-slate-600 text-lg leading-relaxed">
+                  AI-ul știe datele, tu știi oamenii. Transformă-ți experiența în brokeraj sau vânzări în management de relații complexe.
+                </p>
+              </div>
+              <div className="p-6 md:p-12 rounded-2xl md:rounded-[3rem] bg-white border border-[#EDE5C8]/50 shadow-[0_4px_32px_rgba(180,134,11,0.08)] hover:shadow-[rgba(210,160,23,0.16)] hover:border-[#D4A017]/30 transition-all">
+                <div className="w-16 h-16 bg-[#FDF8ED] rounded-2xl flex items-center justify-center mb-8 relative group cursor-help">
+                  <Cpu className="text-[#B8860B] w-8 h-8" />
+                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-64 p-3 bg-slate-900 text-white text-sm rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 shadow-xl z-10 text-center">
+                    Coordonează și integrează multiple sisteme AI pentru a crea fluxuri de lucru complexe, maximizând eficiența și productivitatea.
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#1A1208]"></div>
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold mb-4">AI Orchestration</h3>
+                <p className="text-slate-600 text-lg leading-relaxed">
+                  Nu lupta cu AI-ul, dirijează-l. Învățăm profesioniștii cum să folosească 10 unelte AI pentru a face munca a 100 de oameni.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
 
-        {/* SECTIUNEA 1 — CUM FUNCTIONEAZA TRANSFORMAREA */}
+      {/* Modals */}
+      <AnimatePresence>
+        {activeModal && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+              onClick={() => setActiveModal(null)}
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              className="relative bg-white rounded-3xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto z-10"
+            >
+              <button onClick={() => setActiveModal(null)} className="absolute top-4 right-4 p-2 hover:bg-slate-100 rounded-full transition-colors z-20">
+                <X className="w-5 h-5 text-slate-400" />
+              </button>
+              {activeModal === 'join' && <JoinForm onClose={() => setActiveModal(null)} />}
+              {activeModal === 'eligibility' && <EligibilityQuiz onClose={() => setActiveModal(null)} />}
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
+
         <section className="py-24 md:py-32 bg-white snap-start px-4 border-t border-slate-200">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">

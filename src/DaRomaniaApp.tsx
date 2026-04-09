@@ -2,6 +2,9 @@ import ProfilePage from './auth/ProfilePage';
 import JobBusinessModal from './components/JobBusinessModal';
 import AfacereLaCheiePage from './AfacereLaCheiePage';
 import ArsenalPage from './ArsenalPage';
+import logoDaRomania from './assets/logo-daromania.png';
+import logoDaEu from './assets/logo-daeu.png';
+import logoDaUsa from './assets/logo-dausa.png';
 import { T, BRANDS, LANG_NAMES, type Lang } from './i18n';
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -1162,11 +1165,20 @@ export default function App() {
       {/* Header */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-14 md:h-20 flex items-center justify-between">
-          <div className="flex items-center gap-1.5 cursor-pointer" onClick={() => { setSelectedJob(null); setPivotData(null); setShowAcademia(false); setShowOpenClaw(false); setShowArsenal(false); setShowAfacere(false); window.scrollTo({top: 0, behavior: 'smooth'}); }}>
-            <div className="bg-indigo-600 p-1.5 md:p-2 rounded-lg md:rounded-xl">
-              <HeartHandshake className="text-white w-4 h-4 md:w-6 md:h-6" />
+          <div className="flex items-center gap-2 md:gap-4">
+            <div className="flex items-center gap-1.5 cursor-pointer" onClick={() => { setSelectedJob(null); setPivotData(null); setShowAcademia(false); setShowOpenClaw(false); setShowArsenal(false); setShowAfacere(false); window.scrollTo({top: 0, behavior: 'smooth'}); }}>
+              <img src={logoDaRomania} alt="DaRomania" className="w-8 h-8 md:w-10 md:h-10 rounded-lg object-cover" />
+              <span className="text-sm md:text-base font-black tracking-tight text-slate-900 hidden sm:inline">Da<span className="text-indigo-600">Romania</span></span>
             </div>
-            <span className="text-base md:text-xl font-bold tracking-tight text-slate-900">Da<span className="text-indigo-600">{brand.highlight}</span></span>
+            <div className="w-px h-6 bg-slate-200 hidden sm:block" />
+            <a href="https://daeu.online" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:opacity-80 transition-opacity">
+              <img src={logoDaEu} alt="DaEU" className="w-7 h-7 md:w-9 md:h-9 rounded-lg object-cover" />
+              <span className="text-xs md:text-sm font-bold text-slate-600 hidden md:inline">DaEU</span>
+            </a>
+            <a href="https://dausa.online" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:opacity-80 transition-opacity">
+              <img src={logoDaUsa} alt="DaUSA" className="w-7 h-7 md:w-9 md:h-9 rounded-lg object-cover" />
+              <span className="text-xs md:text-sm font-bold text-slate-600 hidden md:inline">DaUSA</span>
+            </a>
           </div>
           
           {/* Desktop Nav */}

@@ -2994,6 +2994,11 @@ onClick={() => {}} className="hidden" />
           </div>
         </div>
       </footer>
+
+      {/* Job Business Modal */}
+      {modalJob && (
+        <JobBusinessModal job={modalJob} onClose={() => setModalJob(null)} />
+      )}
     </div>
   );
 }

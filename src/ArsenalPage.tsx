@@ -750,3 +750,24 @@ export function ArsenalContent({ embedded }: ContentProps) {
     </div>
   );
 }
+
+interface Props {
+  onClose: () => void;
+}
+
+export default function ArsenalPage({ onClose }: Props) {
+  return (
+    <div className="fixed inset-0 bg-white z-50 overflow-y-auto">
+      <div className="sticky top-0 bg-white border-b border-slate-200 z-10 px-4 py-3 flex items-center justify-between">
+        <button onClick={onClose} style={{display:"flex",alignItems:"center",gap:8,background:"linear-gradient(135deg,#f6c90e,#e0a800)",border:"none",borderRadius:10,padding:"10px 20px",color:"#1a1a1a",fontWeight:900,fontSize:13,cursor:"pointer",boxShadow:"0 2px 8px rgba(246,201,14,0.4)"}}>
+          ← Back to 🇷🇴 DaRomania
+        </button>
+        <span className="font-black text-slate-800 text-sm hidden sm:block">⚡ Arsenal API — 99 meserii × ghid complet de automatizare</span>
+        <div className="w-20" />
+      </div>
+      <div className="max-w-7xl mx-auto px-4 py-6">
+        <ArsenalContent />
+      </div>
+    </div>
+  );
+}

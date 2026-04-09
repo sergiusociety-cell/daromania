@@ -3,7 +3,7 @@ import AuthModal from './auth/AuthModal';
 import { useAuth } from './auth/AuthContext';
 import JobBusinessModal from './components/JobBusinessModal';
 import AfacereLaCheiePage from './AfacereLaCheiePage';
-import ArsenalPage from './ArsenalPage';
+import ArsenalPage, { ArsenalContent } from './ArsenalPage';
 import YouTubePage from './YouTubePage';
 import logoDaRomania from './assets/logo-daromania.png';
 import logoDaEu from './assets/logo-daeu.png';

@@ -14,7 +14,113 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      payments: {
+        Row: {
+          amount: number
+          created_at: string
+          currency: string
+          id: string
+          project_id: string | null
+          status: string
+          stripe_customer_id: string | null
+          stripe_payment_id: string | null
+          user_id: string
+        }
+        Insert: {
+          amount: number
+          created_at?: string
+          currency?: string
+          id?: string
+          project_id?: string | null
+          status?: string
+          stripe_customer_id?: string | null
+          stripe_payment_id?: string | null
+          user_id: string
+        }
+        Update: {
+          amount?: number
+          created_at?: string
+          currency?: string
+          id?: string
+          project_id?: string | null
+          status?: string
+          stripe_customer_id?: string | null
+          stripe_payment_id?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "payments_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          display_name: string | null
+          email: string | null
+          id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          email?: string | null
+          id?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          email?: string | null
+          id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      projects: {
+        Row: {
+          context_answers: Json | null
+          created_at: string
+          id: string
+          job_title: string
+          status: string
+          strategy_data: Json | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          context_answers?: Json | null
+          created_at?: string
+          id?: string
+          job_title: string
+          status?: string
+          strategy_data?: Json | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          context_answers?: Json | null
+          created_at?: string
+          id?: string
+          job_title?: string
+          status?: string
+          strategy_data?: Json | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

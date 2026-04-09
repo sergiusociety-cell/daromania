@@ -1693,7 +1693,7 @@ export default function App() {
               <button onClick={() => { pushHistoryState(); setShowAcademia(true); }} className="group relative border border-indigo-200/60 rounded-xl p-4 hover:shadow-md hover:border-indigo-300 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm">
                 <div className="text-2xl mb-2">🎓</div>
                 <h3 className="text-sm font-bold text-slate-800 mb-1">Academia</h3>
-                <p className="text-slate-500 text-xs leading-snug">71 proiecte practice · <span className="text-indigo-600 font-semibold">99$/lună</span></p>
+                <p className="text-slate-500 text-xs leading-snug">71 proiecte practice · <span className="text-indigo-600 font-semibold">$19/lună</span></p>
                 <span className="inline-block mt-2 text-indigo-500 font-medium text-xs opacity-0 group-hover:opacity-100 transition-opacity">Explorează →</span>
               </button>
               <button onClick={() => { pushHistoryState(); setShowOpenClaw(true); }} className="group relative border border-violet-200/60 rounded-xl p-4 hover:shadow-md hover:border-violet-300 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm">
@@ -1711,7 +1711,7 @@ export default function App() {
               <button onClick={() => { pushHistoryState(); setShowAfacere(true); }} className="group relative border border-amber-200/60 rounded-xl p-4 hover:shadow-md hover:border-amber-300 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm">
                 <div className="text-2xl mb-2">💼</div>
                 <h3 className="text-sm font-bold text-slate-800 mb-1">Afacere la Cheie</h3>
-                <p className="text-slate-500 text-xs leading-snug">De la <span className="text-amber-600 font-semibold">$9/lună</span></p>
+                <p className="text-slate-500 text-xs leading-snug">De la <span className="text-amber-600 font-semibold">$99/lună</span></p>
                 <span className="inline-block mt-2 text-amber-500 font-medium text-xs opacity-0 group-hover:opacity-100 transition-opacity">Explorează →</span>
               </button>
             </div>

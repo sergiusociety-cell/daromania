@@ -1680,9 +1680,14 @@ export default function App() {
               </div>
               <div className="bg-gradient-to-br from-emerald-50 to-green-50 border border-emerald-200/60 rounded-2xl p-5 flex gap-3 items-start">
                 <span className="text-2xl mt-0.5">⚙️</span>
-                <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                  <span className="font-bold text-emerald-700">Nu îți schimbăm cariera.</span> Îți dăm un sistem complet care lucrează <span className="font-bold">22h/zi</span> în locul tău, cu un cost real de <span className="font-bold text-emerald-700">$3–9/lună</span> în API-uri.
-                </p>
+                <div>
+                  <p className="text-slate-700 text-sm md:text-base leading-relaxed">
+                    <span className="font-bold text-emerald-700">Nu îți schimbăm cariera.</span> Îți dăm un sistem complet care lucrează <span className="font-bold">22h/zi</span> în locul tău, cu un cost real de <span className="font-bold text-emerald-700">$3–9/lună</span> în API-uri.
+                  </p>
+                  <button onClick={() => pivotRef.current?.scrollIntoView({ behavior: 'smooth' })} className="mt-3 inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold px-4 py-2 rounded-lg transition-colors">
+                    🔍 Vezi joburi
+                  </button>
+                </div>
               </div>
               <div className="bg-gradient-to-br from-violet-50 to-purple-50 border border-violet-200/60 rounded-2xl p-5 flex gap-3 items-start">
                 <span className="text-2xl mt-0.5">📈</span>

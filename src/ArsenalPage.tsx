@@ -500,7 +500,12 @@ export default function ArsenalPage({ onClose }: Props) {
     return 'bg-yellow-100 text-yellow-700';
   };
 
-  const getRiskLabel = (risk: number) => {
+  const getRiskLabel = (risk: number | string) => {
+    if (typeof risk === 'string') {
+      if (risk === 'critical') return 'risc critic';
+      if (risk === 'high') return 'risc ridicat';
+      return 'risc mediu';
+    }
     if (risk >= 85) return 'risc critic';
     if (risk >= 70) return 'risc ridicat';
     return 'risc mediu';

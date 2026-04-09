@@ -397,10 +397,11 @@ function ChatAgent({ job, onClose }: { job: JobData, onClose: () => void }) {
         parts: [{ text: m.text }]
       }));
 
-      const response = await callAI(prompt);
+      const userMessage = newMessages[newMessages.length - 1]?.text || '';
+      const response = await callAI(userMessage);
 
       if (response) {
-        setMessages(prev => [...prev, { role: 'model', text: response.text! }]);
+        setMessages(prev => [...prev, { role: 'model', text: response }]);
       }
     } catch (e) {
       console.error(e);
@@ -1193,7 +1194,7 @@ onClick={() => {}} className="hidden" />
 
                 <button onClick={() => { scrollTo(pricingRef); setIsMobileMenuOpen(false); }} className="text-left text-lg font-medium text-slate-600 hover:text-indigo-600 py-2">Prețuri</button>
                 <button 
-                  onClick={() => { setAuthModal('signin'); setIsMobileMenuOpen(false); }}
+                  onClick={() => { setIsMobileMenuOpen(false); }}
                   className="bg-slate-900 text-white px-5 py-3 rounded-xl hover:bg-slate-800 transition-all shadow-sm mt-2 font-bold"
                 >
                   Intra in cont
@@ -1910,7 +1911,7 @@ onClick={() => {}} className="hidden" />
                                       <div className="flex flex-wrap gap-2 mb-3">
                                         <span className="bg-slate-50 text-slate-700 px-3 py-1 rounded-full text-xs font-semibold">📍 {project.platform}</span>
                                         <span className="bg-slate-50 text-slate-700 px-3 py-1 rounded-full text-xs font-semibold">💳 {project.monetizationMethod}</span>
-                                        {project.revenue90 && <span className="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full text-xs font-bold">📈 {project.revenue90} / 90 zile</span>}
+                                        {(project as any).revenue90 && <span className="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full text-xs font-bold">📈 {(project as any).revenue90} / 90 zile</span>}
                                       </div>
                                       <div className="grid grid-cols-2 gap-2 mt-2">
                                         <div className="bg-slate-50 rounded-xl p-3">

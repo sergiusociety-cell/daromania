@@ -1672,23 +1672,23 @@ export default function App() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">să nu mai simți că muncești o zi din viață!</span>
             </h1>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto mb-10">
-              <button onClick={() => { pushHistoryState(); setShowAcademia(true); }} className="group relative border border-indigo-200/60 rounded-xl p-4 hover:shadow-md hover:border-indigo-300 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm">
-                <div className="text-2xl mb-2">🎓</div>
-                <h3 className="text-sm font-bold text-slate-800 mb-1">Academia</h3>
-                <p className="text-slate-500 text-xs leading-snug">71 proiecte practice · <span className="text-indigo-600 font-semibold">$19/lună</span></p>
-                <span className="inline-block mt-2 text-indigo-500 font-medium text-xs opacity-0 group-hover:opacity-100 transition-opacity">Explorează →</span>
-              </button>
-              <button onClick={() => { pushHistoryState(); setShowOpenClaw(true); }} className="group relative border border-violet-200/60 rounded-xl p-4 hover:shadow-md hover:border-violet-300 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm">
-                <div className="text-2xl mb-2">🤖</div>
-                <h3 className="text-sm font-bold text-slate-800 mb-1">OpenClaw</h3>
-                <p className="text-slate-500 text-xs leading-snug">Flota AI: <span className="text-violet-600 font-semibold">CTO, CFO, CEO</span></p>
-                <span className="inline-block mt-2 text-violet-500 font-medium text-xs opacity-0 group-hover:opacity-100 transition-opacity">Explorează →</span>
-              </button>
               <button onClick={() => { pushHistoryState(); setShowArsenal(true); }} className="group relative border border-sky-200/60 rounded-xl p-4 hover:shadow-md hover:border-sky-300 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm">
                 <div className="text-2xl mb-2">⚡</div>
                 <h3 className="text-sm font-bold text-slate-800 mb-1">Arsenal API</h3>
                 <p className="text-slate-500 text-xs leading-snug">150 API-uri · <span className="text-sky-600 font-semibold">GRATUIT</span></p>
                 <span className="inline-block mt-2 text-sky-500 font-medium text-xs opacity-0 group-hover:opacity-100 transition-opacity">Explorează →</span>
+              </button>
+              <button onClick={() => { pushHistoryState(); setShowOpenClaw(true); }} className="group relative border border-violet-200/60 rounded-xl p-4 hover:shadow-md hover:border-violet-300 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm">
+                <div className="text-2xl mb-2">🤖</div>
+                <h3 className="text-sm font-bold text-slate-800 mb-1">OpenClaw</h3>
+                <p className="text-slate-500 text-xs leading-snug">Flota AI · <span className="text-violet-600 font-semibold">$9/lună</span></p>
+                <span className="inline-block mt-2 text-violet-500 font-medium text-xs opacity-0 group-hover:opacity-100 transition-opacity">Explorează →</span>
+              </button>
+              <button onClick={() => { pushHistoryState(); setShowAcademia(true); }} className="group relative border border-indigo-200/60 rounded-xl p-4 hover:shadow-md hover:border-indigo-300 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm">
+                <div className="text-2xl mb-2">🎓</div>
+                <h3 className="text-sm font-bold text-slate-800 mb-1">Academia</h3>
+                <p className="text-slate-500 text-xs leading-snug">71 proiecte practice · <span className="text-indigo-600 font-semibold">$19/lună</span></p>
+                <span className="inline-block mt-2 text-indigo-500 font-medium text-xs opacity-0 group-hover:opacity-100 transition-opacity">Explorează →</span>
               </button>
               <button onClick={() => { pushHistoryState(); setShowAfacere(true); }} className="group relative border border-amber-200/60 rounded-xl p-4 hover:shadow-md hover:border-amber-300 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm">
                 <div className="text-2xl mb-2">💼</div>

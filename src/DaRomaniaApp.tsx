@@ -1741,7 +1741,8 @@ export default function App() {
             </motion.div>
           </motion.div>
         </section>
-
+          </div>
+        </section>
 
         {/* Features Section - FULL SCREEN */}
         <section ref={missionRef} className="min-h-screen flex flex-col items-center justify-center snap-start py-20 px-4 sm:px-6 lg:px-8 relative">

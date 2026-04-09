@@ -1115,12 +1115,12 @@ export default function App() {
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-indigo-100 snap-y snap-mandatory scroll-smooth">
       {/* Header */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-2 cursor-pointer" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
-            <div className="bg-indigo-600 p-2 rounded-xl">
-              <HeartHandshake className="text-white w-6 h-6" />
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-14 md:h-20 flex items-center justify-between">
+          <div className="flex items-center gap-1.5 cursor-pointer" onClick={() => { setSelectedJob(null); setPivotData(null); setShowAcademia(false); setShowOpenClaw(false); setShowArsenal(false); setShowAfacere(false); window.scrollTo({top: 0, behavior: 'smooth'}); }}>
+            <div className="bg-indigo-600 p-1.5 md:p-2 rounded-lg md:rounded-xl">
+              <HeartHandshake className="text-white w-4 h-4 md:w-6 md:h-6" />
             </div>
-            <span className="text-xl font-bold tracking-tight text-slate-900">Da<span className="text-indigo-600">{brand.highlight}</span></span>
+            <span className="text-base md:text-xl font-bold tracking-tight text-slate-900">Da<span className="text-indigo-600">{brand.highlight}</span></span>
           </div>
           
           {/* Desktop Nav */}
@@ -1148,11 +1148,8 @@ export default function App() {
               )}
             </div>
             <button onClick={() => scrollTo(missionRef)} className="hover:text-indigo-600 transition-colors">Misiune</button>
-
             <button onClick={() => scrollTo(pricingRef)} className="hover:text-indigo-600 transition-colors">Prețuri</button>
-            <button 
-onClick={() => {}} className="hidden" />
-            
+            <button onClick={() => {}} className="hidden" />
           </nav>
 
           {/* Mobile Menu Toggle */}
@@ -1160,7 +1157,7 @@ onClick={() => {}} className="hidden" />
             className="md:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-lg transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
 
@@ -1173,20 +1170,23 @@ onClick={() => {}} className="hidden" />
               exit={{ height: 0, opacity: 0 }}
               className="md:hidden bg-white border-b border-slate-200 overflow-hidden"
             >
-              <div className="px-4 py-6 flex flex-col gap-4">
-                <button onClick={() => { setShowAcademia(true); setIsMobileMenuOpen(false); }} className="text-left text-lg font-black text-indigo-600 py-2">🎓 Academia DaRomania</button>
-                <button onClick={() => { setShowOpenClaw(true); setIsMobileMenuOpen(false); }} className="text-left text-lg font-black text-purple-600 py-2">🤖 OpenClaw — Ghid Instalare</button>
-                <button onClick={() => { setShowArsenal(true); setIsMobileMenuOpen(false); }} className="text-left text-lg font-black text-amber-500 py-2">⚡ Arsenal API — Transformă-ți Jobul</button>
-                <button onClick={() => { setShowAfacere(true); setIsMobileMenuOpen(false); }} className="text-left text-lg font-black text-green-600 py-2">💼 Afacere la Cheie — $99/lună</button>
-                <button onClick={() => { scrollTo(missionRef); setIsMobileMenuOpen(false); }} className="text-left text-lg font-medium text-slate-600 hover:text-indigo-600 py-2">Misiune</button>
-
-                <button onClick={() => { scrollTo(pricingRef); setIsMobileMenuOpen(false); }} className="text-left text-lg font-medium text-slate-600 hover:text-indigo-600 py-2">Prețuri</button>
-                <button 
-                  onClick={() => { setIsMobileMenuOpen(false); }}
-                  className="bg-slate-900 text-white px-5 py-3 rounded-xl hover:bg-slate-800 transition-all shadow-sm mt-2 font-bold"
-                >
-                  Intra in cont
-                </button>
+              <div className="px-3 py-4 flex flex-col gap-2">
+                <button onClick={() => { setShowAcademia(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-indigo-600 py-2.5 px-3 rounded-xl hover:bg-indigo-50 transition-colors">🎓 Academia</button>
+                <button onClick={() => { setShowOpenClaw(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-purple-600 py-2.5 px-3 rounded-xl hover:bg-purple-50 transition-colors">🤖 OpenClaw</button>
+                <button onClick={() => { setShowArsenal(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-amber-500 py-2.5 px-3 rounded-xl hover:bg-amber-50 transition-colors">⚡ Arsenal API</button>
+                <button onClick={() => { setShowAfacere(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-green-600 py-2.5 px-3 rounded-xl hover:bg-green-50 transition-colors">💼 Afacere la Cheie</button>
+                <div className="border-t border-slate-100 mt-1 pt-2 flex flex-col gap-1">
+                  <button onClick={() => { scrollTo(missionRef); setIsMobileMenuOpen(false); }} className="text-left text-sm font-medium text-slate-600 py-2 px-3 rounded-xl hover:bg-slate-50">Misiune</button>
+                  <button onClick={() => { scrollTo(pricingRef); setIsMobileMenuOpen(false); }} className="text-left text-sm font-medium text-slate-600 py-2 px-3 rounded-xl hover:bg-slate-50">Prețuri</button>
+                </div>
+                <div className="border-t border-slate-100 mt-1 pt-2 flex gap-2">
+                  {(['ro','en','es'] as Lang[]).map(l => (
+                    <button key={l} onClick={() => { setLang(l); setIsMobileMenuOpen(false); }}
+                      className={"flex-1 text-center py-2 text-xs font-bold rounded-lg transition-colors " + (lang === l ? "bg-indigo-100 text-indigo-700" : "bg-slate-50 text-slate-500")}>
+                      {BRANDS[l].flag} {l.toUpperCase()}
+                    </button>
+                  ))}
+                </div>
               </div>
             </motion.div>
           )}
@@ -1687,16 +1687,16 @@ onClick={() => {}} className="hidden" />
                   Caută profesia ta și descoperă cum poți transforma riscul de automatizare într-un avantaj competitiv imposibil de replicat.
                 </p>
                 <div className="relative max-w-2xl mx-auto">
-                  <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 w-6 h-6" />
+                  <Search className="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5 md:w-6 md:h-6" />
                   <input 
                     type="text" 
                     placeholder={t.search_placeholder}
-                    className="w-full pl-16 pr-6 py-5 rounded-full border-2 border-slate-200 shadow-sm focus:ring-4 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all text-xl font-medium"
+                    className="w-full pl-12 md:pl-16 pr-4 md:pr-6 py-3 md:py-5 rounded-full border-2 border-slate-200 shadow-sm focus:ring-4 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none transition-all text-base md:text-xl font-medium"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                   />
                 </div>
-                <div className="mt-6 text-slate-500 font-bold text-lg">{filteredJobs.length} meserii identificate</div>
+                <div className="mt-4 md:mt-6 text-slate-500 font-bold text-sm md:text-lg">{filteredJobs.length} meserii identificate</div>
               </div>
 
               <div className="flex-1 overflow-y-auto pb-20">
@@ -1729,7 +1729,7 @@ onClick={() => {}} className="hidden" />
                           animate={{ opacity: 1, scale: 1 }}
                           exit={{ opacity: 0, scale: 0.95 }}
                           onClick={() => handleJobSelect(job)}
-                          className="w-full p-5 rounded-2xl border border-slate-200 bg-white hover:border-indigo-300 hover:shadow-lg text-left transition-all group flex flex-col"
+                          className="w-full p-3 md:p-5 rounded-xl md:rounded-2xl border border-slate-200 bg-white hover:border-indigo-300 hover:shadow-lg text-left transition-all group flex flex-col"
                         >
                           <div className="flex items-center justify-between mb-3">
                             <span className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border ${catClass}`}>
@@ -1739,10 +1739,10 @@ onClick={() => {}} className="hidden" />
                               {job.level === 'critical' ? '🔴 Critic' : job.level === 'high' ? '🟠 Ridicat' : '🟡 Moderat'}
                             </span>
                           </div>
-                          <h3 className="text-base font-bold text-slate-800 mb-1 group-hover:text-indigo-600 transition-colors">
+                          <h3 className="text-sm md:text-base font-bold text-slate-800 mb-1 group-hover:text-indigo-600 transition-colors">
                             {job.title}
                           </h3>
-                          <ul className="text-xs text-slate-600 space-y-1.5 mb-3">
+                          <ul className="text-[10px] md:text-xs text-slate-600 space-y-1 md:space-y-1.5 mb-2 md:mb-3">
                             <li className="flex gap-1.5"><span className="text-indigo-400">1.</span> {job.pivot1}</li>
                             <li className="flex gap-1.5"><span className="text-indigo-400">2.</span> {job.pivot2}</li>
                             <li className="flex gap-1.5"><span className="text-indigo-400">3.</span> {job.pivot3}</li>
@@ -1778,11 +1778,11 @@ onClick={() => {}} className="hidden" />
               <div className="p-4 md:p-6 border-b border-slate-100 flex items-center justify-between bg-white sticky top-0 z-20 shadow-sm">
                 <button 
                   onClick={() => { setSelectedJob(null); setPivotData(null); }}
-                  className="flex items-center gap-2 text-indigo-600 font-black px-4 py-2 md:px-6 md:py-3 bg-indigo-50 hover:bg-indigo-100 transition-colors rounded-full"
+                  className="flex items-center gap-1.5 text-indigo-600 font-black px-3 py-2 md:px-6 md:py-3 bg-indigo-50 hover:bg-indigo-100 transition-colors rounded-full text-sm"
                 >
-                  <ArrowLeft className="w-5 h-5" /> <span className="hidden sm:inline">Înapoi la Index</span>
+                  <ArrowLeft className="w-4 h-4 md:w-5 md:h-5" /> <span>Înapoi</span>
                 </button>
-                <div className="font-black text-slate-900 text-lg md:text-xl text-right">{selectedJob.title}</div>
+                <div className="font-black text-slate-900 text-sm md:text-xl text-right truncate ml-2">{selectedJob.title}</div>
               </div>
 
               <div className="flex-1 overflow-y-auto p-4 md:p-12 relative">
@@ -2047,11 +2047,11 @@ onClick={() => {}} className="hidden" />
         {/* 5 Business Idea Cards - before pricing */}
         <AnimatePresence>
           {pivotData && selectedJob && (
-            <section className="snap-start py-20 px-4 bg-slate-50">
+            <section className="snap-start py-10 md:py-20 px-3 md:px-4 bg-slate-50">
               <div className="max-w-6xl mx-auto">
-                <h2 className="text-4xl md:text-6xl font-black text-center mb-4 text-slate-900">5 Modele de Business</h2>
-                <p className="text-center text-slate-500 mb-12 text-lg">Construite pe expertiza ta în <span className="font-bold text-slate-800">{selectedJob.title}</span></p>
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+                <h2 className="text-2xl md:text-6xl font-black text-center mb-2 md:mb-4 text-slate-900">5 Modele de Business</h2>
+                <p className="text-center text-slate-500 mb-6 md:mb-12 text-sm md:text-lg">Construite pe expertiza ta în <span className="font-bold text-slate-800">{selectedJob.title}</span></p>
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-2 md:gap-4">
                   {[
                     { emoji: '🎬', title: 'Media Empire', subtitle: 'YouTube + Blotato', gradient: 'from-purple-600 to-violet-700', desc: selectedJob.pivot1 },
                     { emoji: '🛠️', title: 'SaaS Expert', subtitle: 'Software B2B', gradient: 'from-blue-600 to-cyan-600', desc: selectedJob.pivot2 },
@@ -2067,14 +2067,14 @@ onClick={() => {}} className="hidden" />
                       onClick={() => setModalJob(selectedJob)}
                       className="group text-left rounded-2xl overflow-hidden border border-slate-200 hover:shadow-2xl transition-all"
                     >
-                      <div className={`bg-gradient-to-br ${card.gradient} p-5 text-white`}>
-                        <span className="text-3xl block mb-2">{card.emoji}</span>
-                        <h3 className="text-base font-black leading-tight">{card.title}</h3>
-                        <p className="text-white/70 text-xs font-semibold">{card.subtitle}</p>
+                      <div className={`bg-gradient-to-br ${card.gradient} p-3 md:p-5 text-white`}>
+                        <span className="text-xl md:text-3xl block mb-1 md:mb-2">{card.emoji}</span>
+                        <h3 className="text-xs md:text-base font-black leading-tight">{card.title}</h3>
+                        <p className="text-white/70 text-[10px] md:text-xs font-semibold">{card.subtitle}</p>
                       </div>
-                      <div className="bg-white p-4">
-                        <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">{card.desc}</p>
-                        <span className="text-xs font-bold text-indigo-500 mt-2 block opacity-0 group-hover:opacity-100 transition-opacity">Detalii →</span>
+                      <div className="bg-white p-2 md:p-4">
+                        <p className="text-[10px] md:text-xs text-slate-600 leading-relaxed">{card.desc}</p>
+                        <span className="text-[10px] md:text-xs font-bold text-indigo-500 mt-1 md:mt-2 block">Detalii →</span>
                       </div>
                     </motion.button>
                   ))}

@@ -463,11 +463,11 @@ function BusinessDocsSection() {
   );
 }
 
-interface Props {
-  onClose: () => void;
+interface ContentProps {
+  embedded?: boolean;
 }
 
-export default function ArsenalPage({ onClose }: Props) {
+export function ArsenalContent({ embedded }: ContentProps) {
   const [search, setSearch] = useState('');
   const [activeCat, setActiveCat] = useState('Toate');
   const [selectedId, setSelectedId] = useState<number | null>(null);

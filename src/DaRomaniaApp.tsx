@@ -1225,8 +1225,8 @@ export default function App() {
                 <button onClick={() => { pushHistoryState(); setShowArsenal(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-amber-500 py-2.5 px-3 rounded-xl hover:bg-amber-50 hover:scale-105 transition-all duration-200">⚡ Arsenal API</button>
                 <button onClick={() => { pushHistoryState(); setShowAfacere(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-green-700 py-2.5 px-3 rounded-xl hover:bg-green-50 hover:scale-105 transition-all duration-200">💼 Afacere la Cheie</button>
                 <div className="border-t border-slate-100 mt-1 pt-2 flex flex-col gap-1">
-                  <button onClick={() => { scrollTo(missionRef); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-blue-400 py-2 px-3 rounded-xl hover:bg-blue-50">Misiune</button>
-                  <button onClick={() => { scrollTo(pricingRef); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-blue-400 py-2 px-3 rounded-xl hover:bg-blue-50">Prețuri</button>
+                  <button onClick={() => { scrollTo(missionRef); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-blue-600 py-2 px-3 rounded-xl hover:bg-blue-50">Misiune</button>
+                  <button onClick={() => { scrollTo(pricingRef); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-blue-600 py-2 px-3 rounded-xl hover:bg-blue-50">Prețuri</button>
                 </div>
                 <div className="border-t border-slate-100 mt-1 pt-2 flex gap-2">
                   {(['ro','en','es'] as Lang[]).map(l => (

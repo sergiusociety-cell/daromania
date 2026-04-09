@@ -831,6 +831,16 @@ export default function App() {
   const [showUserMenu, setShowUserMenu] = useState(false);
   const { user, isAuthenticated, logout } = useAuth();
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const [showPaymentSuccess, setShowPaymentSuccess] = useState(false);
+
+  // Detect payment success from Stripe redirect
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('payment') === 'success') {
+      setShowPaymentSuccess(true);
+      window.history.replaceState({}, '', window.location.pathname);
+    }
+  }, []);
   const [contextAnswers, setContextAnswers] = useState({ q1: '', q2: '', q3: '' });
   const [luckyLoading, setLuckyLoading] = useState({ q1: false, q2: false, q3: false });
   

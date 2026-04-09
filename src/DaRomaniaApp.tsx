@@ -83,6 +83,24 @@ const callAI = async (prompt: string, system?: string, lucky?: boolean): Promise
   return d.text || '';
 };
 
+type GeoRegion = 'ro' | 'us' | 'eu';
+
+const useGeoRegion = (): GeoRegion => {
+  const [region, setRegion] = useState<GeoRegion>('ro');
+  useEffect(() => {
+    fetch('https://ipapi.co/json/')
+      .then(r => r.json())
+      .then(data => {
+        const code = (data.country_code || '').toUpperCase();
+        if (code === 'RO') setRegion('ro');
+        else if (code === 'US') setRegion('us');
+        else setRegion('eu');
+      })
+      .catch(() => setRegion('ro'));
+  }, []);
+  return region;
+};
+
 type ModalType = 'join' | 'eligibility' | 'download' | null;
 
 interface MonetizationProject {

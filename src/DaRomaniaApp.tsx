@@ -226,25 +226,27 @@ const getJobQuestions = (job: { title: string; category: string }) => {
 };
 
 const buildUniversalBusinessPipelines = (jobTitle: string, context: {q1: string, q2: string, q3: string}) => ({
-  pivotStrategy: `Business Blueprint complet pentru ${jobTitle}
+  pivotStrategy: `## Business Blueprint complet pentru ${jobTitle}
 
-PIPELINE 1 — Servicii Premium
-Expertiză profesională → servicii premium → retainer lunar → upsell enterprise
+---
 
-PIPELINE 2 — Produse Digitale
-Template → funnel → vânzare → abonament
+### 🚀 PIPELINE 1 — Servicii Premium
+> **Expertiză profesională** → servicii premium → retainer lunar → upsell enterprise
 
-PIPELINE 3 — Educație
-Audiență → curs → cohortă → mentorat
+### 📦 PIPELINE 2 — Produse Digitale
+> **Template** → funnel → vânzare → abonament
 
-PIPELINE 4 — Content Authority
-LinkedIn → newsletter → lead generation
+### 🎓 PIPELINE 3 — Educație
+> **Audiență** → curs → cohortă → mentorat
 
-PIPELINE 5 — YouTube Monetization
-Shorts → long form → AdSense → sponsori → afiliere
+### ✍️ PIPELINE 4 — Content Authority
+> **LinkedIn** → newsletter → lead generation
 
-PIPELINE 6 — Scalare
-Freelancer → agenție → SaaS platform`,
+### 🎬 PIPELINE 5 — YouTube Monetization
+> **Shorts** → long form → AdSense → sponsori → afiliere
+
+### 📈 PIPELINE 6 — Scalare
+> **Freelancer** → agenție → SaaS platform`,
   monetizationProjects: [
     {
       title: `${jobTitle} Premium Services`,

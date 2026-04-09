@@ -1148,7 +1148,7 @@ export default function App() {
             <button onClick={() => { pushHistoryState(); setShowAfacere(true); }} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-green-700">{t.nav_afacere}</button>
             <button onClick={() => scrollTo(missionRef)} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-blue-600">Misiune</button>
             <button onClick={() => scrollTo(pricingRef)} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-blue-600">Prețuri</button>
-            <button onClick={() => { pushHistoryState(); setShowYoutube(true); }} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-red-500">🎬 YouTube</button>
+            
             {/* Auth Button Desktop */}
             {isAuthenticated ? (
               <div className="relative">
@@ -1230,7 +1230,7 @@ export default function App() {
                 <div className="border-t border-slate-100 mt-1 pt-2 flex flex-col gap-1">
                   <button onClick={() => { scrollTo(missionRef); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-blue-600 py-2 px-3 rounded-xl hover:bg-blue-50">Misiune</button>
                   <button onClick={() => { scrollTo(pricingRef); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-blue-600 py-2 px-3 rounded-xl hover:bg-blue-50">Prețuri</button>
-                  <button onClick={() => { pushHistoryState(); setShowYoutube(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-red-500 py-2 px-3 rounded-xl hover:bg-red-50">🎬 YouTube</button>
+                  
                 </div>
                 <div className="border-t border-slate-100 mt-1 pt-2 flex gap-2">
                   {(['ro','en','es'] as Lang[]).map(l => (
@@ -1647,7 +1647,64 @@ export default function App() {
                 </div>
               ))}
 
-              {/* CTA Final */}
+              {/* Tutoriale YouTube */}
+              <div className="mb-12">
+                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-red-500 to-red-600 text-white px-4 py-2 rounded-full font-black text-sm mb-6">
+                  🎬 Tutoriale YouTube <span className="bg-white/20 px-2 py-0.5 rounded-full text-xs">28</span>
+                </div>
+                <p className="text-slate-600 text-sm mb-6">Cele mai populare videoclipuri de pe <a href="https://www.youtube.com/@thekoerneroffice" target="_blank" rel="noopener noreferrer" className="text-red-500 font-bold hover:underline">The Koerner Office</a> — business, AI și side hustles.</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {[
+                    { title: "The Most Overlooked $10K/M Business Anyone Can Start", views: "2.1M", duration: "34:17" },
+                    { title: "The Most Profitable One-Man Business You've Never Heard Of", views: "1.2M", duration: "32:38" },
+                    { title: "6 Ways to Make Money With the New GPT Agent", views: "586K", duration: "39:57" },
+                    { title: "He Watched This Channel and Made $32K in His First 2 Months", views: "569K", duration: "42:46" },
+                    { title: "How I Make $35k/Month With Other People's Content (Legally)", views: "563K", duration: "23:43" },
+                    { title: "He Asked AI To Make Money. It Did.", views: "441K", duration: "30:46" },
+                    { title: "I Tried the Costco Gold Hack (How Much I Actually Made)", views: "432K", duration: "10:02" },
+                    { title: "How to Start Reselling (Even With $0 in the Bank)", views: "426K", duration: "1:02:13" },
+                    { title: "\"It's Not That Easy?\" Sam Launched Overnight to Prove It Is", views: "410K", duration: "26:58" },
+                    { title: "She Makes $1k/Day Sending Letters", views: "364K", duration: "53:16" },
+                    { title: "The Most Profitable Local Business Everyone Overlooks", views: "309K", duration: "50:57" },
+                    { title: "25 ChatGPT Hacks You Need to Know in 2026", views: "297K", duration: "19:51" },
+                    { title: "The Most Overlooked Way to Make Money On the Internet", views: "283K", duration: "52:31" },
+                    { title: "40 Ways to Make $400,000 from Unwanted Land", views: "247K", duration: "43:59" },
+                    { title: "Stop Buying Things. Start Buying Assets that Pay for Themselves", views: "235K", duration: "37:25" },
+                    { title: "This $15K/Person Grant Feels Like a Cheat Code", views: "223K", duration: "38:44" },
+                    { title: "Forget Dropshipping. This Side Hustle Is 10x Easier", views: "211K", duration: "35:19" },
+                    { title: "The Easiest $3K/Day Business Nobody Is Talking About", views: "192K", duration: "46:41" },
+                    { title: "The Most Passive Online Business No One Talks About", views: "179K", duration: "34:22" },
+                    { title: "I Started an Online Business in 56 Minutes", views: "174K", duration: "27:36" },
+                    { title: "The Most Hands-Off Side Hustle Anyone Can Copy", views: "173K", duration: "1:14:19" },
+                    { title: "This Business Makes Vending Machines Look Dumb", views: "170K", duration: "1:14:43" },
+                    { title: "She Buys $1 Pallets And Sells Them For $5,000", views: "169K", duration: "50:05" },
+                    { title: "If We Had to Make $1M Fast, We'd Start These Businesses", views: "154K", duration: "1:01:07" },
+                    { title: "Watch Me Build an AI Agency in 24 Minutes", views: "145K", duration: "24:31" },
+                    { title: "The Best Way to Clone These $1M+ Online Businesses (Legally)", views: "143K", duration: "25:00" },
+                    { title: "Facebook Ads For Beginners: Complete Guide (2026)", views: "142K", duration: "46:19" },
+                    { title: "The 4 Best Rural Side Hustles for 2026", views: "139K", duration: "33:44" },
+                  ].map((video, vi) => (
+                    <a
+                      key={vi}
+                      href={`https://www.youtube.com/results?search_query=${encodeURIComponent('Chris Koerner ' + video.title)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block bg-white rounded-2xl border border-slate-200 hover:border-red-300 hover:shadow-xl transition-all no-underline group overflow-hidden"
+                    >
+                      <div className="relative aspect-video bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
+                        <PlayCircle className="w-10 h-10 text-white/30 group-hover:text-red-500 group-hover:scale-110 transition-all z-20" />
+                        <span className="absolute bottom-2 right-2 bg-black/80 text-white text-xs font-bold px-2 py-0.5 rounded z-20">{video.duration}</span>
+                      </div>
+                      <div className="p-3.5">
+                        <h3 className="font-black text-slate-900 text-xs leading-tight line-clamp-2 group-hover:text-red-600 transition-colors">{video.title}</h3>
+                        <p className="text-xs text-slate-500 mt-1.5">👁 {video.views} vizualizări</p>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+
               <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-3xl p-8 md:p-12 text-white text-center mt-8">
                 <h3 className="text-3xl font-black mb-4">Ai o idee de proiect?</h3>
                 <p className="text-white/80 mb-6 text-lg">Construim împreună. Scrie-i lui Sergiu pe WhatsApp și visele devin realitate.</p>

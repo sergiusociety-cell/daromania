@@ -1723,7 +1723,7 @@ export default function App() {
                   <li className="flex items-start gap-2"><span className="text-indigo-500 mt-0.5">✓</span> 71 proiecte practice pas cu pas</li>
                   <li className="flex items-start gap-2"><span className="text-indigo-500 mt-0.5">✓</span> Vezi succesul monetizat al rețelei</li>
                 </ul>
-                <span className="w-full text-center py-2.5 rounded-xl bg-indigo-600 text-white font-semibold text-sm group-hover:bg-indigo-700 transition-all">Alege Pachetul</span>
+                <span className="w-full text-center py-2.5 rounded-xl bg-indigo-600 text-white font-semibold text-sm group-hover:bg-indigo-700 transition-all">Vezi Detalii →</span>
               </button>
 
               {/* Afacere la Cheie - $99 */}

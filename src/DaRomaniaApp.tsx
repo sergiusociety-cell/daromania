@@ -1143,6 +1143,7 @@ export default function App() {
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
             <button onClick={() => { pushHistoryState(); setShowAcademia(true); }} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-blue-600">{t.nav_academy}</button>
+            <button onClick={() => { pushHistoryState(); setShowYoutube(true); }} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-red-500">🎬 YouTube</button>
             <button onClick={() => { pushHistoryState(); setShowOpenClaw(true); }} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-red-500">{t.nav_openclaw}</button>
             <button onClick={() => { pushHistoryState(); setShowArsenal(true); }} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-amber-500">{t.nav_arsenal}</button>
             <button onClick={() => { pushHistoryState(); setShowAfacere(true); }} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-green-700">{t.nav_afacere}</button>
@@ -1223,6 +1224,7 @@ export default function App() {
             >
               <div className="px-3 py-4 flex flex-col gap-2">
                 <button onClick={() => { pushHistoryState(); setShowAcademia(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-blue-600 py-2.5 px-3 rounded-xl hover:bg-blue-50 hover:scale-105 transition-all duration-200">🎓 Academia</button>
+                <button onClick={() => { pushHistoryState(); setShowYoutube(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-red-500 py-2.5 px-3 rounded-xl hover:bg-red-50 hover:scale-105 transition-all duration-200">🎬 YouTube</button>
                 <button onClick={() => { pushHistoryState(); setShowOpenClaw(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-red-500 py-2.5 px-3 rounded-xl hover:bg-red-50 hover:scale-105 transition-all duration-200">🤖 OpenClaw</button>
                 <button onClick={() => { pushHistoryState(); setShowArsenal(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-amber-500 py-2.5 px-3 rounded-xl hover:bg-amber-50 hover:scale-105 transition-all duration-200">⚡ Arsenal API</button>
                 <button onClick={() => { pushHistoryState(); setShowAfacere(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-green-700 py-2.5 px-3 rounded-xl hover:bg-green-50 hover:scale-105 transition-all duration-200">💼 Afacere la Cheie</button>

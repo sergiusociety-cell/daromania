@@ -2551,117 +2551,117 @@ export default function App() {
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="text-center mb-20">
               <h2 className="text-3xl md:text-6xl font-black mb-6">Investiția în Viitorul Tău</h2>
-              <p className="text-xl text-indigo-300 font-medium max-w-3xl mx-auto">
+              <p className="text-xl text-blue-300 font-medium max-w-3xl mx-auto">
                 Totul este gratuit până în momentul în care decizi să lansezi un proiect. Fără taxe ascunse, fără surprize.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
-              {/* Pachet 1 */}
-              <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl md:rounded-[2.5rem] p-5 md:p-8 flex flex-col hover:bg-indigo-600/20 hover:border-indigo-500 transition-all duration-300 cursor-pointer">
-                <h3 className="text-xl md:text-2xl font-black mb-2">Lansare Proiect</h3>
+              {/* Pachet 1 - Albastru deschis */}
+              <div className="bg-white/5 backdrop-blur-lg border border-blue-400/20 rounded-2xl md:rounded-[2.5rem] p-5 md:p-8 flex flex-col hover:bg-blue-600/20 hover:border-blue-400 transition-all duration-300 cursor-pointer">
+                <h3 className="text-xl md:text-2xl font-black mb-2 text-blue-100">Lansare Proiect</h3>
                 <p className="text-slate-400 mb-6 flex-1">Singura și unica taxă pentru a lansa un proiect real.</p>
                 <div className="mb-8">
-                  <span className="text-5xl font-black">$9</span>
+                  <span className="text-5xl font-black text-blue-300">$9</span>
                   <span className="text-slate-400">/lună</span>
                 </div>
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
                     <span className="text-sm text-slate-300">1 Proiect activ</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
                     <span className="text-sm text-slate-300">Vrei 2 proiecte? Plătești $9/lună per proiect.</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
                     <span className="text-sm text-slate-300">Agent Openclaw.ai inclus pentru execuție</span>
                   </li>
                 </ul>
-                <button onClick={() => handleCheckout()} className="w-full py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold transition-colors mt-auto">Alege Pachetul</button>
+                <button onClick={() => handleCheckout()} className="w-full py-4 rounded-full bg-blue-500/20 border border-blue-400/30 hover:bg-green-500 hover:border-green-500 text-white font-bold transition-all duration-300 mt-auto">Alege Pachetul</button>
               </div>
 
-              {/* Pachet 2 */}
-              <div className="bg-indigo-600 rounded-2xl md:rounded-[2.5rem] p-5 md:p-8 flex flex-col relative transform md:-translate-y-4 shadow-2xl shadow-indigo-900/50 hover:bg-indigo-500 transition-all duration-300 cursor-pointer">
+              {/* Pachet 2 - Albastru deschis Recomandat */}
+              <div className="bg-blue-600 rounded-2xl md:rounded-[2.5rem] p-5 md:p-8 flex flex-col relative transform md:-translate-y-4 shadow-2xl shadow-blue-900/50 hover:bg-blue-500 transition-all duration-300 cursor-pointer">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-amber-400 text-amber-950 text-xs font-black px-4 py-1 rounded-full uppercase tracking-widest">Recomandat</div>
                 <h3 className="text-xl md:text-2xl font-black mb-2 text-white">Academy DaRomania</h3>
-                <p className="text-indigo-200 mb-6 flex-1">Acces complet la rețeaua de succes.</p>
+                <p className="text-blue-200 mb-6 flex-1">Acces complet la rețeaua de succes.</p>
                 <div className="mb-8">
                   <span className="text-5xl font-black text-white">$19</span>
-                  <span className="text-indigo-200">/lună</span>
+                  <span className="text-blue-200">/lună</span>
                 </div>
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-indigo-300 shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-blue-300 shrink-0 mt-0.5" />
                     <span className="text-sm text-white">Tot ce include pachetul de $9</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-indigo-300 shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-blue-300 shrink-0 mt-0.5" />
                     <span className="text-sm text-white">Acces în Academy DaRomania</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-indigo-300 shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-blue-300 shrink-0 mt-0.5" />
                     <span className="text-sm text-white">Vezi proiectele și succesul monetizat al rețelei</span>
                   </li>
                 </ul>
-                <button onClick={() => handleCheckout(undefined, 'price_1TKHL2LDo9sXtuKJSzlNPZA4', 'subscription')} className="w-full py-4 rounded-full bg-white text-indigo-600 hover:bg-indigo-50 font-black transition-colors mt-auto">Alege Pachetul</button>
+                <button onClick={() => handleCheckout(undefined, 'price_1TKHL2LDo9sXtuKJSzlNPZA4', 'subscription')} className="w-full py-4 rounded-full bg-white text-blue-600 hover:bg-green-500 hover:text-white font-black transition-all duration-300 mt-auto">Alege Pachetul</button>
               </div>
 
-              {/* Pachet 3 */}
-              <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl md:rounded-[2.5rem] p-5 md:p-8 flex flex-col hover:bg-indigo-600/20 hover:border-indigo-500 transition-all duration-300 cursor-pointer">
-                <h3 className="text-xl md:text-2xl font-black mb-2">Mentor 1:1</h3>
+              {/* Pachet 3 - Albastru deschis */}
+              <div className="bg-white/5 backdrop-blur-lg border border-blue-400/20 rounded-2xl md:rounded-[2.5rem] p-5 md:p-8 flex flex-col hover:bg-blue-600/20 hover:border-blue-400 transition-all duration-300 cursor-pointer">
+                <h3 className="text-xl md:text-2xl font-black mb-2 text-blue-100">Mentor 1:1</h3>
                 <p className="text-slate-400 mb-6 flex-1">Îndrumare directă de la experți.</p>
                 <div className="mb-8">
-                  <span className="text-5xl font-black">€99</span>
+                  <span className="text-5xl font-black text-blue-300">€99</span>
                   <span className="text-slate-400">/lună</span>
                 </div>
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
                     <span className="text-sm text-slate-300">Tot ce include pachetul Academy</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
                     <span className="text-sm text-slate-300">1 ședință/săptămână de 2 ore</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
                     <span className="text-sm text-slate-300">Sesiuni cu un colaborator din academie</span>
                   </li>
                 </ul>
-                <button onClick={() => handleCheckout(undefined, 'price_1TKHLNLDo9sXtuKJpgudoEO2', 'subscription')} className="w-full py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold transition-colors mt-auto">Alege Pachetul</button>
+                <button onClick={() => handleCheckout(undefined, 'price_1TKHLNLDo9sXtuKJpgudoEO2', 'subscription')} className="w-full py-4 rounded-full bg-blue-500/20 border border-blue-400/30 hover:bg-green-500 hover:border-green-500 text-white font-bold transition-all duration-300 mt-auto">Alege Pachetul</button>
               </div>
 
-              {/* Pachet 4 */}
-              <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl md:rounded-[2.5rem] p-5 md:p-8 flex flex-col hover:bg-indigo-600/20 hover:border-indigo-500 transition-all duration-300 cursor-pointer">
-                <h3 className="text-xl md:text-2xl font-black mb-2">Sergiu Live 1:1</h3>
+              {/* Pachet 4 - Portocaliu */}
+              <div className="bg-white/5 backdrop-blur-lg border border-orange-400/20 rounded-2xl md:rounded-[2.5rem] p-5 md:p-8 flex flex-col hover:bg-orange-600/20 hover:border-orange-400 transition-all duration-300 cursor-pointer">
+                <h3 className="text-xl md:text-2xl font-black mb-2 text-orange-100">Sergiu Live 1:1</h3>
                 <p className="text-slate-400 mb-6 flex-1">Experiența supremă de mentorat.</p>
                 <div className="mb-8">
-                  <span className="text-5xl font-black">€899</span>
+                  <span className="text-5xl font-black text-orange-400">€899</span>
                   <span className="text-slate-400">/lună</span>
                 </div>
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-orange-400 shrink-0 mt-0.5" />
                     <span className="text-sm text-slate-300">Tot ce include pachetul Academy</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-orange-400 shrink-0 mt-0.5" />
                     <span className="text-sm text-slate-300">1 ședință/săptămână de 2 ore</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-orange-400 shrink-0 mt-0.5" />
                     <span className="text-sm text-slate-300">Sesiuni 1:1 direct cu Sergiu</span>
                   </li>
                 </ul>
-                <button onClick={() => handleCheckout(undefined, 'price_1TKHLkLDo9sXtuKJkqEcQYle', 'subscription')} className="w-full py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold transition-colors mt-auto">Alege Pachetul</button>
+                <button onClick={() => handleCheckout(undefined, 'price_1TKHLkLDo9sXtuKJkqEcQYle', 'subscription')} className="w-full py-4 rounded-full bg-orange-500/20 border border-orange-400/30 hover:bg-orange-500 hover:border-orange-500 text-white font-bold transition-all duration-300 mt-auto">Alege Pachetul</button>
               </div>
             </div>
 
-            <div className="mt-16 bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl p-8 text-center max-w-4xl mx-auto">
+            <div className="mt-16 bg-white/5 backdrop-blur-lg border border-blue-400/20 rounded-3xl p-8 text-center max-w-4xl mx-auto">
               <div className="flex items-center justify-center gap-4 mb-4">
-                <Bot className="w-8 h-8 text-indigo-400" />
+                <Bot className="w-8 h-8 text-blue-400" />
                 <h3 className="text-2xl font-black">Agent Openclaw.ai Inclus</h3>
               </div>
               <p className="text-slate-300 text-lg">

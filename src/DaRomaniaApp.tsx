@@ -1671,50 +1671,77 @@ export default function App() {
               {t.hero_title1} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">să nu mai simți că muncești o zi din viață!</span>
             </h1>
-            <div className="flex flex-col gap-4 max-w-3xl w-full mx-auto mb-10">
-              <button onClick={() => { pushHistoryState(); setShowArsenal(true); }} className="group relative border border-sky-200/60 rounded-2xl p-5 md:p-6 hover:shadow-lg hover:border-sky-400 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex items-center gap-5">
-                <div className="text-4xl flex-shrink-0">⚡</div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-lg font-bold text-slate-800 mb-1">Arsenal API</h3>
-                  <p className="text-slate-500 text-sm leading-snug">Accesezi <span className="font-semibold text-slate-700">150+ API-uri gratuite</span> și construiești exact sistemul de care ai nevoie — automatizări, integrări, fluxuri complete. Zero costuri, putere maximă.</p>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-5xl w-full mx-auto mb-10">
+              {/* Arsenal API - GRATUIT */}
+              <button onClick={() => { pushHistoryState(); setShowArsenal(true); }} className="group relative border border-sky-200/60 rounded-2xl p-6 hover:shadow-xl hover:border-sky-400 transition-all duration-300 hover:-translate-y-1 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex flex-col">
+                <div className="text-3xl mb-3">⚡</div>
+                <h3 className="text-base font-bold text-slate-800 mb-1">Arsenal API</h3>
+                <p className="text-slate-400 text-xs mb-4">Construiește orice sistem</p>
+                <div className="mb-4">
+                  <span className="text-sky-600 font-black text-2xl">GRATUIT</span>
                 </div>
-                <div className="flex-shrink-0 text-right">
-                  <span className="text-sky-600 font-black text-lg">GRATUIT</span>
-                  <span className="block mt-1 text-sky-500 font-medium text-xs opacity-0 group-hover:opacity-100 transition-opacity">Explorează →</span>
-                </div>
+                <ul className="text-slate-500 text-xs space-y-2 flex-1 mb-4">
+                  <li className="flex items-start gap-2"><span className="text-sky-500 mt-0.5">✓</span> 150+ API-uri gratuite</li>
+                  <li className="flex items-start gap-2"><span className="text-sky-500 mt-0.5">✓</span> Automatizări & integrări</li>
+                  <li className="flex items-start gap-2"><span className="text-sky-500 mt-0.5">✓</span> Fluxuri complete de lucru</li>
+                  <li className="flex items-start gap-2"><span className="text-sky-500 mt-0.5">✓</span> Zero costuri, putere maximă</li>
+                </ul>
+                <span className="w-full text-center py-2.5 rounded-xl border border-sky-300 text-sky-600 font-semibold text-sm group-hover:bg-sky-600 group-hover:text-white transition-all">Explorează →</span>
               </button>
-              <button onClick={() => { pushHistoryState(); setShowOpenClaw(true); }} className="group relative border border-violet-200/60 rounded-2xl p-5 md:p-6 hover:shadow-lg hover:border-violet-400 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex items-center gap-5">
-                <div className="text-4xl flex-shrink-0">🤖</div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-lg font-bold text-slate-800 mb-1">OpenClaw</h3>
-                  <p className="text-slate-500 text-sm leading-snug">Flota ta de agenți AI — <span className="font-semibold text-slate-700">CTO, CFO, CEO virtual</span>. Deleghezi strategie, finanțe și operațiuni către AI care lucrează 24/7 pentru tine.</p>
+
+              {/* OpenClaw - $9 */}
+              <button onClick={() => { pushHistoryState(); setShowOpenClaw(true); }} className="group relative border border-violet-200/60 rounded-2xl p-6 hover:shadow-xl hover:border-violet-400 transition-all duration-300 hover:-translate-y-1 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex flex-col">
+                <div className="text-3xl mb-3">🤖</div>
+                <h3 className="text-base font-bold text-slate-800 mb-1">OpenClaw</h3>
+                <p className="text-slate-400 text-xs mb-4">Flota AI: CTO, CFO, CEO</p>
+                <div className="mb-4">
+                  <span className="text-violet-600 font-black text-2xl">$9</span>
+                  <span className="text-slate-400 text-sm">/lună</span>
                 </div>
-                <div className="flex-shrink-0 text-right">
-                  <span className="text-violet-600 font-black text-lg">$9/lună</span>
-                  <span className="block mt-1 text-violet-500 font-medium text-xs opacity-0 group-hover:opacity-100 transition-opacity">Explorează →</span>
-                </div>
+                <ul className="text-slate-500 text-xs space-y-2 flex-1 mb-4">
+                  <li className="flex items-start gap-2"><span className="text-violet-500 mt-0.5">✓</span> 1 proiect activ</li>
+                  <li className="flex items-start gap-2"><span className="text-violet-500 mt-0.5">✓</span> Agent OpenClaw.ai inclus</li>
+                  <li className="flex items-start gap-2"><span className="text-violet-500 mt-0.5">✓</span> Execuție automată 24/7</li>
+                  <li className="flex items-start gap-2"><span className="text-violet-500 mt-0.5">✓</span> $9/lună per proiect adițional</li>
+                </ul>
+                <span className="w-full text-center py-2.5 rounded-xl border border-violet-300 text-violet-600 font-semibold text-sm group-hover:bg-violet-600 group-hover:text-white transition-all">Alege Pachetul</span>
               </button>
-              <button onClick={() => { pushHistoryState(); setShowAcademia(true); }} className="group relative border border-indigo-200/60 rounded-2xl p-5 md:p-6 hover:shadow-lg hover:border-indigo-400 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex items-center gap-5">
-                <div className="text-4xl flex-shrink-0">🎓</div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-lg font-bold text-slate-800 mb-1">Academia</h3>
-                  <p className="text-slate-500 text-sm leading-snug"><span className="font-semibold text-slate-700">71 proiecte practice</span> pas cu pas — de la idee la business automatizat. Fiecare proiect vine cu ghid complet, unelte și strategie de monetizare.</p>
+
+              {/* Academia - $19 - Recomandat */}
+              <button onClick={() => { pushHistoryState(); setShowAcademia(true); }} className="group relative border-2 border-indigo-400 rounded-2xl p-6 hover:shadow-xl hover:border-indigo-500 transition-all duration-300 hover:-translate-y-1 cursor-pointer text-left bg-indigo-50/60 backdrop-blur-sm flex flex-col ring-1 ring-indigo-200">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-indigo-600 text-white text-xs font-bold px-4 py-1 rounded-full">Recomandat</span>
+                <div className="text-3xl mb-3 mt-1">🎓</div>
+                <h3 className="text-base font-bold text-slate-800 mb-1">Academy DaRomania</h3>
+                <p className="text-slate-400 text-xs mb-4">Acces complet la rețeaua de succes</p>
+                <div className="mb-4">
+                  <span className="text-indigo-600 font-black text-2xl">$19</span>
+                  <span className="text-slate-400 text-sm">/lună</span>
                 </div>
-                <div className="flex-shrink-0 text-right">
-                  <span className="text-indigo-600 font-black text-lg">$19/lună</span>
-                  <span className="block mt-1 text-indigo-500 font-medium text-xs opacity-0 group-hover:opacity-100 transition-opacity">Explorează →</span>
-                </div>
+                <ul className="text-slate-500 text-xs space-y-2 flex-1 mb-4">
+                  <li className="flex items-start gap-2"><span className="text-indigo-500 mt-0.5">✓</span> Tot ce include pachetul de $9</li>
+                  <li className="flex items-start gap-2"><span className="text-indigo-500 mt-0.5">✓</span> Acces în Academy DaRomania</li>
+                  <li className="flex items-start gap-2"><span className="text-indigo-500 mt-0.5">✓</span> 71 proiecte practice pas cu pas</li>
+                  <li className="flex items-start gap-2"><span className="text-indigo-500 mt-0.5">✓</span> Vezi succesul monetizat al rețelei</li>
+                </ul>
+                <span className="w-full text-center py-2.5 rounded-xl bg-indigo-600 text-white font-semibold text-sm group-hover:bg-indigo-700 transition-all">Alege Pachetul</span>
               </button>
-              <button onClick={() => { pushHistoryState(); setShowAfacere(true); }} className="group relative border border-amber-200/60 rounded-2xl p-5 md:p-6 hover:shadow-lg hover:border-amber-400 transition-all duration-200 hover:-translate-y-0.5 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex items-center gap-5">
-                <div className="text-4xl flex-shrink-0">💼</div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-lg font-bold text-slate-800 mb-1">Afacere la Cheie</h3>
-                  <p className="text-slate-500 text-sm leading-snug">Business complet gata de lansare — <span className="font-semibold text-slate-700">brand, site, automatizări, strategie, clienți</span>. Tu doar alegi nișa, noi livrăm totul.</p>
+
+              {/* Afacere la Cheie - $99 */}
+              <button onClick={() => { pushHistoryState(); setShowAfacere(true); }} className="group relative border border-amber-200/60 rounded-2xl p-6 hover:shadow-xl hover:border-amber-400 transition-all duration-300 hover:-translate-y-1 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex flex-col">
+                <div className="text-3xl mb-3">💼</div>
+                <h3 className="text-base font-bold text-slate-800 mb-1">Afacere la Cheie</h3>
+                <p className="text-slate-400 text-xs mb-4">Business complet gata de lansare</p>
+                <div className="mb-4">
+                  <span className="text-amber-600 font-black text-2xl">$99</span>
+                  <span className="text-slate-400 text-sm">/lună</span>
                 </div>
-                <div className="flex-shrink-0 text-right">
-                  <span className="text-amber-600 font-black text-lg">$99/lună</span>
-                  <span className="block mt-1 text-amber-500 font-medium text-xs opacity-0 group-hover:opacity-100 transition-opacity">Explorează →</span>
-                </div>
+                <ul className="text-slate-500 text-xs space-y-2 flex-1 mb-4">
+                  <li className="flex items-start gap-2"><span className="text-amber-500 mt-0.5">✓</span> Tot ce include pachetul Academy</li>
+                  <li className="flex items-start gap-2"><span className="text-amber-500 mt-0.5">✓</span> Brand, site, automatizări incluse</li>
+                  <li className="flex items-start gap-2"><span className="text-amber-500 mt-0.5">✓</span> Strategie completă de monetizare</li>
+                  <li className="flex items-start gap-2"><span className="text-amber-500 mt-0.5">✓</span> Tu alegi nișa, noi livrăm totul</li>
+                </ul>
+                <span className="w-full text-center py-2.5 rounded-xl border border-amber-300 text-amber-600 font-semibold text-sm group-hover:bg-amber-600 group-hover:text-white transition-all">Alege Pachetul</span>
               </button>
             </div>
             

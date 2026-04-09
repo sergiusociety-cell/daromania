@@ -1079,6 +1079,25 @@ export default function App() {
     document.body.removeChild(element);
   };
 
+  const handleCheckout = async (jobTitle?: string) => {
+    if (!isAuthenticated) {
+      setAuthMode('signin');
+      setShowAuthModal(true);
+      return;
+    }
+    try {
+      const { supabase } = await import('@/integrations/supabase/client');
+      const { data, error } = await supabase.functions.invoke('create-checkout', {
+        body: { jobTitle: jobTitle || selectedJob?.title || '' },
+      });
+      if (error) throw error;
+      if (data?.url) window.open(data.url, '_blank');
+    } catch (err: any) {
+      console.error('Checkout error:', err);
+      alert('Eroare la procesarea plății. Încearcă din nou.');
+    }
+  };
+
   const scrollTo = (ref: React.RefObject<HTMLDivElement | null>) => {
     ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };

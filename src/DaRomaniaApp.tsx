@@ -4,6 +4,7 @@ import { useAuth } from './auth/AuthContext';
 import JobBusinessModal from './components/JobBusinessModal';
 import AfacereLaCheiePage from './AfacereLaCheiePage';
 import ArsenalPage from './ArsenalPage';
+import YouTubePage from './YouTubePage';
 import logoDaRomania from './assets/logo-daromania.png';
 import logoDaEu from './assets/logo-daeu.png';
 import logoDaUsa from './assets/logo-dausa.png';
@@ -813,6 +814,7 @@ export default function App() {
   const [showOpenClaw, setShowOpenClaw] = useState(false);
   const [showArsenal, setShowArsenal] = useState(false);
   const [showAfacere, setShowAfacere] = useState(false);
+  const [showYoutube, setShowYoutube] = useState(false);
   const location = useLocation();
   useEffect(() => {
     const p = location.pathname;
@@ -896,14 +898,14 @@ export default function App() {
       if (activeModal) { setActiveModal(null); return; }
       if (pivotData) { setPivotData(null); return; }
       if (selectedJob) { setSelectedJob(null); setPivotData(null); return; }
-      if (showAcademia || showOpenClaw || showArsenal || showAfacere) {
-        setShowAcademia(false); setShowOpenClaw(false); setShowArsenal(false); setShowAfacere(false);
+      if (showAcademia || showOpenClaw || showArsenal || showAfacere || showYoutube) {
+        setShowAcademia(false); setShowOpenClaw(false); setShowArsenal(false); setShowAfacere(false); setShowYoutube(false);
         return;
       }
     };
     window.addEventListener('popstate', onPopState);
     return () => window.removeEventListener('popstate', onPopState);
-  }, [selectedJob, pivotData, modalJob, activeModal, showAcademia, showOpenClaw, showArsenal, showAfacere]);
+  }, [selectedJob, pivotData, modalJob, activeModal, showAcademia, showOpenClaw, showArsenal, showAfacere, showYoutube]);
 
   const pushHistoryState = useCallback(() => {
     window.history.pushState({ daromania: true }, '');
@@ -1119,7 +1121,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-14 md:h-20 flex items-center justify-between">
           <div className="flex items-center gap-2 md:gap-4">
             {geoRegion === 'ro' && (
-              <div className="flex items-center gap-1.5 cursor-pointer" onClick={() => { setSelectedJob(null); setPivotData(null); setShowAcademia(false); setShowOpenClaw(false); setShowArsenal(false); setShowAfacere(false); window.scrollTo({top: 0, behavior: 'smooth'}); }}>
+              <div className="flex items-center gap-1.5 cursor-pointer" onClick={() => { setSelectedJob(null); setPivotData(null); setShowAcademia(false); setShowOpenClaw(false); setShowArsenal(false); setShowAfacere(false); setShowYoutube(false); window.scrollTo({top: 0, behavior: 'smooth'}); }}>
                 <img src={logoDaRomania} alt="DaRomania" className="w-8 h-8 md:w-10 md:h-10 rounded-lg object-cover" />
                 <span className="text-sm md:text-base font-black tracking-tight"><span className="text-slate-900">Da</span><span className="text-blue-600">Romania</span></span>
               </div>

@@ -1621,7 +1621,7 @@ onClick={() => {}} className="hidden" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">să nu mai simți că muncești o zi din viață!</span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto mb-12 leading-relaxed font-medium">
-              99 de meserii în pericol de automatizare. 99 de planuri de business construite pe experiența ta. O singură misiune — să nu pierzi nimic din ce contează cu adevărat.
+              🎓 Academia cu 71 de proiecte practice. 🤖 OpenClaw — agentul AI viral. ⚡ Arsenal API cu 12 pași de lansare. 💼 Afacere la Cheie de la doar $9/lună. Succesul tău profesional începe aici.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

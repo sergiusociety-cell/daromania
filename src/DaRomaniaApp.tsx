@@ -1742,6 +1742,325 @@ export default function App() {
           </motion.div>
         </section>
 
+
+        {/* Features Section - FULL SCREEN */}
+        <section ref={missionRef} className="min-h-screen flex flex-col items-center justify-center snap-start py-20 px-4 sm:px-6 lg:px-8 relative">
+          <div className="absolute top-0 left-0 right-0 h-px" style={{background:'linear-gradient(90deg,transparent,#D4A017,#E8B84B,#D4A017,transparent)'}} />
+          <div className="max-w-7xl mx-auto w-full">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-6xl font-black mb-4 text-slate-900">Misiunea Noastră</h2>
+              <div className="h-1 w-16 mx-auto rounded-full mb-4" style={{background:'linear-gradient(90deg,#B8860B,#E8B84B,#B8860B)'}} />
+              <p className="text-[#5A5040] text-xl max-w-2xl mx-auto">Protejăm valoarea umană într-o lume dominată de algoritmi.</p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8 w-full">
+              <div className="p-6 md:p-12 rounded-2xl md:rounded-[3rem] bg-white border border-[#EDE5C8]/50 shadow-[0_4px_32px_rgba(180,134,11,0.08)] hover:shadow-[rgba(210,160,23,0.16)] hover:border-[#D4A017]/30 transition-all">
+                <div className="w-16 h-16 bg-[#FDF8ED] rounded-2xl flex items-center justify-center mb-8 relative group cursor-help">
+                  <ShieldCheck className="text-[#B8860B] w-8 h-8" />
+                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-64 p-3 bg-slate-900 text-white text-sm rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 shadow-xl z-10 text-center">
+                    Verifică și validează deciziile AI pentru a asigura conformitatea etică, lipsa prejudecăților și alinierea cu valorile umane.
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#1A1208]"></div>
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold mb-4">Audit Etic AI</h3>
+                <p className="text-slate-600 text-lg leading-relaxed">
+                  Fostul tău job de corector sau editor devine acum un rol de Auditor Etic pentru conținutul generat de AI.
+                </p>
+              </div>
+              <div className="p-6 md:p-12 rounded-2xl md:rounded-[3rem] bg-white border border-[#E0E0EC]/50 shadow-[0_4px_32px_rgba(140,140,180,0.08)] hover:shadow-[rgba(140,140,180,0.16)] hover:border-[#8A8A9E]/25 transition-all">
+                <div className="w-16 h-16 bg-[#F3F3F9] rounded-2xl flex items-center justify-center mb-8 relative group cursor-help">
+                  <Users className="text-[#8A8A9E] w-8 h-8" />
+                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-64 p-3 bg-slate-900 text-white text-sm rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 shadow-xl z-10 text-center">
+                    Oferă nuanța emoțională și culturală pe care AI-ul nu o poate înțelege. Construiește relații bazate pe încredere și empatie.
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#1A1208]"></div>
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold mb-4">Consultanță Contextuală</h3>
+                <p className="text-slate-600 text-lg leading-relaxed">
+                  AI-ul știe datele, tu știi oamenii. Transformă-ți experiența în brokeraj sau vânzări în management de relații complexe.
+                </p>
+              </div>
+              <div className="p-6 md:p-12 rounded-2xl md:rounded-[3rem] bg-white border border-[#EDE5C8]/50 shadow-[0_4px_32px_rgba(180,134,11,0.08)] hover:shadow-[rgba(210,160,23,0.16)] hover:border-[#D4A017]/30 transition-all">
+                <div className="w-16 h-16 bg-[#FDF8ED] rounded-2xl flex items-center justify-center mb-8 relative group cursor-help">
+                  <Cpu className="text-[#B8860B] w-8 h-8" />
+                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-64 p-3 bg-slate-900 text-white text-sm rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 shadow-xl z-10 text-center">
+                    Coordonează și integrează multiple sisteme AI pentru a crea fluxuri de lucru complexe, maximizând eficiența și productivitatea.
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#1A1208]"></div>
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold mb-4">AI Orchestration</h3>
+                <p className="text-slate-600 text-lg leading-relaxed">
+                  Nu lupta cu AI-ul, dirijează-l. Învățăm profesioniștii cum să folosească 10 unelte AI pentru a face munca a 100 de oameni.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-24 md:py-32 bg-white snap-start px-4 border-t border-slate-200">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-16">
+              <div className="inline-block bg-[#FEF8E7] text-[#8B6508] font-black text-sm px-4 py-1.5 rounded-full mb-4 border border-[#E8D5A3]">Metodologia DaRomânia</div>
+              <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-4">Cum funcționează transformarea</h2>
+              <p className="text-xl text-slate-500 max-w-2xl mx-auto">Nu îți schimbăm cariera. Îți amplificăm experiența cu AI ca motor de execuție.</p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="relative">
+                <div className="bg-[#FEF8E7] border border-[#E8D5A3] rounded-3xl p-8 h-full">
+                  <div className="text-5xl font-black text-[#C9A84C] mb-4">85%</div>
+                  <h3 className="text-xl font-black text-slate-900 mb-3">Ce preia AI-ul</h3>
+                  <p className="text-slate-600 leading-relaxed text-sm mb-4">Sarcinile repetitive, structurate și bazate pe reguli din jobul tău actual — emailuri standard, rapoarte, introducere date, programări, follow-up-uri automate.</p>
+                  <div className="space-y-2">
+                    {['Comunicare standardizată', 'Analiză date de rutină', 'Generare rapoarte', 'Programare întâlniri', 'Follow-up automat'].map((item, i) => (
+                      <div key={i} className="flex items-center gap-2 text-xs text-[#8B6508] bg-[#FEF3D0] rounded-full px-3 py-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#C9A84C] flex-shrink-0"></span>
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 z-10 w-8 h-8 bg-indigo-600 rounded-full items-center justify-center text-white font-black text-lg">→</div>
+              </div>
+
+              <div className="relative">
+                <div className="bg-green-50 border border-green-100 rounded-3xl p-8 h-full">
+                  <div className="text-5xl font-black text-green-200 mb-4">15%</div>
+                  <h3 className="text-xl font-black text-slate-900 mb-3">Ce rămâne ireductibil uman</h3>
+                  <p className="text-slate-600 leading-relaxed text-sm mb-4">Judecata, empatia, relațiile, contextul și nuanța umană acumulată în ani de experiență reală în industrie. Exact aceea nu o poate replica nimeni.</p>
+                  <div className="space-y-2">
+                    {['Înțelegerea profundă a clientului', 'Negociere și relații', 'Gândire strategică', 'Adaptabilitate la context', 'Autoritate în domeniu'].map((item, i) => (
+                      <div key={i} className="flex items-center gap-2 text-xs text-green-700 bg-green-100 rounded-full px-3 py-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-green-400 flex-shrink-0"></span>
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 z-10 w-8 h-8 bg-indigo-600 rounded-full items-center justify-center text-white font-black text-lg">→</div>
+              </div>
+
+              <div className="bg-indigo-600 rounded-3xl p-8 h-full text-white">
+                <div className="text-5xl font-black text-indigo-400 mb-4">∞</div>
+                <h3 className="text-xl font-black text-white mb-3">Business-ul tău la cheie</h3>
+                <p className="text-indigo-200 leading-relaxed text-sm mb-4">Tu furnizezi expertiza și supervizezi 2h/zi. AI-ul execută celelalte 22h — generează conținut, trimite emailuri, postează, analizează, raportează.</p>
+                <div className="space-y-2">
+                  {['Venituri recurente lunare', 'Sistem care lucrează fără tine', 'Scalabil fără angajați', 'Cost real API-uri: $3–9/lună', 'Venit estimat: €2.000–€12.000/lună'].map((item, i) => (
+                    <div key={i} className="flex items-center gap-2 text-xs text-indigo-100 bg-indigo-500 rounded-full px-3 py-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-300 flex-shrink-0"></span>
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTIUNEA 2 — PIPELINE-UL AUTOMAT */}
+        <section className="py-24 md:py-32 bg-slate-900 snap-start px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-16">
+              <div className="inline-block bg-white/10 text-white font-black text-sm px-4 py-1.5 rounded-full mb-4">Arhitectura tehnică</div>
+              <h2 className="text-4xl md:text-6xl font-black text-white mb-4">Pipeline-ul tău automat</h2>
+              <p className="text-xl text-slate-400 max-w-2xl mx-auto">Un sistem ierarhic de agenți AI care lucrează 24/7 pentru afacerea ta. Tu ești directorul. Ei sunt echipa.</p>
+            </div>
+
+            <div className="flex flex-col items-center gap-4 mb-12">
+              {/* Tu — Air Claw */}
+              <div className="bg-indigo-600 rounded-2xl px-8 py-5 text-center text-white w-full max-w-sm">
+                <div className="text-2xl font-black mb-1">🧠 Tu — Directorul Strategic</div>
+                <div className="text-indigo-200 text-sm">Furnizezi expertiza · Supervizezi 2h/zi · Iei deciziile mari</div>
+              </div>
+              <div className="text-white text-2xl">↓</div>
+
+              {/* Air Claw Agent */}
+              <div className="bg-purple-700 rounded-2xl px-8 py-4 text-center text-white w-full max-w-sm">
+                <div className="text-xl font-black mb-1">⚡ Agent Principal (Air Claw)</div>
+                <div className="text-purple-200 text-sm">Orchestrează toți sub-agenții · Generează idei de business · Monitorizează performanța</div>
+              </div>
+              <div className="text-white text-2xl">↓</div>
+
+              {/* Sub-agenti */}
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-3 w-full">
+                {[
+                  { icon: '🔧', name: 'Agent CTO', desc: 'Monitorizează API-urile · Gestionează erori · Menține stabilitatea', color: 'bg-blue-800' },
+                  { icon: '💰', name: 'Agent CFO', desc: 'Trackează costurile · Alertă buget · Optimizează cheltuieli', color: 'bg-green-800' },
+                  { icon: '🔍', name: 'Agent SEO', desc: 'Research keywords · Optimizează conținut · Analizează competitori', color: 'bg-amber-800' },
+                  { icon: '✍️', name: 'Content Creator', desc: 'Generează text · Imagini · Video · Scripturi TTS', color: 'bg-rose-800' },
+                  { icon: '📱', name: 'Social Manager', desc: 'Postează pe 4 platforme · Programează · Monitorizează reach', color: 'bg-violet-800' },
+                ].map((agent, i) => (
+                  <div key={i} className={`${agent.color} rounded-xl p-4 text-center text-white`}>
+                    <div className="text-2xl mb-2">{agent.icon}</div>
+                    <div className="font-black text-sm mb-1">{agent.name}</div>
+                    <div className="text-xs opacity-70 leading-tight">{agent.desc}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                { label: 'Cost real lunar API-uri', val: '$3–9/lună' },
+                { label: 'Emailuri automate/zi', val: '300' },
+                { label: 'Platforme sociale', val: '4 simultan' },
+                { label: 'Ore supervizare/zi', val: '~2h' },
+              ].map((m, i) => (
+                <div key={i} className="bg-white/5 rounded-xl p-4 text-center">
+                  <div className="text-2xl font-black text-indigo-400 mb-1">{m.val}</div>
+                  <div className="text-slate-400 text-xs">{m.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* SECTIUNEA 3 — UNDE VINZI */}
+        <section className="py-24 md:py-32 bg-white snap-start px-4 border-t border-slate-200">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-16">
+              <div className="inline-block bg-green-50 text-green-700 font-black text-sm px-4 py-1.5 rounded-full mb-4">Modele de monetizare</div>
+              <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-4">Unde și cum vinzi</h2>
+              <p className="text-xl text-slate-500 max-w-2xl mx-auto">Nu un singur canal. Un ecosistem de venituri care funcționează simultan.</p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                {
+                  icon: '🛍️',
+                  title: 'Etsy — Produse Digitale',
+                  desc: '95 milioane cumpărători activi. Zero costuri de livrare. Vânzare automată 24/7. Ghiduri PDF, template-uri, cursuri video, pachete de automatizare.',
+                  stats: ['GMV 2024: $12 miliarde', '46% cumpărători internaționali', 'Cost marginal per vânzare: $0'],
+                  color: 'border-orange-200 bg-orange-50',
+                  badge: 'Recomandat pentru start',
+                  badgeColor: 'bg-orange-100 text-orange-700',
+                },
+                {
+                  icon: '🔄',
+                  title: 'Subscripții — Venit Recurent',
+                  desc: 'Cel mai stabil model de venituri. Comunitate premium, bibliotecă de resurse actualizate lunar, acces la tool-uri și template-uri exclusive.',
+                  stats: ['Venit predictibil lunar', 'Churn rate mic dacă oferi valoare', 'Scalabil fără costuri extra'],
+                  color: 'border-indigo-200 bg-indigo-50',
+                  badge: 'Cel mai sustenabil',
+                  badgeColor: 'bg-indigo-100 text-indigo-700',
+                },
+                {
+                  icon: '🎯',
+                  title: 'Servicii High-Ticket',
+                  desc: 'Consultanță, coaching, audit digital, implementare la cheie. Prețuri €299–€2.999 per proiect. Clienți calificați atrași de conținutul tău automat.',
+                  stats: ['Marjă 95%+', '1-3 clienți/lună = venit full', 'Leaduri generate automat de pipeline'],
+                  color: 'border-purple-200 bg-purple-50',
+                  badge: 'Venit maxim per client',
+                  badgeColor: 'bg-purple-100 text-purple-700',
+                },
+                {
+                  icon: '🤝',
+                  title: 'Comisioane & Parteneriate',
+                  desc: 'Recomanzi tool-uri, platforme și servicii pe care le folosești. Afiliați, parteneriate B2B, white-label pentru alte agenții.',
+                  stats: ['Venit 100% pasiv', 'Fără muncă extra după setup', 'Acumulativ în timp'],
+                  color: 'border-green-200 bg-green-50',
+                  badge: 'Venit pasiv pur',
+                  badgeColor: 'bg-green-100 text-green-700',
+                },
+              ].map((ch, i) => (
+                <div key={i} className={`border-2 ${ch.color} rounded-3xl p-7`}>
+                  <div className="flex items-start justify-between mb-4">
+                    <span className="text-4xl">{ch.icon}</span>
+                    <span className={`text-xs font-black px-3 py-1 rounded-full ${ch.badgeColor}`}>{ch.badge}</span>
+                  </div>
+                  <h3 className="text-xl font-black text-slate-900 mb-2">{ch.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed mb-4">{ch.desc}</p>
+                  <div className="space-y-1">
+                    {ch.stats.map((s, j) => (
+                      <div key={j} className="flex items-center gap-2 text-xs text-slate-500">
+                        <span className="text-green-500 font-black">✓</span> {s}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* SECTIUNEA 4 — PLANUL IN 4 FAZE */}
+        <section className="py-24 md:py-32 bg-[#FAFAF7] snap-start px-4 border-t border-[#EDE5C8]/40">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <div className="inline-block bg-amber-50 text-amber-700 font-black text-sm px-4 py-1.5 rounded-full mb-4">Roadmap concret</div>
+              <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-4">Planul tău în 4 faze</h2>
+              <p className="text-xl text-slate-500 max-w-2xl mx-auto">Nu construim totul dintr-o dată. Validăm pas cu pas, minimizăm riscul, maximizăm rezultatele.</p>
+            </div>
+            <div className="space-y-6">
+              {[
+                {
+                  phase: '01',
+                  period: 'Luna 1–2',
+                  title: 'Validarea MVP',
+                  desc: 'Un singur flux de la A la B. DeepSeek generează conținut → Amazon SES trimite emailuri → tu măsori costul real și calitatea. Obiectiv: primul feedback de la piață.',
+                  actions: ['Alegi un singur job target și un singur canal', 'Configurezi DeepSeek API + Amazon SES', 'Trimiți primele 300 emailuri/zi automat', 'Măsori rata de deschidere și răspuns'],
+                  color: 'bg-rose-600',
+                  lightColor: 'bg-rose-50 border-rose-200',
+                },
+                {
+                  phase: '02',
+                  period: 'Luna 3',
+                  title: 'Primele vânzări',
+                  desc: 'Transformi rezultatele MVP într-un produs digital real. Îl listezi pe Etsy. Primești primele vânzări și feedback direct de la clienți plătitori.',
+                  actions: ['Creezi primul produs digital (PDF, template, ghid)', 'Listezi pe Etsy cu SEO optimizat', 'Primele vânzări la €9–€49', 'Colectezi recenzii și ajustezi produsul'],
+                  color: 'bg-amber-600',
+                  lightColor: 'bg-amber-50 border-amber-200',
+                },
+                {
+                  phase: '03',
+                  period: 'Luna 4',
+                  title: 'Distribuție multiplă',
+                  desc: 'Adaugi Social Media Manager în pipeline. Postezi automat pe LinkedIn, Instagram, TikTok, YouTube. Traficul organic crește și leadurile vin automat.',
+                  actions: ['Configurezi Telegram Bot + Buffer pentru postare automată', 'KIE.ai generează imagini pentru fiecare post', 'Pipeline complet: conținut → postare → leaduri → email', 'Primii 10 clienți recurenți'],
+                  color: 'bg-indigo-600',
+                  lightColor: 'bg-indigo-50 border-indigo-200',
+                },
+                {
+                  phase: '04',
+                  period: 'Luna 5+',
+                  title: 'Scale & Optimizare',
+                  desc: 'Multiplici produsele, canalele și tipurile de conținut. Agent CFO monitorizează costurile. Bugetul crește odată cu veniturile. Obiectiv: €5.000+/lună recurent.',
+                  actions: ['Adaugi subscripție lunară comunitate premium', 'Lansezi servicii high-ticket €299–€999', 'Automatizezi 90% din operațiuni', 'Construiești portofoliu de venituri multiple'],
+                  color: 'bg-green-600',
+                  lightColor: 'bg-green-50 border-green-200',
+                },
+              ].map((phase, i) => (
+                <div key={i} className={`border-2 ${phase.lightColor} rounded-2xl md:rounded-3xl p-4 md:p-7 flex gap-3 md:gap-6`}>
+                  <div className={`${phase.color} text-white rounded-xl md:rounded-2xl w-12 h-12 md:w-16 md:h-16 flex items-center justify-center font-black text-base md:text-xl flex-shrink-0`}>
+                    {phase.phase}
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-2 flex-wrap">
+                      <h3 className="text-xl font-black text-slate-900">{phase.title}</h3>
+                      <span className="text-xs font-black text-slate-400 bg-slate-100 px-3 py-1 rounded-full">{phase.period}</span>
+                    </div>
+                    <p className="text-slate-600 text-sm leading-relaxed mb-4">{phase.desc}</p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {phase.actions.map((action, j) => (
+                        <div key={j} className="flex items-start gap-2 text-sm text-slate-700">
+                          <span className="text-green-500 font-black mt-0.5 flex-shrink-0">→</span>
+                          {action}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-12 bg-indigo-600 rounded-3xl p-8 text-center text-white">
+              <h3 className="text-2xl font-black mb-2">Gata să începi?</h3>
+              <p className="text-indigo-200 mb-6">Găsește-ți meseria în indexul nostru și primești planul complet în 60 de secunde.</p>
+              <button onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
+                className="bg-white text-indigo-700 font-black px-8 py-3 rounded-xl hover:bg-indigo-50 transition-all">
+                Găsește-ți meseria acum →
+              </button>
+            </div>
+          </div>
+        </section>
+
         <section ref={pivotRef} className="min-h-screen w-full bg-slate-50 snap-start relative overflow-hidden py-24 px-4">
           {!selectedJob ? (
             <div className="max-w-7xl mx-auto flex flex-col h-full">
@@ -2589,58 +2908,6 @@ export default function App() {
           )}
         </AnimatePresence>
 
-        {/* Features Section - FULL SCREEN */}
-        <section ref={missionRef} className="min-h-screen flex flex-col items-center justify-center snap-start py-20 px-4 sm:px-6 lg:px-8 relative">
-          <div className="absolute top-0 left-0 right-0 h-px" style={{background:'linear-gradient(90deg,transparent,#D4A017,#E8B84B,#D4A017,transparent)'}} />
-          <div className="max-w-7xl mx-auto w-full">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-6xl font-black mb-4 text-slate-900">Misiunea Noastră</h2>
-              <div className="h-1 w-16 mx-auto rounded-full mb-4" style={{background:'linear-gradient(90deg,#B8860B,#E8B84B,#B8860B)'}} />
-              <p className="text-[#5A5040] text-xl max-w-2xl mx-auto">Protejăm valoarea umană într-o lume dominată de algoritmi.</p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-8 w-full">
-              <div className="p-6 md:p-12 rounded-2xl md:rounded-[3rem] bg-white border border-[#EDE5C8]/50 shadow-[0_4px_32px_rgba(180,134,11,0.08)] hover:shadow-[rgba(210,160,23,0.16)] hover:border-[#D4A017]/30 transition-all">
-                <div className="w-16 h-16 bg-[#FDF8ED] rounded-2xl flex items-center justify-center mb-8 relative group cursor-help">
-                  <ShieldCheck className="text-[#B8860B] w-8 h-8" />
-                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-64 p-3 bg-slate-900 text-white text-sm rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 shadow-xl z-10 text-center">
-                    Verifică și validează deciziile AI pentru a asigura conformitatea etică, lipsa prejudecăților și alinierea cu valorile umane.
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#1A1208]"></div>
-                  </div>
-                </div>
-                <h3 className="text-2xl font-bold mb-4">Audit Etic AI</h3>
-                <p className="text-slate-600 text-lg leading-relaxed">
-                  Fostul tău job de corector sau editor devine acum un rol de Auditor Etic pentru conținutul generat de AI.
-                </p>
-              </div>
-              <div className="p-6 md:p-12 rounded-2xl md:rounded-[3rem] bg-white border border-[#E0E0EC]/50 shadow-[0_4px_32px_rgba(140,140,180,0.08)] hover:shadow-[rgba(140,140,180,0.16)] hover:border-[#8A8A9E]/25 transition-all">
-                <div className="w-16 h-16 bg-[#F3F3F9] rounded-2xl flex items-center justify-center mb-8 relative group cursor-help">
-                  <Users className="text-[#8A8A9E] w-8 h-8" />
-                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-64 p-3 bg-slate-900 text-white text-sm rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 shadow-xl z-10 text-center">
-                    Oferă nuanța emoțională și culturală pe care AI-ul nu o poate înțelege. Construiește relații bazate pe încredere și empatie.
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#1A1208]"></div>
-                  </div>
-                </div>
-                <h3 className="text-2xl font-bold mb-4">Consultanță Contextuală</h3>
-                <p className="text-slate-600 text-lg leading-relaxed">
-                  AI-ul știe datele, tu știi oamenii. Transformă-ți experiența în brokeraj sau vânzări în management de relații complexe.
-                </p>
-              </div>
-              <div className="p-6 md:p-12 rounded-2xl md:rounded-[3rem] bg-white border border-[#EDE5C8]/50 shadow-[0_4px_32px_rgba(180,134,11,0.08)] hover:shadow-[rgba(210,160,23,0.16)] hover:border-[#D4A017]/30 transition-all">
-                <div className="w-16 h-16 bg-[#FDF8ED] rounded-2xl flex items-center justify-center mb-8 relative group cursor-help">
-                  <Cpu className="text-[#B8860B] w-8 h-8" />
-                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-64 p-3 bg-slate-900 text-white text-sm rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 shadow-xl z-10 text-center">
-                    Coordonează și integrează multiple sisteme AI pentru a crea fluxuri de lucru complexe, maximizând eficiența și productivitatea.
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#1A1208]"></div>
-                  </div>
-                </div>
-                <h3 className="text-2xl font-bold mb-4">AI Orchestration</h3>
-                <p className="text-slate-600 text-lg leading-relaxed">
-                  Nu lupta cu AI-ul, dirijează-l. Învățăm profesioniștii cum să folosească 10 unelte AI pentru a face munca a 100 de oameni.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
 
       {/* Modals */}
@@ -2671,270 +2938,6 @@ export default function App() {
       </AnimatePresence>
 
 
-        <section className="py-24 md:py-32 bg-white snap-start px-4 border-t border-slate-200">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-16">
-              <div className="inline-block bg-[#FEF8E7] text-[#8B6508] font-black text-sm px-4 py-1.5 rounded-full mb-4 border border-[#E8D5A3]">Metodologia DaRomânia</div>
-              <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-4">Cum funcționează transformarea</h2>
-              <p className="text-xl text-slate-500 max-w-2xl mx-auto">Nu îți schimbăm cariera. Îți amplificăm experiența cu AI ca motor de execuție.</p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="relative">
-                <div className="bg-[#FEF8E7] border border-[#E8D5A3] rounded-3xl p-8 h-full">
-                  <div className="text-5xl font-black text-[#C9A84C] mb-4">85%</div>
-                  <h3 className="text-xl font-black text-slate-900 mb-3">Ce preia AI-ul</h3>
-                  <p className="text-slate-600 leading-relaxed text-sm mb-4">Sarcinile repetitive, structurate și bazate pe reguli din jobul tău actual — emailuri standard, rapoarte, introducere date, programări, follow-up-uri automate.</p>
-                  <div className="space-y-2">
-                    {['Comunicare standardizată', 'Analiză date de rutină', 'Generare rapoarte', 'Programare întâlniri', 'Follow-up automat'].map((item, i) => (
-                      <div key={i} className="flex items-center gap-2 text-xs text-[#8B6508] bg-[#FEF3D0] rounded-full px-3 py-1">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#C9A84C] flex-shrink-0"></span>
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 z-10 w-8 h-8 bg-indigo-600 rounded-full items-center justify-center text-white font-black text-lg">→</div>
-              </div>
-
-              <div className="relative">
-                <div className="bg-green-50 border border-green-100 rounded-3xl p-8 h-full">
-                  <div className="text-5xl font-black text-green-200 mb-4">15%</div>
-                  <h3 className="text-xl font-black text-slate-900 mb-3">Ce rămâne ireductibil uman</h3>
-                  <p className="text-slate-600 leading-relaxed text-sm mb-4">Judecata, empatia, relațiile, contextul și nuanța umană acumulată în ani de experiență reală în industrie. Exact aceea nu o poate replica nimeni.</p>
-                  <div className="space-y-2">
-                    {['Înțelegerea profundă a clientului', 'Negociere și relații', 'Gândire strategică', 'Adaptabilitate la context', 'Autoritate în domeniu'].map((item, i) => (
-                      <div key={i} className="flex items-center gap-2 text-xs text-green-700 bg-green-100 rounded-full px-3 py-1">
-                        <span className="w-1.5 h-1.5 rounded-full bg-green-400 flex-shrink-0"></span>
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 z-10 w-8 h-8 bg-indigo-600 rounded-full items-center justify-center text-white font-black text-lg">→</div>
-              </div>
-
-              <div className="bg-indigo-600 rounded-3xl p-8 h-full text-white">
-                <div className="text-5xl font-black text-indigo-400 mb-4">∞</div>
-                <h3 className="text-xl font-black text-white mb-3">Business-ul tău la cheie</h3>
-                <p className="text-indigo-200 leading-relaxed text-sm mb-4">Tu furnizezi expertiza și supervizezi 2h/zi. AI-ul execută celelalte 22h — generează conținut, trimite emailuri, postează, analizează, raportează.</p>
-                <div className="space-y-2">
-                  {['Venituri recurente lunare', 'Sistem care lucrează fără tine', 'Scalabil fără angajați', 'Cost real API-uri: $3–9/lună', 'Venit estimat: €2.000–€12.000/lună'].map((item, i) => (
-                    <div key={i} className="flex items-center gap-2 text-xs text-indigo-100 bg-indigo-500 rounded-full px-3 py-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-300 flex-shrink-0"></span>
-                      {item}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* SECTIUNEA 2 — PIPELINE-UL AUTOMAT */}
-        <section className="py-24 md:py-32 bg-slate-900 snap-start px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-16">
-              <div className="inline-block bg-white/10 text-white font-black text-sm px-4 py-1.5 rounded-full mb-4">Arhitectura tehnică</div>
-              <h2 className="text-4xl md:text-6xl font-black text-white mb-4">Pipeline-ul tău automat</h2>
-              <p className="text-xl text-slate-400 max-w-2xl mx-auto">Un sistem ierarhic de agenți AI care lucrează 24/7 pentru afacerea ta. Tu ești directorul. Ei sunt echipa.</p>
-            </div>
-
-            <div className="flex flex-col items-center gap-4 mb-12">
-              {/* Tu — Air Claw */}
-              <div className="bg-indigo-600 rounded-2xl px-8 py-5 text-center text-white w-full max-w-sm">
-                <div className="text-2xl font-black mb-1">🧠 Tu — Directorul Strategic</div>
-                <div className="text-indigo-200 text-sm">Furnizezi expertiza · Supervizezi 2h/zi · Iei deciziile mari</div>
-              </div>
-              <div className="text-white text-2xl">↓</div>
-
-              {/* Air Claw Agent */}
-              <div className="bg-purple-700 rounded-2xl px-8 py-4 text-center text-white w-full max-w-sm">
-                <div className="text-xl font-black mb-1">⚡ Agent Principal (Air Claw)</div>
-                <div className="text-purple-200 text-sm">Orchestrează toți sub-agenții · Generează idei de business · Monitorizează performanța</div>
-              </div>
-              <div className="text-white text-2xl">↓</div>
-
-              {/* Sub-agenti */}
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-3 w-full">
-                {[
-                  { icon: '🔧', name: 'Agent CTO', desc: 'Monitorizează API-urile · Gestionează erori · Menține stabilitatea', color: 'bg-blue-800' },
-                  { icon: '💰', name: 'Agent CFO', desc: 'Trackează costurile · Alertă buget · Optimizează cheltuieli', color: 'bg-green-800' },
-                  { icon: '🔍', name: 'Agent SEO', desc: 'Research keywords · Optimizează conținut · Analizează competitori', color: 'bg-amber-800' },
-                  { icon: '✍️', name: 'Content Creator', desc: 'Generează text · Imagini · Video · Scripturi TTS', color: 'bg-rose-800' },
-                  { icon: '📱', name: 'Social Manager', desc: 'Postează pe 4 platforme · Programează · Monitorizează reach', color: 'bg-violet-800' },
-                ].map((agent, i) => (
-                  <div key={i} className={`${agent.color} rounded-xl p-4 text-center text-white`}>
-                    <div className="text-2xl mb-2">{agent.icon}</div>
-                    <div className="font-black text-sm mb-1">{agent.name}</div>
-                    <div className="text-xs opacity-70 leading-tight">{agent.desc}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[
-                { label: 'Cost real lunar API-uri', val: '$3–9/lună' },
-                { label: 'Emailuri automate/zi', val: '300' },
-                { label: 'Platforme sociale', val: '4 simultan' },
-                { label: 'Ore supervizare/zi', val: '~2h' },
-              ].map((m, i) => (
-                <div key={i} className="bg-white/5 rounded-xl p-4 text-center">
-                  <div className="text-2xl font-black text-indigo-400 mb-1">{m.val}</div>
-                  <div className="text-slate-400 text-xs">{m.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* SECTIUNEA 3 — UNDE VINZI */}
-        <section className="py-24 md:py-32 bg-white snap-start px-4 border-t border-slate-200">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-16">
-              <div className="inline-block bg-green-50 text-green-700 font-black text-sm px-4 py-1.5 rounded-full mb-4">Modele de monetizare</div>
-              <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-4">Unde și cum vinzi</h2>
-              <p className="text-xl text-slate-500 max-w-2xl mx-auto">Nu un singur canal. Un ecosistem de venituri care funcționează simultan.</p>
-            </div>
-            <div className="grid md:grid-cols-2 gap-6">
-              {[
-                {
-                  icon: '🛍️',
-                  title: 'Etsy — Produse Digitale',
-                  desc: '95 milioane cumpărători activi. Zero costuri de livrare. Vânzare automată 24/7. Ghiduri PDF, template-uri, cursuri video, pachete de automatizare.',
-                  stats: ['GMV 2024: $12 miliarde', '46% cumpărători internaționali', 'Cost marginal per vânzare: $0'],
-                  color: 'border-orange-200 bg-orange-50',
-                  badge: 'Recomandat pentru start',
-                  badgeColor: 'bg-orange-100 text-orange-700',
-                },
-                {
-                  icon: '🔄',
-                  title: 'Subscripții — Venit Recurent',
-                  desc: 'Cel mai stabil model de venituri. Comunitate premium, bibliotecă de resurse actualizate lunar, acces la tool-uri și template-uri exclusive.',
-                  stats: ['Venit predictibil lunar', 'Churn rate mic dacă oferi valoare', 'Scalabil fără costuri extra'],
-                  color: 'border-indigo-200 bg-indigo-50',
-                  badge: 'Cel mai sustenabil',
-                  badgeColor: 'bg-indigo-100 text-indigo-700',
-                },
-                {
-                  icon: '🎯',
-                  title: 'Servicii High-Ticket',
-                  desc: 'Consultanță, coaching, audit digital, implementare la cheie. Prețuri €299–€2.999 per proiect. Clienți calificați atrași de conținutul tău automat.',
-                  stats: ['Marjă 95%+', '1-3 clienți/lună = venit full', 'Leaduri generate automat de pipeline'],
-                  color: 'border-purple-200 bg-purple-50',
-                  badge: 'Venit maxim per client',
-                  badgeColor: 'bg-purple-100 text-purple-700',
-                },
-                {
-                  icon: '🤝',
-                  title: 'Comisioane & Parteneriate',
-                  desc: 'Recomanzi tool-uri, platforme și servicii pe care le folosești. Afiliați, parteneriate B2B, white-label pentru alte agenții.',
-                  stats: ['Venit 100% pasiv', 'Fără muncă extra după setup', 'Acumulativ în timp'],
-                  color: 'border-green-200 bg-green-50',
-                  badge: 'Venit pasiv pur',
-                  badgeColor: 'bg-green-100 text-green-700',
-                },
-              ].map((ch, i) => (
-                <div key={i} className={`border-2 ${ch.color} rounded-3xl p-7`}>
-                  <div className="flex items-start justify-between mb-4">
-                    <span className="text-4xl">{ch.icon}</span>
-                    <span className={`text-xs font-black px-3 py-1 rounded-full ${ch.badgeColor}`}>{ch.badge}</span>
-                  </div>
-                  <h3 className="text-xl font-black text-slate-900 mb-2">{ch.title}</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed mb-4">{ch.desc}</p>
-                  <div className="space-y-1">
-                    {ch.stats.map((s, j) => (
-                      <div key={j} className="flex items-center gap-2 text-xs text-slate-500">
-                        <span className="text-green-500 font-black">✓</span> {s}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* SECTIUNEA 4 — PLANUL IN 4 FAZE */}
-        <section className="py-24 md:py-32 bg-[#FAFAF7] snap-start px-4 border-t border-[#EDE5C8]/40">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <div className="inline-block bg-amber-50 text-amber-700 font-black text-sm px-4 py-1.5 rounded-full mb-4">Roadmap concret</div>
-              <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-4">Planul tău în 4 faze</h2>
-              <p className="text-xl text-slate-500 max-w-2xl mx-auto">Nu construim totul dintr-o dată. Validăm pas cu pas, minimizăm riscul, maximizăm rezultatele.</p>
-            </div>
-            <div className="space-y-6">
-              {[
-                {
-                  phase: '01',
-                  period: 'Luna 1–2',
-                  title: 'Validarea MVP',
-                  desc: 'Un singur flux de la A la B. DeepSeek generează conținut → Amazon SES trimite emailuri → tu măsori costul real și calitatea. Obiectiv: primul feedback de la piață.',
-                  actions: ['Alegi un singur job target și un singur canal', 'Configurezi DeepSeek API + Amazon SES', 'Trimiți primele 300 emailuri/zi automat', 'Măsori rata de deschidere și răspuns'],
-                  color: 'bg-rose-600',
-                  lightColor: 'bg-rose-50 border-rose-200',
-                },
-                {
-                  phase: '02',
-                  period: 'Luna 3',
-                  title: 'Primele vânzări',
-                  desc: 'Transformi rezultatele MVP într-un produs digital real. Îl listezi pe Etsy. Primești primele vânzări și feedback direct de la clienți plătitori.',
-                  actions: ['Creezi primul produs digital (PDF, template, ghid)', 'Listezi pe Etsy cu SEO optimizat', 'Primele vânzări la €9–€49', 'Colectezi recenzii și ajustezi produsul'],
-                  color: 'bg-amber-600',
-                  lightColor: 'bg-amber-50 border-amber-200',
-                },
-                {
-                  phase: '03',
-                  period: 'Luna 4',
-                  title: 'Distribuție multiplă',
-                  desc: 'Adaugi Social Media Manager în pipeline. Postezi automat pe LinkedIn, Instagram, TikTok, YouTube. Traficul organic crește și leadurile vin automat.',
-                  actions: ['Configurezi Telegram Bot + Buffer pentru postare automată', 'KIE.ai generează imagini pentru fiecare post', 'Pipeline complet: conținut → postare → leaduri → email', 'Primii 10 clienți recurenți'],
-                  color: 'bg-indigo-600',
-                  lightColor: 'bg-indigo-50 border-indigo-200',
-                },
-                {
-                  phase: '04',
-                  period: 'Luna 5+',
-                  title: 'Scale & Optimizare',
-                  desc: 'Multiplici produsele, canalele și tipurile de conținut. Agent CFO monitorizează costurile. Bugetul crește odată cu veniturile. Obiectiv: €5.000+/lună recurent.',
-                  actions: ['Adaugi subscripție lunară comunitate premium', 'Lansezi servicii high-ticket €299–€999', 'Automatizezi 90% din operațiuni', 'Construiești portofoliu de venituri multiple'],
-                  color: 'bg-green-600',
-                  lightColor: 'bg-green-50 border-green-200',
-                },
-              ].map((phase, i) => (
-                <div key={i} className={`border-2 ${phase.lightColor} rounded-2xl md:rounded-3xl p-4 md:p-7 flex gap-3 md:gap-6`}>
-                  <div className={`${phase.color} text-white rounded-xl md:rounded-2xl w-12 h-12 md:w-16 md:h-16 flex items-center justify-center font-black text-base md:text-xl flex-shrink-0`}>
-                    {phase.phase}
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2 flex-wrap">
-                      <h3 className="text-xl font-black text-slate-900">{phase.title}</h3>
-                      <span className="text-xs font-black text-slate-400 bg-slate-100 px-3 py-1 rounded-full">{phase.period}</span>
-                    </div>
-                    <p className="text-slate-600 text-sm leading-relaxed mb-4">{phase.desc}</p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                      {phase.actions.map((action, j) => (
-                        <div key={j} className="flex items-start gap-2 text-sm text-slate-700">
-                          <span className="text-green-500 font-black mt-0.5 flex-shrink-0">→</span>
-                          {action}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-12 bg-indigo-600 rounded-3xl p-8 text-center text-white">
-              <h3 className="text-2xl font-black mb-2">Gata să începi?</h3>
-              <p className="text-indigo-200 mb-6">Găsește-ți meseria în indexul nostru și primești planul complet în 60 de secunde.</p>
-              <button onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
-                className="bg-white text-indigo-700 font-black px-8 py-3 rounded-xl hover:bg-indigo-50 transition-all">
-                Găsește-ți meseria acum →
-              </button>
-            </div>
-          </div>
-        </section>
 
         {/* ABOUT / MISIUNEA NOASTRĂ */}
         <section ref={missionRef} className="py-24 md:py-32 bg-[#FAFAF7] snap-start px-4 border-t border-[#EDE5C8]/40 relative">

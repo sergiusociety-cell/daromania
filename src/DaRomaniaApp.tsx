@@ -3,7 +3,7 @@ import JobBusinessModal from './components/JobBusinessModal';
 import AfacereLaCheiePage from './AfacereLaCheiePage';
 import ArsenalPage from './ArsenalPage';
 import { T, BRANDS, LANG_NAMES, type Lang } from './i18n';
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {

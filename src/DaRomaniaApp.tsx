@@ -2023,6 +2023,8 @@ export default function App() {
                 </button>
               </div>
             </div>
+          </div>
+        </section>
 
         {/* SECTIUNEA 4 — PLANUL IN 4 FAZE */}
         <section className="py-24 md:py-32 bg-[#FAFAF7] snap-start px-4 border-t border-[#EDE5C8]/40">

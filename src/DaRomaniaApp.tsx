@@ -61,6 +61,8 @@ import Markdown from 'react-markdown';
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+const API_BASE = 'https://daromania.online';
+const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
 
 const callAI = async (prompt: string, system?: string, lucky?: boolean): Promise<string> => {
   const res = await fetch(`${SUPABASE_URL}/functions/v1/chat`, {

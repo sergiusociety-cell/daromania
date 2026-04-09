@@ -1,4 +1,5 @@
 import ProfilePage from './auth/ProfilePage';
+import JobBusinessModal from './components/JobBusinessModal';
 import AfacereLaCheiePage from './AfacereLaCheiePage';
 import ArsenalPage from './ArsenalPage';
 import { T, BRANDS, LANG_NAMES, type Lang } from './i18n';
@@ -860,6 +861,7 @@ export default function App() {
   };
 
   const [selectedJob, setSelectedJob] = useState<JobData | null>(null);
+  const [modalJob, setModalJob] = useState<JobData | null>(null);
 
   const [premiumProjection, setPremiumProjection] = useState<PremiumProjection | null>(null);
   const [developingIdx, setDevelopingIdx] = useState<number | null>(null);
@@ -1726,7 +1728,7 @@ onClick={() => {}} className="hidden" />
                           initial={{ opacity: 0, scale: 0.95 }}
                           animate={{ opacity: 1, scale: 1 }}
                           exit={{ opacity: 0, scale: 0.95 }}
-                          onClick={() => handleJobSelect(job)}
+                          onClick={() => setModalJob(job)}
                           className="w-full p-5 rounded-2xl border border-slate-200 bg-white hover:border-indigo-300 hover:shadow-lg text-left transition-all group flex flex-col"
                         >
                           <div className="flex items-center justify-between mb-3">
@@ -1759,7 +1761,7 @@ onClick={() => {}} className="hidden" />
                           </div>
                           <div
                             className="mt-auto w-full text-center py-2 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 text-white text-xs font-bold hover:from-indigo-600 hover:to-violet-600 transition-all"
-                            onClick={(e) => { e.stopPropagation(); handleJobSelect(job); }}
+                            onClick={(e) => { e.stopPropagation(); setModalJob(job); }}
                           >
                             🚀 Lansează proiect — $9
                           </div>
@@ -2992,6 +2994,11 @@ onClick={() => {}} className="hidden" />
           </div>
         </div>
       </footer>
+
+      {/* Job Business Modal */}
+      {modalJob && (
+        <JobBusinessModal job={modalJob} onClose={() => setModalJob(null)} />
+      )}
     </div>
   );
 }

@@ -1142,13 +1142,13 @@ export default function App() {
           
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-            <button onClick={() => { pushHistoryState(); setShowAcademia(true); }} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-blue-600">{t.nav_academy}</button>
-            <button onClick={() => { pushHistoryState(); setShowYoutube(true); }} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-red-500">🎬 YouTube</button>
+            <button onClick={() => { pushHistoryState(); setShowAcademia(true); }} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-blue-600">🎓 Academy</button>
             <button onClick={() => { pushHistoryState(); setShowOpenClaw(true); }} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-red-500">{t.nav_openclaw}</button>
             <button onClick={() => { pushHistoryState(); setShowArsenal(true); }} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-amber-500">{t.nav_arsenal}</button>
             <button onClick={() => { pushHistoryState(); setShowAfacere(true); }} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-green-700">{t.nav_afacere}</button>
             <button onClick={() => scrollTo(missionRef)} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-blue-600">Misiune</button>
             <button onClick={() => scrollTo(pricingRef)} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-blue-600">Prețuri</button>
+            <button onClick={() => { pushHistoryState(); setShowYoutube(true); }} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-red-500">🎬 YouTube</button>
             {/* Auth Button Desktop */}
             {isAuthenticated ? (
               <div className="relative">

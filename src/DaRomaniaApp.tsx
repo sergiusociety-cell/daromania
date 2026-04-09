@@ -2491,7 +2491,7 @@ onClick={() => {}} className="hidden" />
                 <X className="w-5 h-5 text-slate-400" />
               </button>
               {activeModal === 'join' && <JoinForm onClose={() => setActiveModal(null)} />}
-              {activeModal === 'eligibility' && <EligibilityQuiz onClose={() => setActiveModal(null)} />}
+              {activeModal === 'eligibility' && <EligibilityCheck onClose={() => setActiveModal(null)} />}
             </motion.div>
           </div>
         )}

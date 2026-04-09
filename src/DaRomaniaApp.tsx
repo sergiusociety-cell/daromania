@@ -1956,9 +1956,36 @@ export default function App() {
                </div>
 
               {/* Motivational message */}
-              <p className="text-center text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 mt-5">
-                ✨ Tu găsești problema și împreună creăm și automatizăm soluțiile în jurul ei!
+              <p className="text-center text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 mt-6 mb-5 leading-snug">
+                ✨ Tu găsești problema și împreună creăm<br className="hidden md:block" /> și automatizăm soluțiile în jurul ei!
               </p>
+
+              {/* $9 CTA card */}
+              <div className="bg-gradient-to-br from-blue-900/60 to-indigo-900/40 border border-blue-500/30 rounded-2xl p-5 md:p-6 text-center max-w-lg mx-auto">
+                <div className="text-3xl md:text-4xl font-black text-white mb-1">$9 <span className="text-base font-bold text-slate-400">o singură dată</span></div>
+                <p className="text-slate-300 text-sm mb-4">Setup complet · Sergiu configurează totul · Agentul tău AI funcțional în 30 min</p>
+                <button
+                  onClick={async () => {
+                    if (!isAuthenticated) {
+                      setAuthMode('signin');
+                      setShowAuthModal(true);
+                      return;
+                    }
+                    try {
+                      const { supabase } = await import('@/integrations/supabase/client');
+                      const { data, error } = await supabase.functions.invoke('create-checkout', {
+                        body: { priceId: 'price_1TKHDVLDo9sXtuKJQvka6gr9', mode: 'payment', jobTitle: 'OpenClaw Setup' },
+                      });
+                      if (data?.url) window.open(data.url, '_blank');
+                    } catch (e) {
+                      console.error('Checkout error:', e);
+                    }
+                  }}
+                  className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-black text-base hover:from-blue-600 hover:to-indigo-700 transition-all shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50"
+                >
+                  🚀 Lansează acum — $9
+                </button>
+              </div>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

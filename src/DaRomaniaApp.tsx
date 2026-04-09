@@ -1,4 +1,6 @@
 import ProfilePage from './auth/ProfilePage';
+import AuthModal from './auth/AuthModal';
+import { useAuth } from './auth/AuthContext';
 import JobBusinessModal from './components/JobBusinessModal';
 import AfacereLaCheiePage from './AfacereLaCheiePage';
 import ArsenalPage from './ArsenalPage';
@@ -824,6 +826,10 @@ export default function App() {
   const t = T[lang];
   const brand = BRANDS[lang];
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const [authMode, setAuthMode] = useState<'signin' | 'signup'>('signin');
+  const [showUserMenu, setShowUserMenu] = useState(false);
+  const { user, isAuthenticated, logout } = useAuth();
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [contextAnswers, setContextAnswers] = useState({ q1: '', q2: '', q3: '' });
   const [luckyLoading, setLuckyLoading] = useState({ q1: false, q2: false, q3: false });
@@ -1129,16 +1135,68 @@ export default function App() {
             </div>
             <button onClick={() => scrollTo(missionRef)} className="hover:text-indigo-600 transition-colors">Misiune</button>
             <button onClick={() => scrollTo(pricingRef)} className="hover:text-indigo-600 transition-colors">Prețuri</button>
-            <button onClick={() => {}} className="hidden" />
+            {/* Auth Button Desktop */}
+            {isAuthenticated ? (
+              <div className="relative">
+                <button onClick={() => setShowUserMenu(p => !p)} className="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 rounded-full px-3 py-1.5 transition-colors">
+                  {user?.avatarUrl ? (
+                    <img src={user.avatarUrl} alt="" className="w-7 h-7 rounded-full" />
+                  ) : (
+                    <div className="w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-black">
+                      {user?.name?.[0]?.toUpperCase() || '?'}
+                    </div>
+                  )}
+                  <span className="text-sm font-bold text-slate-700 max-w-[100px] truncate">{user?.name}</span>
+                </button>
+                {showUserMenu && (
+                  <>
+                    <div className="fixed inset-0 z-40" onClick={() => setShowUserMenu(false)} />
+                    <div className="absolute right-0 top-10 bg-white border border-slate-200 rounded-xl shadow-xl overflow-hidden z-50 min-w-[180px]">
+                      <div className="px-4 py-3 border-b border-slate-100">
+                        <p className="text-sm font-bold text-slate-900 truncate">{user?.name}</p>
+                        <p className="text-xs text-slate-500 truncate">{user?.email}</p>
+                      </div>
+                      <button onClick={() => { logout(); setShowUserMenu(false); }}
+                        className="w-full text-left px-4 py-3 text-sm text-red-600 font-bold hover:bg-red-50 transition-colors">
+                        Deconectare
+                      </button>
+                    </div>
+                  </>
+                )}
+              </div>
+            ) : (
+              <button onClick={() => { setAuthMode('signin'); setShowAuthModal(true); }}
+                className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm px-4 py-2 rounded-xl transition-colors">
+                Intră în cont
+              </button>
+            )}
           </nav>
 
-          {/* Mobile Menu Toggle */}
-          <button 
-            className="md:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-lg transition-colors"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
+          {/* Auth Button Mobile */}
+          <div className="flex items-center gap-2 md:hidden">
+            {isAuthenticated ? (
+              <button onClick={() => setShowUserMenu(p => !p)} className="relative">
+                {user?.avatarUrl ? (
+                  <img src={user.avatarUrl} alt="" className="w-8 h-8 rounded-full" />
+                ) : (
+                  <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-black">
+                    {user?.name?.[0]?.toUpperCase() || '?'}
+                  </div>
+                )}
+              </button>
+            ) : (
+              <button onClick={() => { setAuthMode('signin'); setShowAuthModal(true); }}
+                className="bg-blue-600 text-white font-bold text-xs px-3 py-1.5 rounded-lg">
+                Login
+              </button>
+            )}
+            <button 
+              className="p-2 text-slate-600 hover:bg-slate-100 rounded-lg transition-colors"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Nav */}
@@ -2212,6 +2270,15 @@ export default function App() {
 
         {/* Platform Chatbot */}
         <PlatformChatbot />
+
+        {/* Auth Modal */}
+        {showAuthModal && (
+          <AuthModal
+            mode={authMode}
+            onClose={() => setShowAuthModal(false)}
+            onSwitchMode={(m) => setAuthMode(m)}
+          />
+        )}
 
         {/* AI Dividend Section - FULL SCREEN */}
         <section ref={dividendRef} className="min-h-screen w-full bg-indigo-600 flex items-center justify-center snap-start py-20 px-4 md:px-12">

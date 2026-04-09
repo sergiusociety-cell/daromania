@@ -1,77 +1,98 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { supabase } from '@/integrations/supabase/client';
+import type { User, Session } from '@supabase/supabase-js';
 
 export interface AppUser {
+  id: string;
   email: string;
   name: string;
+  avatarUrl?: string;
 }
 
 interface AuthContextType {
   user: AppUser | null;
+  session: Session | null;
   login: (email: string, password: string) => Promise<{ ok: boolean; error?: string }>;
   signup: (email: string, password: string, name: string) => Promise<{ ok: boolean; error?: string }>;
-  logout: () => void;
+  loginWithGoogle: () => Promise<{ ok: boolean; error?: string }>;
+  logout: () => Promise<void>;
   isAuthenticated: boolean;
+  isLoading: boolean;
 }
 
 const AuthContext = createContext<AuthContextType | null>(null);
 
-async function hashPassword(password: string): Promise<string> {
-  const encoder = new TextEncoder();
-  const data = encoder.encode(password + 'dr_salt_2025');
-  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-}
-
-function getUsers(): Record<string, { hash: string; name: string }> {
-  try { return JSON.parse(localStorage.getItem('dr_users') || '{}'); } catch { return {}; }
-}
-
-function saveUsers(users: Record<string, { hash: string; name: string }>) {
-  localStorage.setItem('dr_users', JSON.stringify(users));
+function mapUser(user: User): AppUser {
+  return {
+    id: user.id,
+    email: user.email || '',
+    name: user.user_metadata?.full_name || user.user_metadata?.name || user.email?.split('@')[0] || '',
+    avatarUrl: user.user_metadata?.avatar_url || user.user_metadata?.picture,
+  };
 }
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<AppUser | null>(null);
+  const [session, setSession] = useState<Session | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const stored = localStorage.getItem('dr_session');
-    if (stored) {
-      try { setUser(JSON.parse(stored)); } catch { localStorage.removeItem('dr_session'); }
-    }
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+      setUser(session?.user ? mapUser(session.user) : null);
+      setIsLoading(false);
+    });
+
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+      setUser(session?.user ? mapUser(session.user) : null);
+      setIsLoading(false);
+    });
+
+    return () => subscription.unsubscribe();
   }, []);
 
   const signup = async (email: string, password: string, name: string) => {
-    const users = getUsers();
-    if (users[email]) return { ok: false, error: 'Emailul este deja inregistrat.' };
-    if (password.length < 6) return { ok: false, error: 'Parola trebuie sa aiba minim 6 caractere.' };
-    const hash = await hashPassword(password);
-    users[email] = { hash, name };
-    saveUsers(users);
-    const u = { email, name };
-    setUser(u);
-    localStorage.setItem('dr_session', JSON.stringify(u));
+    const { error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        data: { full_name: name },
+        emailRedirectTo: window.location.origin,
+      },
+    });
+    if (error) return { ok: false, error: error.message };
     return { ok: true };
   };
 
   const login = async (email: string, password: string) => {
-    const users = getUsers();
-    if (!users[email]) return { ok: false, error: 'Nu exista cont cu acest email.' };
-    const hash = await hashPassword(password);
-    if (users[email].hash !== hash) return { ok: false, error: 'Parola incorecta.' };
-    const u = { email, name: users[email].name };
-    setUser(u);
-    localStorage.setItem('dr_session', JSON.stringify(u));
+    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    if (error) return { ok: false, error: error.message };
     return { ok: true };
   };
 
-  const logout = () => {
+  const loginWithGoogle = async () => {
+    try {
+      const { lovable } = await import('@/integrations/lovable/index');
+      const result = await lovable.auth.signInWithOAuth('google', {
+        redirect_uri: window.location.origin,
+      });
+      if (result.error) return { ok: false, error: String(result.error) };
+      if (result.redirected) return { ok: true };
+      return { ok: true };
+    } catch (e: any) {
+      return { ok: false, error: e.message || 'Eroare la autentificarea cu Google' };
+    }
+  };
+
+  const logout = async () => {
+    await supabase.auth.signOut();
     setUser(null);
-    localStorage.removeItem('dr_session');
+    setSession(null);
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, signup, logout, isAuthenticated: !!user }}>
+    <AuthContext.Provider value={{ user, session, login, signup, loginWithGoogle, logout, isAuthenticated: !!user, isLoading }}>
       {children}
     </AuthContext.Provider>
   );

@@ -2212,7 +2212,7 @@ export default function App() {
                     <span className="text-sm text-white">Vezi proiectele și succesul monetizat al rețelei</span>
                   </li>
                 </ul>
-                <button className="w-full py-4 rounded-full bg-white text-indigo-600 hover:bg-indigo-50 font-black transition-colors mt-auto">Alege Pachetul</button>
+                <button onClick={() => handleCheckout(undefined, 'price_1TKHL2LDo9sXtuKJSzlNPZA4', 'subscription')} className="w-full py-4 rounded-full bg-white text-indigo-600 hover:bg-indigo-50 font-black transition-colors mt-auto">Alege Pachetul</button>
               </div>
 
               {/* Pachet 3 */}

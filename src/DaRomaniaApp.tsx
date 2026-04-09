@@ -591,113 +591,19 @@ function ChatAgent({ job, onClose }: { job: JobData, onClose: () => void }) {
 }
 
 function PlatformChatbot() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
-    { role: 'model', text: 'Salut! Sunt asistentul platformei Human Premium. Cu ce te pot ajuta legat de serviciile noastre sau tranziția profesională în era AI?' }
-  ]);
-  const [inputText, setInputText] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
-  const chatRef = useRef<any>(null);
-
-  useEffect(() => {
-    if (!chatRef.current) {
-      chatRef.current = null;
-    }
-  }, []);
-
-  useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages, isOpen]);
-
-  const handleSendText = async () => {
-    if (!inputText.trim() || isLoading) return;
-    const userText = inputText;
-    setMessages(prev => [...prev, { role: 'user', text: userText }]);
-    setInputText('');
-    setIsLoading(true);
-
-    try {
-      const response = await chatRef.current.sendMessage({ message: userText });
-      if (response) {
-        setMessages(prev => [...prev, { role: 'model', text: response.text }]);
-      }
-    } catch (e) {
-      console.error(e);
-      setMessages(prev => [...prev, { role: 'model', text: "A apărut o eroare. Te rog încearcă din nou." }]);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  const whatsappUrl = `https://wa.me/40768676141?text=${encodeURIComponent('Salut Sergiu! Am o întrebare despre platforma DaRomania.')}`;
 
   return (
-    <>
-      {!isOpen && (
-        <button
-          onClick={() => setIsOpen(true)}
-          className="fixed bottom-4 left-4 md:bottom-8 md:left-8 bg-slate-800 text-white p-3 md:p-4 rounded-full shadow-2xl hover:bg-slate-900 hover:scale-110 transition-all z-40 flex items-center gap-3"
-        >
-          <MessageCircle className="w-6 h-6" />
-          <span className="font-bold pr-2 hidden md:inline">Suport Platformă</span>
-        </button>
-      )}
-
-      {isOpen && (
-        <div className="fixed bottom-4 left-4 md:bottom-6 md:left-6 w-[calc(100vw-2rem)] md:w-[400px] h-[80vh] md:h-[500px] bg-white rounded-3xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden z-50">
-          <div className="bg-slate-800 p-4 flex items-center justify-between text-white">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                <MessageCircle className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="font-bold leading-tight">Suport Human Premium</h3>
-                <span className="text-xs text-slate-300 flex items-center gap-1">
-                  <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span> Online
-                </span>
-              </div>
-            </div>
-            <button onClick={() => setIsOpen(false)} className="p-2 hover:bg-white/20 rounded-full transition-colors">
-              <X className="w-5 h-5" />
-            </button>
-          </div>
-
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50">
-            {messages.map((m, i) => (
-              <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                <div className={`max-w-[85%] p-3 rounded-2xl ${m.role === 'user' ? 'bg-slate-800 text-white rounded-tr-sm' : 'bg-white border border-slate-200 text-slate-800 rounded-tl-sm shadow-sm'}`}>
-                  <div className={`prose prose-sm max-w-none ${m.role === 'user' ? 'prose-invert' : ''}`}>
-                    <Markdown>{m.text}</Markdown>
-                  </div>
-                </div>
-              </div>
-            ))}
-            {isLoading && (
-              <div className="flex justify-start">
-                <div className="bg-white border border-slate-200 p-4 rounded-2xl rounded-tl-sm shadow-sm w-[85%] space-y-3">
-                  <div className="flex items-center gap-2 mb-2">
-                    <MessageCircle className="w-4 h-4 text-slate-500 animate-pulse" />
-                    <span className="text-xs font-bold text-slate-500 animate-pulse">Platforma răspunde...</span>
-                  </div>
-                  <div className="h-2 bg-slate-200 rounded-full animate-pulse w-3/4"></div>
-                  <div className="h-2 bg-slate-200 rounded-full animate-pulse w-full"></div>
-                  <div className="h-2 bg-slate-200 rounded-full animate-pulse w-5/6"></div>
-                </div>
-              </div>
-            )}
-            <div ref={messagesEndRef} />
-          </div>
-
-          <div className="p-4 bg-white border-t border-slate-200">
-            <div className="flex items-center gap-2">
-              <input
-                type="text"
-                value={inputText}
-                onChange={e => setInputText(e.target.value)}
-                onKeyDown={e => e.key === 'Enter' && handleSendText()}
-                placeholder="Întreabă ceva..."
-                className="flex-1 bg-slate-100 border-transparent focus:bg-white focus:border-slate-500 focus:ring-2 focus:ring-slate-200 rounded-full px-4 py-3 outline-none transition-all"
-              />
-              <button onClick={handleSendText} disabled={!inputText.trim() || isLoading} className="p-3 bg-slate-800 text-white rounded-full hover:bg-slate-900 disabled:opacity-50 disabled:hover:bg-slate-800 transition-colors">
+    <a
+      href={whatsappUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="fixed bottom-4 left-4 md:bottom-8 md:left-8 bg-green-500 text-white p-3 md:p-4 rounded-full shadow-2xl hover:bg-green-600 hover:scale-110 transition-all z-40 flex items-center gap-3"
+    >
+      <MessageCircle className="w-6 h-6" />
+      <span className="font-bold pr-2 hidden md:inline">Discută LIVE cu Sergiu</span>
+    </a>
+  );
                 <Send className="w-5 h-5" />
               </button>
             </div>

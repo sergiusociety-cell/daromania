@@ -778,6 +778,7 @@ const RadarChart = ({ job }: { job: any }) => {
 
 export default function App() {
   const [searchTerm, setSearchTerm] = useState('');
+  const geoRegion = useGeoRegion();
 
   const getArsenalButtons = (project) => {
     return [

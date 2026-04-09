@@ -1966,16 +1966,17 @@ export default function App() {
                 <p className="text-slate-300 text-sm mb-4">Setup complet · Sergiu configurează totul · Agentul tău AI funcțional în 30 min</p>
                 <button
                   onClick={async () => {
+                    if (!isAuthenticated) {
+                      setAuthMode('signin');
+                      setShowAuthModal(true);
+                      return;
+                    }
                     try {
-                      const { data: { session: authSession } } = await supabase.auth.getSession();
-                      if (!authSession) {
-                        setShowAuth(true);
-                        return;
-                      }
-                      const res = await supabase.functions.invoke('create-checkout', {
+                      const { supabase } = await import('@/integrations/supabase/client');
+                      const { data, error } = await supabase.functions.invoke('create-checkout', {
                         body: { priceId: 'price_1TKHDVLDo9sXtuKJQvka6gr9', mode: 'payment', jobTitle: 'OpenClaw Setup' },
                       });
-                      if (res.data?.url) window.open(res.data.url, '_blank');
+                      if (data?.url) window.open(data.url, '_blank');
                     } catch (e) {
                       console.error('Checkout error:', e);
                     }

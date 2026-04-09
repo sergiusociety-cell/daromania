@@ -2106,7 +2106,7 @@ export default function App() {
                       initial={{ opacity: 0, y: 30 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: idx * 0.1 }}
-                      onClick={() => setModalJob(selectedJob)}
+                      onClick={() => { pushHistoryState(); setModalJob(selectedJob); }}
                       className="group text-left rounded-2xl overflow-hidden border border-slate-200 hover:shadow-2xl transition-all"
                     >
                       <div className={`bg-gradient-to-br ${card.gradient} p-3 md:p-5 text-white`}>

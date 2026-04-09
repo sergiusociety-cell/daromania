@@ -1144,8 +1144,8 @@ export default function App() {
             <button onClick={() => { pushHistoryState(); setShowOpenClaw(true); }} className="hover:scale-105 transition-all duration-200 font-black text-red-500">{t.nav_openclaw}</button>
             <button onClick={() => { pushHistoryState(); setShowArsenal(true); }} className="hover:scale-105 transition-all duration-200 font-black text-amber-500">{t.nav_arsenal}</button>
             <button onClick={() => { pushHistoryState(); setShowAfacere(true); }} className="hover:scale-105 transition-all duration-200 font-black text-green-700">{t.nav_afacere}</button>
-            <button onClick={() => scrollTo(missionRef)} className="hover:scale-105 transition-all duration-200 font-black text-blue-400">Misiune</button>
-            <button onClick={() => scrollTo(pricingRef)} className="hover:scale-105 transition-all duration-200 font-black text-blue-400">Prețuri</button>
+            <button onClick={() => scrollTo(missionRef)} className="hover:scale-105 transition-all duration-200 font-black text-blue-600">Misiune</button>
+            <button onClick={() => scrollTo(pricingRef)} className="hover:scale-105 transition-all duration-200 font-black text-blue-600">Prețuri</button>
             {/* Auth Button Desktop */}
             {isAuthenticated ? (
               <div className="relative">

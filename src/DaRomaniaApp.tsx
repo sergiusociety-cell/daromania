@@ -1230,6 +1230,7 @@ export default function App() {
                 <div className="border-t border-slate-100 mt-1 pt-2 flex flex-col gap-1">
                   <button onClick={() => { scrollTo(missionRef); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-blue-600 py-2 px-3 rounded-xl hover:bg-blue-50">Misiune</button>
                   <button onClick={() => { scrollTo(pricingRef); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-blue-600 py-2 px-3 rounded-xl hover:bg-blue-50">Prețuri</button>
+                  <button onClick={() => { pushHistoryState(); setShowYoutube(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-red-500 py-2 px-3 rounded-xl hover:bg-red-50">🎬 YouTube</button>
                 </div>
                 <div className="border-t border-slate-100 mt-1 pt-2 flex gap-2">
                   {(['ro','en','es'] as Lang[]).map(l => (

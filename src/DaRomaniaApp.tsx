@@ -861,6 +861,7 @@ export default function App() {
   };
 
   const [selectedJob, setSelectedJob] = useState<JobData | null>(null);
+  const [modalJob, setModalJob] = useState<JobData | null>(null);
 
   const [premiumProjection, setPremiumProjection] = useState<PremiumProjection | null>(null);
   const [developingIdx, setDevelopingIdx] = useState<number | null>(null);

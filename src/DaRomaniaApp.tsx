@@ -1808,7 +1808,7 @@ export default function App() {
                 <p className="text-slate-500 text-xs mb-4">Acces complet la rețeaua de succes</p>
                 <div className="mb-4">
                   <span className="text-blue-600 font-black text-2xl">$29</span>
-                  <span className="text-slate-400 text-sm">o singură dată</span>
+                  <span className="text-slate-400 text-sm">/lună</span>
                 </div>
                 <ul className="text-slate-600 text-xs space-y-2 flex-1 mb-4">
                   <li className="flex items-start gap-2"><span className="text-blue-500 mt-0.5">✓</span> Tot ce include pachetul de $19</li>
@@ -2310,7 +2310,7 @@ export default function App() {
                 <p className="text-slate-500 text-xs mb-4">Acces complet la rețeaua de succes</p>
                 <div className="mb-4">
                   <span className="text-blue-600 font-black text-2xl">$29</span>
-                  <span className="text-slate-400 text-sm">o singură dată</span>
+                  <span className="text-slate-400 text-sm">/lună</span>
                 </div>
                 <ul className="text-slate-600 text-xs space-y-2 flex-1 mb-4">
                   <li className="flex items-start gap-2"><span className="text-blue-500 mt-0.5">✓</span> Tot ce include pachetul de $19</li>
@@ -2814,13 +2814,13 @@ export default function App() {
                 <button onClick={() => handleCheckout(undefined, 'price_1TKP9eLDo9sXtuKJLmrH4tUV', 'subscription')} className="w-full py-4 rounded-full bg-white text-blue-600 hover:bg-green-500 hover:text-white font-black transition-all duration-300 mt-auto">Alege Pachetul</button>
               </div>
 
-              {/* Pachet 3 - $29 one-time Academy */}
+              {/* Pachet 3 - $29/lună Academy */}
               <div className="bg-white/5 backdrop-blur-lg border border-blue-400/20 rounded-2xl md:rounded-[2.5rem] p-5 md:p-8 flex flex-col hover:bg-blue-600/20 hover:border-blue-400 transition-all duration-300 cursor-pointer">
                 <h3 className="text-xl md:text-2xl font-black mb-2 text-blue-100">Academy DaRomania</h3>
-                <p className="text-slate-400 mb-6 flex-1">Alege din 100+ proiecte și însușește-ți unul.</p>
+                <p className="text-slate-400 mb-6 flex-1">Alege din 100+ proiecte și însușește-ți unul. Anulezi oricând.</p>
                 <div className="mb-8">
                   <span className="text-5xl font-black text-blue-300">$29</span>
-                  <span className="text-slate-400"> o singură dată</span>
+                  <span className="text-slate-400">/lună</span>
                 </div>
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-start gap-3">
@@ -2833,10 +2833,10 @@ export default function App() {
                   </li>
                   <li className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
-                    <span className="text-sm text-slate-300">Plată unică, acces permanent</span>
+                    <span className="text-sm text-slate-300">Anulezi subscripția dintr-un click</span>
                   </li>
                 </ul>
-                <button onClick={() => handleCheckout(undefined, 'price_1TKPA1LDo9sXtuKJ8sXT9pqP', 'payment')} className="w-full py-4 rounded-full bg-blue-500/20 border border-blue-400/30 hover:bg-green-500 hover:border-green-500 text-white font-bold transition-all duration-300 mt-auto">Alege Pachetul</button>
+                <button onClick={() => handleCheckout(undefined, 'price_1TKPDvLDo9sXtuKJlsze4mNb', 'subscription')} className="w-full py-4 rounded-full bg-blue-500/20 border border-blue-400/30 hover:bg-green-500 hover:border-green-500 text-white font-bold transition-all duration-300 mt-auto">Alege Pachetul</button>
               </div>
 
               {/* Pachet 4 - $99/mo Afacere la Cheie */}

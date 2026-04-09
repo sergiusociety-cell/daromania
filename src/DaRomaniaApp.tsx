@@ -1741,7 +1741,7 @@ export default function App() {
                   <li className="flex items-start gap-2"><span className="text-amber-500 mt-0.5">✓</span> Strategie completă de monetizare</li>
                   <li className="flex items-start gap-2"><span className="text-amber-500 mt-0.5">✓</span> Tu alegi nișa, noi livrăm totul</li>
                 </ul>
-                <span className="w-full text-center py-2.5 rounded-xl border border-amber-300 text-amber-600 font-semibold text-sm group-hover:bg-amber-600 group-hover:text-white transition-all">Alege Pachetul</span>
+                <span className="w-full text-center py-2.5 rounded-xl border border-amber-300 text-amber-600 font-semibold text-sm group-hover:bg-amber-600 group-hover:text-white transition-all">Vezi Detalii →</span>
               </button>
             </div>
             

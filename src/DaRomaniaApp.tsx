@@ -3123,5 +3123,11 @@ function EligibilityCheck({ onClose }: { onClose: () => void }) {
         </button>
       </div>
     </div>
+
+    {/* Job Business Modal */}
+    {modalJob && (
+      <JobBusinessModal job={modalJob} onClose={() => setModalJob(null)} />
+    )}
+  </>
   );
 }

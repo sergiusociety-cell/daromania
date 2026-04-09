@@ -1953,7 +1953,12 @@ export default function App() {
                     <div className="text-xs opacity-70 leading-tight">{agent.desc}</div>
                   </div>
                 ))}
-              </div>
+               </div>
+
+              {/* Motivational message */}
+              <p className="text-center text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 mt-5">
+                ✨ Tu găsești problema și împreună creăm și automatizăm soluțiile în jurul ei!
+              </p>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

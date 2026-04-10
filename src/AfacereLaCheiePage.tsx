@@ -95,10 +95,10 @@ function rl(r:number){return r>=85?"CRITIC":r>=70?"RIDICAT":"MEDIU";}
 export default function AfacereLaCheiePage({ onClose }: { onClose?: () => void }){
   const navigate = useNavigate();
   const goBack = () => { if (onClose) onClose(); else navigate('/'); };
-  const [cat,setCat]=useState("Todas");
+  const [cat,setCat]=useState("Toate");
   const [sel,setSel]=useState<Business|null>(null);
   const [tab,setTab]=useState<"api"|"pipeline"|"clienti"|"ssociety">("api");
-  const list=cat==="Todas"?B:B.filter(b=>b.category===cat);
+  const list=cat==="Toate"?B:B.filter(b=>b.category===cat);
 
   if(sel){document.body.style.overflow="hidden";
     return(

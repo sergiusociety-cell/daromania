@@ -869,10 +869,10 @@ export default function App() {
   const goHome = useCallback(() => {
     setSelectedJob(null);
     setPivotData(null);
-    setShowAcademia(false);
-    setShowOpenClaw(false);
-    setShowArsenal(false);
-    setShowAfacere(false);
+    ;
+    ;
+    ;
+    ;
     setModalJob(null);
     setActiveModal(null);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -885,14 +885,14 @@ export default function App() {
       if (activeModal) { setActiveModal(null); return; }
       if (pivotData) { setPivotData(null); return; }
       if (selectedJob) { setSelectedJob(null); setPivotData(null); return; }
-      if (showAcademia || showOpenClaw || showArsenal || showAfacere || showYoutube) {
-        setShowAcademia(false); setShowOpenClaw(false); setShowArsenal(false); setShowAfacere(false); setShowYoutube(false);
+      if (showYoutube) {
+        ; ; ; ; setShowYoutube(false);
         return;
       }
     };
     window.addEventListener('popstate', onPopState);
     return () => window.removeEventListener('popstate', onPopState);
-  }, [selectedJob, pivotData, modalJob, activeModal, showAcademia, showOpenClaw, showArsenal, showAfacere, showYoutube]);
+  }, [selectedJob, pivotData, modalJob, activeModal, showYoutube]);
 
   const pushHistoryState = useCallback(() => {
     window.history.pushState({ daromania: true }, '');
@@ -1108,7 +1108,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-14 md:h-20 flex items-center justify-between">
           <div className="flex items-center gap-2 md:gap-4">
             {geoRegion === 'ro' && (
-              <div className="flex items-center gap-1.5 cursor-pointer" onClick={() => { setSelectedJob(null); setPivotData(null); setShowAcademia(false); setShowOpenClaw(false); setShowArsenal(false); setShowAfacere(false); setShowYoutube(false); window.scrollTo({top: 0, behavior: 'smooth'}); }}>
+              <div className="flex items-center gap-1.5 cursor-pointer" onClick={() => { setSelectedJob(null); setPivotData(null); ; ; ; ; setShowYoutube(false); window.scrollTo({top: 0, behavior: 'smooth'}); }}>
                 <img src={logoDaRomania} alt="DaRomania" className="w-8 h-8 md:w-10 md:h-10 rounded-lg object-cover" />
                 <span className="text-sm md:text-base font-black tracking-tight"><span className="text-slate-900">Da</span><span className="text-blue-600">Romania</span></span>
               </div>
@@ -1129,10 +1129,10 @@ export default function App() {
           
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-            <button onClick={() => { pushHistoryState(); setShowArsenal(true); }} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-amber-500">{t.nav_arsenal}</button>
-            <button onClick={() => { pushHistoryState(); setShowOpenClaw(true); }} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-red-500">{t.nav_openclaw}</button>
-            <button onClick={() => { pushHistoryState(); setShowAcademia(true); }} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-blue-600">🎓 Academy</button>
-            <button onClick={() => { pushHistoryState(); setShowAfacere(true); }} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-green-700">{t.nav_afacere}</button>
+            <button onClick={() => { pushHistoryState(); nav("/arsenalapi"); }} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-amber-500">{t.nav_arsenal}</button>
+            <button onClick={() => { pushHistoryState(); nav("/openclaw"); }} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-red-500">{t.nav_openclaw}</button>
+            <button onClick={() => { pushHistoryState(); nav("/academy"); }} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-blue-600">🎓 Academy</button>
+            <button onClick={() => { pushHistoryState(); nav("/afacerelacheie"); }} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-green-700">{t.nav_afacere}</button>
             
             <button onClick={() => scrollTo(pricingRef)} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-blue-600">Prețuri</button>
             
@@ -1210,10 +1210,10 @@ export default function App() {
               className="md:hidden bg-white border-b border-slate-200 overflow-hidden"
             >
               <div className="px-3 py-4 flex flex-col gap-2">
-                <button onClick={() => { pushHistoryState(); setShowArsenal(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-amber-500 py-2.5 px-3 rounded-xl hover:bg-amber-50 hover:scale-105 transition-all duration-200">⚡ Arsenal API</button>
-                <button onClick={() => { pushHistoryState(); setShowOpenClaw(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-red-500 py-2.5 px-3 rounded-xl hover:bg-red-50 hover:scale-105 transition-all duration-200">🤖 OpenClaw</button>
-                <button onClick={() => { pushHistoryState(); setShowAcademia(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-blue-600 py-2.5 px-3 rounded-xl hover:bg-blue-50 hover:scale-105 transition-all duration-200">🎓 Academy</button>
-                <button onClick={() => { pushHistoryState(); setShowAfacere(true); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-green-700 py-2.5 px-3 rounded-xl hover:bg-green-50 hover:scale-105 transition-all duration-200">💼 Afacere la Cheie</button>
+                <button onClick={() => { pushHistoryState(); nav("/arsenalapi"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-amber-500 py-2.5 px-3 rounded-xl hover:bg-amber-50 hover:scale-105 transition-all duration-200">⚡ Arsenal API</button>
+                <button onClick={() => { pushHistoryState(); nav("/openclaw"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-red-500 py-2.5 px-3 rounded-xl hover:bg-red-50 hover:scale-105 transition-all duration-200">🤖 OpenClaw</button>
+                <button onClick={() => { pushHistoryState(); nav("/academy"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-blue-600 py-2.5 px-3 rounded-xl hover:bg-blue-50 hover:scale-105 transition-all duration-200">🎓 Academy</button>
+                <button onClick={() => { pushHistoryState(); nav("/afacerelacheie"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-green-700 py-2.5 px-3 rounded-xl hover:bg-green-50 hover:scale-105 transition-all duration-200">💼 Afacere la Cheie</button>
                 <div className="border-t border-slate-100 mt-1 pt-2 flex flex-col gap-1">
                   
                   <button onClick={() => { scrollTo(pricingRef); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-blue-600 py-2 px-3 rounded-xl hover:bg-blue-50">Prețuri</button>
@@ -1232,8 +1232,8 @@ export default function App() {
           )}
 
         {/* OPENCLAW PAGE */}
-        {showArsenal && <ArsenalPage onClose={() => setShowArsenal(false)} />}
-        {showAfacere && <AfacereLaCheiePage onClose={() => setShowAfacere(false)} />}
+        {showArsenal && <ArsenalPage onClose={() => } />}
+        {showAfacere && <AfacereLaCheiePage onClose={() => } />}
         {showYoutube && <div className="fixed inset-0 z-50 bg-white overflow-y-auto"><YouTubePage onClose={() => setShowYoutube(false)} /></div>}
         
         
@@ -1241,7 +1241,7 @@ export default function App() {
           <div className="fixed inset-0 z-50 bg-white overflow-y-auto">
             {/* Header */}
             <div className="sticky top-0 bg-white/95 backdrop-blur border-b border-slate-200 px-4 py-3 flex items-center justify-between z-10">
-              <button onClick={() => setShowOpenClaw(false)} style={{display:"flex",alignItems:"center",gap:8,background:"linear-gradient(135deg,#f6c90e,#e0a800)",border:"none",borderRadius:10,padding:"10px 20px",color:"#1a1a1a",fontWeight:900,fontSize:13,cursor:"pointer",boxShadow:"0 2px 8px rgba(246,201,14,0.4)"}}>← Back to 🇷🇴 DaRomania</button>
+              <button onClick={() => } style={{display:"flex",alignItems:"center",gap:8,background:"linear-gradient(135deg,#f6c90e,#e0a800)",border:"none",borderRadius:10,padding:"10px 20px",color:"#1a1a1a",fontWeight:900,fontSize:13,cursor:"pointer",boxShadow:"0 2px 8px rgba(246,201,14,0.4)"}}>← Back to 🇷🇴 DaRomania</button>
                 
               <span className="font-black text-slate-800 text-sm hidden sm:block">🤖 OpenClaw AI — Cel mai viral agent AI din 2026</span>
               <a href="https://build.nvidia.com" target="_blank" rel="noopener noreferrer" className="text-xs font-black text-green-700 bg-green-100 px-3 py-2 rounded-full">NVIDIA Gratuit →</a>
@@ -1494,7 +1494,7 @@ export default function App() {
           <div className="fixed inset-0 z-50 bg-white overflow-y-auto">
             <div className="sticky top-0 bg-white border-b border-slate-200 px-4 py-4 flex items-center justify-between z-10 shadow-sm">
               <div className="flex items-center gap-3">
-                <button onClick={() => setShowAcademia(false)} style={{display:"flex",alignItems:"center",gap:8,background:"linear-gradient(135deg,#f6c90e,#e0a800)",border:"none",borderRadius:10,padding:"10px 20px",color:"#1a1a1a",fontWeight:900,fontSize:13,cursor:"pointer",boxShadow:"0 2px 8px rgba(246,201,14,0.4)"}}>← Back to 🇷🇴 DaRomania</button>
+                <button onClick={() => } style={{display:"flex",alignItems:"center",gap:8,background:"linear-gradient(135deg,#f6c90e,#e0a800)",border:"none",borderRadius:10,padding:"10px 20px",color:"#1a1a1a",fontWeight:900,fontSize:13,cursor:"pointer",boxShadow:"0 2px 8px rgba(246,201,14,0.4)"}}>← Back to 🇷🇴 DaRomania</button>
                 <div>
                   <h1 className="text-xl font-black text-slate-900">🎓 Academia DaRomania</h1>
                   <p className="text-xs text-slate-500">71 proiecte construite de SSociety — comunitatea noastră</p>
@@ -1670,7 +1670,7 @@ export default function App() {
 
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                   {/* Arsenal API - $9 */}
-                  <button onClick={() => { setShowAcademia(false); pushHistoryState(); setShowArsenal(true); }} className="group relative border border-blue-200/60 rounded-2xl p-6 hover:shadow-xl hover:border-blue-400 transition-all duration-300 hover:-translate-y-1 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex flex-col">
+                  <button onClick={() => { ; pushHistoryState(); nav("/arsenalapi"); }} className="group relative border border-blue-200/60 rounded-2xl p-6 hover:shadow-xl hover:border-blue-400 transition-all duration-300 hover:-translate-y-1 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex flex-col">
                     <div className="text-3xl mb-3">⚡</div>
                     <h3 className="text-base font-bold text-slate-900 mb-1">Arsenal API</h3>
                     <p className="text-slate-500 text-xs mb-4">Construiește orice sistem</p>
@@ -1688,7 +1688,7 @@ export default function App() {
                   </button>
 
                   {/* OpenClaw - $19/lună */}
-                  <button onClick={() => { setShowAcademia(false); pushHistoryState(); setShowOpenClaw(true); }} className="group relative border border-green-200/60 rounded-2xl p-6 hover:shadow-xl hover:border-green-400 transition-all duration-300 hover:-translate-y-1 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex flex-col">
+                  <button onClick={() => { ; pushHistoryState(); nav("/openclaw"); }} className="group relative border border-green-200/60 rounded-2xl p-6 hover:shadow-xl hover:border-green-400 transition-all duration-300 hover:-translate-y-1 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex flex-col">
                     <div className="text-3xl mb-3">🤖</div>
                     <h3 className="text-base font-bold text-slate-900 mb-1">OpenClaw</h3>
                     <p className="text-slate-500 text-xs mb-4">Flota AI: CTO, CFO, CEO</p>
@@ -1725,7 +1725,7 @@ export default function App() {
                   </div>
 
                   {/* Afacere la Cheie - $99/lună */}
-                  <button onClick={() => { setShowAcademia(false); pushHistoryState(); setShowAfacere(true); }} className="group relative border border-orange-200/60 rounded-2xl p-6 hover:shadow-xl hover:border-orange-400 transition-all duration-300 hover:-translate-y-1 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex flex-col">
+                  <button onClick={() => { ; pushHistoryState(); nav("/afacerelacheie"); }} className="group relative border border-orange-200/60 rounded-2xl p-6 hover:shadow-xl hover:border-orange-400 transition-all duration-300 hover:-translate-y-1 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex flex-col">
                     <div className="text-3xl mb-3">💼</div>
                     <h3 className="text-base font-bold text-slate-900 mb-1">Afacere la Cheie</h3>
                     <p className="text-slate-500 text-xs mb-4">Business complet gata de lansare</p>
@@ -1863,7 +1863,7 @@ export default function App() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-5xl w-full mx-auto mb-10">
               {/* Arsenal API - $9 - Albastru premium */}
-              <button onClick={() => { pushHistoryState(); setShowArsenal(true); }} className="group relative border border-blue-200/60 rounded-2xl p-6 hover:shadow-xl hover:border-blue-400 transition-all duration-300 hover:-translate-y-1 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex flex-col">
+              <button onClick={() => { pushHistoryState(); nav("/arsenalapi"); }} className="group relative border border-blue-200/60 rounded-2xl p-6 hover:shadow-xl hover:border-blue-400 transition-all duration-300 hover:-translate-y-1 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex flex-col">
                 <div className="text-3xl mb-3">⚡</div>
                 <h3 className="text-base font-bold text-slate-900 mb-1">Arsenal API</h3>
                 <p className="text-slate-500 text-xs mb-4">Construiește orice sistem</p>
@@ -1881,7 +1881,7 @@ export default function App() {
               </button>
 
               {/* OpenClaw - $9 - Verde WhatsApp */}
-              <button onClick={() => { pushHistoryState(); setShowOpenClaw(true); }} className="group relative border border-green-200/60 rounded-2xl p-6 hover:shadow-xl hover:border-green-400 transition-all duration-300 hover:-translate-y-1 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex flex-col">
+              <button onClick={() => { pushHistoryState(); nav("/openclaw"); }} className="group relative border border-green-200/60 rounded-2xl p-6 hover:shadow-xl hover:border-green-400 transition-all duration-300 hover:-translate-y-1 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex flex-col">
                 <div className="text-3xl mb-3">🤖</div>
                 <h3 className="text-base font-bold text-slate-900 mb-1">OpenClaw</h3>
                 <p className="text-slate-500 text-xs mb-4">Flota AI: CTO, CFO, CEO</p>
@@ -1899,7 +1899,7 @@ export default function App() {
               </button>
 
               {/* Academia - $19 - Albastru premium - Recomandat */}
-              <button onClick={() => { pushHistoryState(); setShowAcademia(true); }} className="group relative border-2 border-blue-400 rounded-2xl p-6 hover:shadow-xl hover:border-blue-500 transition-all duration-300 hover:-translate-y-1 cursor-pointer text-left bg-blue-50/60 backdrop-blur-sm flex flex-col ring-1 ring-blue-200">
+              <button onClick={() => { pushHistoryState(); nav("/academy"); }} className="group relative border-2 border-blue-400 rounded-2xl p-6 hover:shadow-xl hover:border-blue-500 transition-all duration-300 hover:-translate-y-1 cursor-pointer text-left bg-blue-50/60 backdrop-blur-sm flex flex-col ring-1 ring-blue-200">
                 <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-xs font-bold px-4 py-1 rounded-full">Recomandat</span>
                 <div className="text-3xl mb-3 mt-1">🎓</div>
                 <h3 className="text-base font-bold text-slate-900 mb-1">Academy DaRomania</h3>
@@ -1918,7 +1918,7 @@ export default function App() {
               </button>
 
               {/* Afacere la Cheie - $99 - Portocaliu */}
-              <button onClick={() => { pushHistoryState(); setShowAfacere(true); }} className="group relative border border-orange-200/60 rounded-2xl p-6 hover:shadow-xl hover:border-orange-400 transition-all duration-300 hover:-translate-y-1 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex flex-col">
+              <button onClick={() => { pushHistoryState(); nav("/afacerelacheie"); }} className="group relative border border-orange-200/60 rounded-2xl p-6 hover:shadow-xl hover:border-orange-400 transition-all duration-300 hover:-translate-y-1 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex flex-col">
                 <div className="text-3xl mb-3">💼</div>
                 <h3 className="text-base font-bold text-slate-900 mb-1">Afacere la Cheie</h3>
                 <p className="text-slate-500 text-xs mb-4">Business complet gata de lansare</p>
@@ -2251,7 +2251,7 @@ export default function App() {
                   ))}
                 </div>
                 <button 
-                  onClick={() => { pushHistoryState(); setShowArsenal(true); }}
+                  onClick={() => { pushHistoryState(); nav("/arsenalapi"); }}
                   className="bg-purple-600 text-white font-black px-8 py-3 rounded-xl hover:bg-purple-700 transition-all inline-flex items-center gap-2"
                 >
                   Explorează Arsenal API →
@@ -2268,7 +2268,7 @@ export default function App() {
                   Descoperă biblioteca completă de proiecte validate, idei de business și modele de monetizare gata de implementat.
                 </p>
                 <button 
-                  onClick={() => { pushHistoryState(); setShowAfacere(true); }}
+                  onClick={() => { pushHistoryState(); nav("/afacerelacheie"); }}
                   className="bg-white text-indigo-700 font-black px-8 py-4 rounded-xl hover:bg-indigo-50 transition-all text-lg inline-flex items-center gap-2"
                 >
                   Vezi Afacere la Cheie →
@@ -2366,7 +2366,7 @@ export default function App() {
             <p className="text-center text-slate-500 text-lg mb-12 max-w-2xl mx-auto">Totul este gratuit până în momentul în care decizi să lansezi un proiect. Fără taxe ascunse, fără surprize.</p>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               {/* Arsenal API - $9 */}
-              <button onClick={() => { pushHistoryState(); setShowArsenal(true); }} className="group relative border border-blue-200/60 rounded-2xl p-6 hover:shadow-xl hover:border-blue-400 transition-all duration-300 hover:-translate-y-1 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex flex-col">
+              <button onClick={() => { pushHistoryState(); nav("/arsenalapi"); }} className="group relative border border-blue-200/60 rounded-2xl p-6 hover:shadow-xl hover:border-blue-400 transition-all duration-300 hover:-translate-y-1 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex flex-col">
                 <div className="text-3xl mb-3">⚡</div>
                 <h3 className="text-base font-bold text-slate-900 mb-1">Arsenal API</h3>
                 <p className="text-slate-500 text-xs mb-4">Construiește orice sistem</p>
@@ -2384,7 +2384,7 @@ export default function App() {
               </button>
 
               {/* OpenClaw - $9 */}
-              <button onClick={() => { pushHistoryState(); setShowOpenClaw(true); }} className="group relative border border-blue-200/60 rounded-2xl p-6 hover:shadow-xl hover:border-blue-400 transition-all duration-300 hover:-translate-y-1 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex flex-col">
+              <button onClick={() => { pushHistoryState(); nav("/openclaw"); }} className="group relative border border-blue-200/60 rounded-2xl p-6 hover:shadow-xl hover:border-blue-400 transition-all duration-300 hover:-translate-y-1 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex flex-col">
                 <div className="text-3xl mb-3">🤖</div>
                 <h3 className="text-base font-bold text-slate-900 mb-1">OpenClaw</h3>
                 <p className="text-slate-500 text-xs mb-4">Flota AI: CTO, CFO, CEO</p>
@@ -2403,7 +2403,7 @@ export default function App() {
               </button>
 
               {/* Academia - $19 */}
-              <button onClick={() => { pushHistoryState(); setShowAcademia(true); }} className="group relative border border-blue-200/60 rounded-2xl p-6 hover:shadow-xl hover:border-blue-400 transition-all duration-300 hover:-translate-y-1 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex flex-col">
+              <button onClick={() => { pushHistoryState(); nav("/academy"); }} className="group relative border border-blue-200/60 rounded-2xl p-6 hover:shadow-xl hover:border-blue-400 transition-all duration-300 hover:-translate-y-1 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex flex-col">
                 <div className="text-3xl mb-3">🎓</div>
                 <h3 className="text-base font-bold text-slate-900 mb-1">Academy DaRomania</h3>
                 <p className="text-slate-500 text-xs mb-4">Acces complet la rețeaua de succes</p>
@@ -2421,7 +2421,7 @@ export default function App() {
               </button>
 
               {/* Afacere la Cheie - $99 - Portocaliu */}
-              <button onClick={() => { pushHistoryState(); setShowAfacere(true); }} className="group relative border border-orange-200/60 rounded-2xl p-6 hover:shadow-xl hover:border-orange-400 transition-all duration-300 hover:-translate-y-1 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex flex-col">
+              <button onClick={() => { pushHistoryState(); nav("/afacerelacheie"); }} className="group relative border border-orange-200/60 rounded-2xl p-6 hover:shadow-xl hover:border-orange-400 transition-all duration-300 hover:-translate-y-1 cursor-pointer text-left bg-white/60 backdrop-blur-sm flex flex-col">
                 <div className="text-3xl mb-3">💼</div>
                 <h3 className="text-base font-bold text-slate-900 mb-1">Afacere la Cheie</h3>
                 <p className="text-slate-500 text-xs mb-4">Business complet gata de lansare</p>

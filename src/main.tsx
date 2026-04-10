@@ -1,13 +1,23 @@
 import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import DaRomaniaApp from "./DaRomaniaApp";
+import ArsenalPage from "./ArsenalPage";
+import OpenClawPage from "./OpenClawPage";
+import AcademyPage from "./AcademyPage";
+import AfacereLaCheiePage from "./AfacereLaCheiePage";
 import { AuthProvider } from "./auth/AuthContext";
 
 createRoot(document.getElementById("root")!).render(
   <AuthProvider>
     <BrowserRouter>
-      <DaRomaniaApp />
+      <Routes>
+        <Route path="/arsenalapi" element={<ArsenalPage />} />
+        <Route path="/openclaw" element={<OpenClawPage />} />
+        <Route path="/academy" element={<AcademyPage />} />
+        <Route path="/afacerelacheie" element={<AfacereLaCheiePage />} />
+        <Route path="/*" element={<DaRomaniaApp />} />
+      </Routes>
     </BrowserRouter>
   </AuthProvider>
 );

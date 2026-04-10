@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Business {
   id: number; category: string; jobTitle: string; risk: number;
@@ -92,6 +93,8 @@ function rc(r:number){return r>=85?"#dc3545":r>=70?"#fd7e14":"#28a745";}
 function rl(r:number){return r>=85?"CRITIC":r>=70?"RIDICAT":"MEDIU";}
 
 export default function AfacereLaCheiePage({ onClose }: { onClose?: () => void }){
+  const navigate = useNavigate();
+  const goBack = () => { if (onClose) onClose(); else navigate('/'); };
   const [cat,setCat]=useState("Toate");
   const [sel,setSel]=useState<Business|null>(null);
   const [tab,setTab]=useState<"api"|"pipeline"|"clienti"|"ssociety">("api");
@@ -99,7 +102,7 @@ export default function AfacereLaCheiePage({ onClose }: { onClose?: () => void }
 
   if(sel){document.body.style.overflow="hidden";
     return(
-      <div style={{position:"fixed",top:0,left:0,right:0,bottom:0,zIndex:99999,overflowY:"auto",background:"#f8f9fa",fontFamily:"Syne,Arial,sans-serif"}}><button onClick={()=>onClose&&onClose()} style={{position:"fixed",top:16,left:16,zIndex:999999,background:"linear-gradient(135deg,#f6c90e,#e0a800)",border:"none",borderRadius:10,padding:"10px 20px",color:"#1a1a1a",fontWeight:900,fontSize:13,cursor:"pointer",boxShadow:"0 4px 12px rgba(246,201,14,0.5)"}}>← Back to 🇷🇴 DaRomania</button>
+      <div style={{position:"fixed",top:0,left:0,right:0,bottom:0,zIndex:99999,overflowY:"auto",background:"#f8f9fa",fontFamily:"Syne,Arial,sans-serif"}}><button onClick={goBack} style={{position:"fixed",top:16,left:16,zIndex:999999,background:"linear-gradient(135deg,#f6c90e,#e0a800)",border:"none",borderRadius:10,padding:"10px 20px",color:"#1a1a1a",fontWeight:900,fontSize:13,cursor:"pointer",boxShadow:"0 4px 12px rgba(246,201,14,0.5)"}}>← Back to 🇷🇴 DaRomania</button>
         <div style={{background:"#fff",borderBottom:"1px solid #e9ecef",padding:"14px 24px",display:"flex",alignItems:"center",gap:16,position:"sticky",top:0,zIndex:10}}>
           <button onClick={()=>{setSel(null);setTab("api");document.body.style.overflow="auto";}} style={{background:"linear-gradient(135deg,#f6c90e,#e0a800)",border:"none",borderRadius:10,padding:"10px 20px",color:"#1a1a1a",fontWeight:900,fontSize:13,cursor:"pointer",boxShadow:"0 2px 8px rgba(246,201,14,0.4)"}}>← Back to 🇷🇴 DaRomania</button>
           <div style={{flex:1,fontSize:13,fontWeight:700,color:sel.color}}>{sel.businessName}</div>

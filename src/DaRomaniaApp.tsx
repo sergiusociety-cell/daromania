@@ -1534,26 +1534,6 @@ export default function App() {
               {/* Categorii */}
               {[
                 {
-                  cat: '🍽️ Restaurante', color: 'from-orange-500 to-red-500', count: 15,
-                  projects: [
-                    { name: 'MrDelivery — Pagina Principală', desc: 'Platforma centrală cu toate serviciile digitale pentru restaurante. AI, automatizare, delivery optimization și consultanță.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
-                    { name: 'Instant Menu Pictures — Poze Meniu AI', desc: 'Generează fotografii profesionale de meniu Michelin-quality doar din text. Logo branding, export multi-format, procesare bulk.', link: 'https://ssociety-image-generator-588412172690.us-west1.run.app/', badge: 'LIVE' },
-                    { name: 'AI Assistant pentru Clienți', desc: 'Chatbot AI care răspunde la întrebări despre meniu, prețuri, alergeni, preia comenzi și oferă suport 24/7 pe WhatsApp sau site.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
-                    { name: 'AI Assistant pentru Echipă', desc: 'Asistent AI intern pentru personal: instrucțiuni preparare, checklist-uri deschidere/închidere, alertează managerii. Reduce erorile umane.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
-                    { name: 'Gourmet Visionary AI', desc: 'Platformă AI premium fine dining: meniuri degustare sofisticate, perechi vin-mâncare, descrieri poetice, consultanță Michelin.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
-                    { name: 'MrDelivery AI Central', desc: 'Dashboard central care controlează toate sistemele AI ale restaurantului. Status boti, performanță, setări, rapoarte consolidate.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
-                    { name: 'Laborator de Texte AI', desc: 'Generator conținut specializat restaurante: postări social media, descrieri meniu, mesaje WhatsApp, răspunsuri recenzii Google.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
-                    { name: 'FoodieQuest — Descoperă Restaurante', desc: 'App descoperire culinară cu AI: spui ce poftești, buget, locație și primești recomandări perfecte cu filtre alergeni și rating.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
-                    { name: 'Audit AI — Analiză Restaurant', desc: 'Audit digital complet: meniu, prețuri, prezență online, recenzii, operațiuni, marketing. Raport cu note și recomandări concrete.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
-                    { name: 'Audit Michelin — Evaluare Premium', desc: 'Evaluare AI pe criteriile reale Michelin: ingrediente, tehnici gătit, calitate-preț, consistență. Scor detaliat și plan de acțiune.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
-                    { name: 'RestoMaster — Management All-in-One', desc: 'Platformă completă management restaurant: rezervări, meniu, stocuri, financiar, marketing, echipă, satisfacție clienți.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
-                    { name: 'MisterDelivery Bot — Chelner Digital', desc: 'Chatbot AI chelner virtual 24/7: preia comenzi prin chat, recomandă preparate, informează alergeni, trimite la bucătărie.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
-                    { name: 'MrDelivery Shop — Magazin Online', desc: 'Magazin online echipamente delivery și restaurante: cutii termice, pungi branduite, ambalaje eco, materiale marketing.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
-                    { name: 'MrDelivery Online — Portal Parteneri', desc: 'Portal digital parteneri: resurse exclusive, documentație, tutoriale, management performanță și rapoarte din dashboard centralizat.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
-                    { name: 'Audit MrDelivery — Interfață Modernă', desc: 'Versiunea redesignată a auditului restaurant cu interfață modernă, grafice interactive, scoruri colorate și recomandări pas-cu-pas.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
-                  ]
-                },
-                {
                   cat: '🤖 Unelte AI', color: 'from-purple-500 to-indigo-600', count: 10,
                   projects: [
                     { name: 'SSociety Studio — 6 Agenți AI', desc: 'CEO, CMO, CRO, CTO, CSO, CFO — agenți AI 24/7 pe marketing, vânzări, CRM și conținut. 500+ utilizatori, 3x ROI mediu.', link: 'https://ssocietystudio.lovable.app/', badge: 'LIVE' },
@@ -1625,6 +1605,26 @@ export default function App() {
                     { name: 'Heart Echo — Mesaje de Suflet', desc: 'Generator AI mesaje emoționale personalizate pentru orice ocazie: partener, părinte, prieten. Unic, sincer, emoționant.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
                     { name: 'Anchor — Guardian al Relațiilor', desc: 'AI relațional: amintește aniversări, sugerează activități quality time, sfaturi comunicare, te ajută să fii prezent cu cei dragi.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
                     { name: 'LifeKit — Kit pentru o Viață Mai Bună', desc: 'Instrumente AI dezvoltare personală: tracker obiceiuri, jurnal recunoștință, obiective, meditații, nutriție, coach AI personal.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
+                  ]
+                },
+                {
+                  cat: '🍽️ Restaurante', color: 'from-orange-500 to-red-500', count: 15,
+                  projects: [
+                    { name: 'MrDelivery — Pagina Principală', desc: 'Platforma centrală cu toate serviciile digitale pentru restaurante. AI, automatizare, delivery optimization și consultanță.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
+                    { name: 'Instant Menu Pictures — Poze Meniu AI', desc: 'Generează fotografii profesionale de meniu Michelin-quality doar din text. Logo branding, export multi-format, procesare bulk.', link: 'https://ssociety-image-generator-588412172690.us-west1.run.app/', badge: 'LIVE' },
+                    { name: 'AI Assistant pentru Clienți', desc: 'Chatbot AI care răspunde la întrebări despre meniu, prețuri, alergeni, preia comenzi și oferă suport 24/7 pe WhatsApp sau site.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
+                    { name: 'AI Assistant pentru Echipă', desc: 'Asistent AI intern pentru personal: instrucțiuni preparare, checklist-uri deschidere/închidere, alertează managerii. Reduce erorile umane.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
+                    { name: 'Gourmet Visionary AI', desc: 'Platformă AI premium fine dining: meniuri degustare sofisticate, perechi vin-mâncare, descrieri poetice, consultanță Michelin.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
+                    { name: 'MrDelivery AI Central', desc: 'Dashboard central care controlează toate sistemele AI ale restaurantului. Status boti, performanță, setări, rapoarte consolidate.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
+                    { name: 'Laborator de Texte AI', desc: 'Generator conținut specializat restaurante: postări social media, descrieri meniu, mesaje WhatsApp, răspunsuri recenzii Google.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
+                    { name: 'FoodieQuest — Descoperă Restaurante', desc: 'App descoperire culinară cu AI: spui ce poftești, buget, locație și primești recomandări perfecte cu filtre alergeni și rating.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
+                    { name: 'Audit AI — Analiză Restaurant', desc: 'Audit digital complet: meniu, prețuri, prezență online, recenzii, operațiuni, marketing. Raport cu note și recomandări concrete.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
+                    { name: 'Audit Michelin — Evaluare Premium', desc: 'Evaluare AI pe criteriile reale Michelin: ingrediente, tehnici gătit, calitate-preț, consistență. Scor detaliat și plan de acțiune.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
+                    { name: 'RestoMaster — Management All-in-One', desc: 'Platformă completă management restaurant: rezervări, meniu, stocuri, financiar, marketing, echipă, satisfacție clienți.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
+                    { name: 'MisterDelivery Bot — Chelner Digital', desc: 'Chatbot AI chelner virtual 24/7: preia comenzi prin chat, recomandă preparate, informează alergeni, trimite la bucătărie.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
+                    { name: 'MrDelivery Shop — Magazin Online', desc: 'Magazin online echipamente delivery și restaurante: cutii termice, pungi branduite, ambalaje eco, materiale marketing.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
+                    { name: 'MrDelivery Online — Portal Parteneri', desc: 'Portal digital parteneri: resurse exclusive, documentație, tutoriale, management performanță și rapoarte din dashboard centralizat.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
+                    { name: 'Audit MrDelivery — Interfață Modernă', desc: 'Versiunea redesignată a auditului restaurant cu interfață modernă, grafice interactive, scoruri colorate și recomandări pas-cu-pas.', link: 'https://mrdelivery.ro', badge: 'LIVE' },
                   ]
                 },
               ].map((category, ci) => (

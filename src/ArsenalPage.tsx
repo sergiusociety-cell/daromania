@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { JOBS_LIST } from './constants';
 
 const API_CATALOG = {
@@ -752,14 +753,20 @@ export function ArsenalContent({ embedded }: ContentProps) {
 }
 
 interface Props {
-  onClose: () => void;
+  onClose?: () => void;
 }
 
 export default function ArsenalPage({ onClose }: Props) {
+  const navigate = useNavigate();
+  const goBack = () => {
+    if (onClose) onClose();
+    else navigate('/');
+  };
+
   return (
     <div className="fixed inset-0 bg-white z-50 overflow-y-auto">
       <div className="sticky top-0 bg-white border-b border-slate-200 z-10 px-4 py-3 flex items-center justify-between">
-        <button onClick={onClose} style={{display:"flex",alignItems:"center",gap:8,background:"linear-gradient(135deg,#f6c90e,#e0a800)",border:"none",borderRadius:10,padding:"10px 20px",color:"#1a1a1a",fontWeight:900,fontSize:13,cursor:"pointer",boxShadow:"0 2px 8px rgba(246,201,14,0.4)"}}>
+        <button onClick={goBack} style={{display:"flex",alignItems:"center",gap:8,background:"linear-gradient(135deg,#f6c90e,#e0a800)",border:"none",borderRadius:10,padding:"10px 20px",color:"#1a1a1a",fontWeight:900,fontSize:13,cursor:"pointer",boxShadow:"0 2px 8px rgba(246,201,14,0.4)"}}>
           ← Back to 🇷🇴 DaRomania
         </button>
         <span className="font-black text-slate-800 text-sm hidden sm:block">⚡ Arsenal API — 99 meserii × ghid complet de automatizare</span>

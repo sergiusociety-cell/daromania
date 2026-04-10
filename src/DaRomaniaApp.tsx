@@ -1230,7 +1230,7 @@ export default function App() {
               </div>
             </motion.div>
           )}
-
+        </AnimatePresence>
 
         {showYoutube && <div className="fixed inset-0 z-50 bg-white overflow-y-auto"><YouTubePage onClose={() => setShowYoutube(false)} /></div>}
 

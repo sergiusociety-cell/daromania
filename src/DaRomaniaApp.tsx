@@ -2,15 +2,14 @@ import ProfilePage from './auth/ProfilePage';
 import AuthModal from './auth/AuthModal';
 import { useAuth } from './auth/AuthContext';
 import JobBusinessModal from './components/JobBusinessModal';
-import AfacereLaCheiePage from './AfacereLaCheiePage';
-import ArsenalPage, { ArsenalContent } from './ArsenalPage';
+import JobBusinessModal from './components/JobBusinessModal';
 import YouTubePage from './YouTubePage';
 import logoDaRomania from './assets/logo-daromania.png';
 import logoDaEu from './assets/logo-daeu.png';
 import logoDaUsa from './assets/logo-dausa.png';
 import { T, BRANDS, LANG_NAMES, type Lang } from './i18n';
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   BarChart,

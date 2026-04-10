@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Business {
   id: number; category: string; jobTitle: string; risk: number;
@@ -92,10 +93,12 @@ function rc(r:number){return r>=85?"#dc3545":r>=70?"#fd7e14":"#28a745";}
 function rl(r:number){return r>=85?"CRITIC":r>=70?"RIDICAT":"MEDIU";}
 
 export default function AfacereLaCheiePage({ onClose }: { onClose?: () => void }){
-  const [cat,setCat]=useState("Toate");
+  const navigate = useNavigate();
+  const goBack = () => { if (onClose) onClose(); else navigate('/'); };
+  const [cat,setCat]=useState("Todas");
   const [sel,setSel]=useState<Business|null>(null);
   const [tab,setTab]=useState<"api"|"pipeline"|"clienti"|"ssociety">("api");
-  const list=cat==="Toate"?B:B.filter(b=>b.category===cat);
+  const list=cat==="Todas"?B:B.filter(b=>b.category===cat);
 
   if(sel){document.body.style.overflow="hidden";
     return(

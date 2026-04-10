@@ -808,19 +808,8 @@ export default function App() {
   const [pivotData, setPivotData] = useState<PivotData | null>(null);
   const [isGenerating, setIsGenerating] = useState(false);
   const [activeModal, setActiveModal] = useState<ModalType>(null);
-  const [showAcademia, setShowAcademia] = useState(false);
-  const [showOpenClaw, setShowOpenClaw] = useState(false);
-  const [showArsenal, setShowArsenal] = useState(false);
-  const [showAfacere, setShowAfacere] = useState(false);
   const [showYoutube, setShowYoutube] = useState(false);
-  const location = useLocation();
-  useEffect(() => {
-    const p = location.pathname;
-    if (p === '/afacerelacheie') setShowAfacere(true);
-    else if (p === '/academy') setShowAcademia(true);
-    else if (p === '/openclaw') setShowOpenClaw(true);
-    else if (p === '/arsenalapi') setShowArsenal(true);
-  }, []);
+  const nav = useNavigate();
   const [lang, setLang] = useState<Lang>('ro');
   const [showLangMenu, setShowLangMenu] = useState(false);
   const t = T[lang];

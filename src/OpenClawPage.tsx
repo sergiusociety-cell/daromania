@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import DaRomaniaBackButton from './components/DaRomaniaBackButton';
 
 interface Props {
   onClose?: () => void;
@@ -12,11 +13,11 @@ export default function OpenClawPage({ onClose }: Props) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-white overflow-y-auto">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-background">
+      <DaRomaniaBackButton onClick={goBack} />
       {/* Header */}
-      <div className="sticky top-0 bg-white/95 backdrop-blur border-b border-slate-200 px-4 py-3 flex items-center justify-between z-10">
-        <button onClick={goBack} style={{display:"flex",alignItems:"center",gap:8,background:"linear-gradient(135deg,#f6c90e,#e0a800)",border:"none",borderRadius:10,padding:"10px 20px",color:"#1a1a1a",fontWeight:900,fontSize:13,cursor:"pointer",boxShadow:"0 2px 8px rgba(246,201,14,0.4)"}}>← Back to 🇷🇴 DaRomania</button>
-        <span className="font-black text-slate-800 text-sm hidden sm:block">🤖 OpenClaw AI — Cel mai viral agent AI din 2026</span>
+      <div className="sticky top-0 z-10 flex items-center justify-end gap-4 border-b border-border bg-background/95 px-4 py-3 backdrop-blur sm:justify-between sm:pl-60">
+        <span className="hidden text-sm font-black text-foreground sm:block">🤖 OpenClaw AI — Cel mai viral agent AI din 2026</span>
         <a href="https://build.nvidia.com" target="_blank" rel="noopener noreferrer" className="text-xs font-black text-green-700 bg-green-100 px-3 py-2 rounded-full">NVIDIA Gratuit →</a>
       </div>
 

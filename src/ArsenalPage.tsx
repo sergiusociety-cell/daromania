@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { JOBS_LIST } from './constants';
+import DaRomaniaBackButton from './components/DaRomaniaBackButton';
 
 const API_CATALOG = {
   'AI & Text': [
@@ -764,13 +765,12 @@ export default function ArsenalPage({ onClose }: Props) {
   };
 
   return (
-    <div className="fixed inset-0 bg-white z-50 overflow-y-auto">
-      <div className="sticky top-0 bg-white border-b border-slate-200 z-10 px-4 py-3 flex items-center justify-between">
-        <button onClick={goBack} style={{display:"flex",alignItems:"center",gap:8,background:"linear-gradient(135deg,#f6c90e,#e0a800)",border:"none",borderRadius:10,padding:"10px 20px",color:"#1a1a1a",fontWeight:900,fontSize:13,cursor:"pointer",boxShadow:"0 2px 8px rgba(246,201,14,0.4)"}}>
-          ← Back to 🇷🇴 DaRomania
-        </button>
-        <span className="font-black text-slate-800 text-sm hidden sm:block">⚡ Arsenal API — 99 meserii × ghid complet de automatizare</span>
-        <div className="w-20" />
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-background">
+      <DaRomaniaBackButton onClick={goBack} />
+      <div className="sticky top-0 z-10 border-b border-border bg-background/95 px-4 py-3 backdrop-blur">
+        <div className="flex min-h-10 items-center justify-center text-center">
+          <span className="hidden text-sm font-black text-foreground sm:block">⚡ Arsenal API — 99 meserii × ghid complet de automatizare</span>
+        </div>
       </div>
       <div className="max-w-7xl mx-auto px-4 py-6">
         <ArsenalContent />

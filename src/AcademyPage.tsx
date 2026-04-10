@@ -3,6 +3,7 @@ import { ArrowRight, PlayCircle } from 'lucide-react';
 import { ArsenalContent } from './ArsenalPage';
 import { useAuth } from './auth/AuthContext';
 import { useState } from 'react';
+import DaRomaniaBackButton from './components/DaRomaniaBackButton';
 
 interface Props {
   onClose?: () => void;
@@ -172,14 +173,12 @@ export default function AcademyPage({ onClose }: Props) {
   ];
 
   return (
-    <div className="fixed inset-0 z-50 bg-white overflow-y-auto">
-      <div className="sticky top-0 bg-white border-b border-slate-200 px-4 py-4 flex items-center justify-between z-10 shadow-sm">
-        <div className="flex items-center gap-3">
-          <button onClick={goBack} style={{display:"flex",alignItems:"center",gap:8,background:"linear-gradient(135deg,#f6c90e,#e0a800)",border:"none",borderRadius:10,padding:"10px 20px",color:"#1a1a1a",fontWeight:900,fontSize:13,cursor:"pointer",boxShadow:"0 2px 8px rgba(246,201,14,0.4)"}}>← Back to 🇷🇴 DaRomania</button>
-          <div>
-            <h1 className="text-xl font-black text-slate-900">🎓 Academia DaRomania</h1>
-            <p className="text-xs text-slate-500">71 proiecte construite de SSociety — comunitatea noastră</p>
-          </div>
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-background">
+      <DaRomaniaBackButton onClick={goBack} />
+      <div className="sticky top-0 z-10 flex items-center justify-between border-b border-border bg-background/95 px-4 py-4 pl-24 shadow-sm backdrop-blur sm:pl-60">
+        <div>
+          <h1 className="text-xl font-black text-slate-900">🎓 Academia DaRomania</h1>
+          <p className="text-xs text-slate-500">71 proiecte construite de SSociety — comunitatea noastră</p>
         </div>
         <a href="https://ssociety.eu" target="_blank" rel="noopener noreferrer" className="text-xs font-black text-indigo-600 bg-indigo-50 px-3 py-2 rounded-full hover:bg-indigo-100 transition-all">ssociety.eu →</a>
       </div>

@@ -2,7 +2,6 @@ import ProfilePage from './auth/ProfilePage';
 import AuthModal from './auth/AuthModal';
 import { useAuth } from './auth/AuthContext';
 import JobBusinessModal from './components/JobBusinessModal';
-import JobBusinessModal from './components/JobBusinessModal';
 import YouTubePage from './YouTubePage';
 import logoDaRomania from './assets/logo-daromania.png';
 import logoDaEu from './assets/logo-daeu.png';

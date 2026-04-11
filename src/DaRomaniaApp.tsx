@@ -1135,10 +1135,10 @@ export default function App() {
             <div className="relative">
               <button
                 onClick={() => setIsAgentsOpen(!isAgentsOpen)}
-                className="hover:scale-105 transition-all duration-200 font-black text-[15px] text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 flex items-center gap-1"
+                className="hover:scale-105 transition-all duration-200 font-black text-[15px] text-red-600 flex items-center gap-1"
               >
                 🤖 Agenți
-                <svg className={`w-3.5 h-3.5 text-indigo-600 transition-transform ${isAgentsOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
+                <svg className={`w-3.5 h-3.5 text-red-600 transition-transform ${isAgentsOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
               </button>
               {isAgentsOpen && (
                 <>
@@ -1151,8 +1151,8 @@ export default function App() {
                 </>
               )}
             </div>
-            <button onClick={() => { pushHistoryState(); nav("/academy"); }} className="hover:scale-105 transition-all duration-200 font-black text-[15px] text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">🎓 Academy</button>
-            <button onClick={() => { pushHistoryState(); nav("/afacerelacheie"); }} className="hover:scale-105 transition-all duration-200 font-black text-[15px] text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">{t.nav_afacere}</button>
+            <button onClick={() => { pushHistoryState(); nav("/academy"); }} className="hover:scale-105 transition-all duration-200 font-black text-[15px] text-amber-600">🎓 Academy</button>
+            <button onClick={() => { pushHistoryState(); nav("/afacerelacheie"); }} className="hover:scale-105 transition-all duration-200 font-black text-[15px] text-blue-700">{t.nav_afacere}</button>
             
             {/* Auth Button Desktop */}
             {isAuthenticated ? (
@@ -1229,9 +1229,9 @@ export default function App() {
             >
               <div className="px-3 py-4 flex flex-col gap-2">
                 {/* Agenți dropdown mobile */}
-                <button onClick={() => setIsMobileAgentsOpen(!isMobileAgentsOpen)} className="text-left text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 py-2.5 px-3 rounded-xl hover:bg-indigo-50 transition-all duration-200 flex items-center justify-between">
+                <button onClick={() => setIsMobileAgentsOpen(!isMobileAgentsOpen)} className="text-left text-sm font-black text-red-600 py-2.5 px-3 rounded-xl hover:bg-red-50 transition-all duration-200 flex items-center justify-between">
                   🤖 Agenți
-                  <svg className={`w-3.5 h-3.5 text-indigo-600 transition-transform ${isMobileAgentsOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
+                  <svg className={`w-3.5 h-3.5 text-red-600 transition-transform ${isMobileAgentsOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
                 </button>
                 {isMobileAgentsOpen && (
                   <div className="pl-6 flex flex-col gap-1">
@@ -1240,8 +1240,8 @@ export default function App() {
                     <button onClick={() => { pushHistoryState(); nav("/openclaw"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 py-2 px-3 rounded-xl hover:bg-indigo-50 transition-all duration-200">🤖 OpenClaw</button>
                   </div>
                 )}
-                <button onClick={() => { pushHistoryState(); nav("/academy"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 py-2.5 px-3 rounded-xl hover:bg-indigo-50 hover:scale-105 transition-all duration-200">🎓 Academy</button>
-                <button onClick={() => { pushHistoryState(); nav("/afacerelacheie"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 py-2.5 px-3 rounded-xl hover:bg-indigo-50 hover:scale-105 transition-all duration-200">💼 Afacere la Cheie</button>
+                <button onClick={() => { pushHistoryState(); nav("/academy"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-amber-600 py-2.5 px-3 rounded-xl hover:bg-amber-50 hover:scale-105 transition-all duration-200">🎓 Academy</button>
+                <button onClick={() => { pushHistoryState(); nav("/afacerelacheie"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-blue-700 py-2.5 px-3 rounded-xl hover:bg-blue-50 hover:scale-105 transition-all duration-200">💼 Afacere la Cheie</button>
                 <div className="border-t border-slate-100 mt-1 pt-2 flex gap-2">
                   {(['ro','en','es'] as Lang[]).map(l => (
                     <button key={l} onClick={() => { setLang(l); setIsMobileMenuOpen(false); }}

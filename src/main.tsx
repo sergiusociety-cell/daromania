@@ -8,6 +8,7 @@ import AcademyPage from "./AcademyPage";
 import AfacereLaCheiePage from "./AfacereLaCheiePage";
 import SergiuClawPage from "./SergiuClawPage";
 import NemoClawPage from "./NemoClawPage";
+import HermesPage from "./HermesPage";
 import { AuthProvider } from "./auth/AuthContext";
 
 createRoot(document.getElementById("root")!).render(
@@ -20,6 +21,7 @@ createRoot(document.getElementById("root")!).render(
         <Route path="/afacerelacheie" element={<AfacereLaCheiePage />} />
         <Route path="/sergiuclaw" element={<SergiuClawPage />} />
         <Route path="/nemoclaw" element={<NemoClawPage />} />
+        <Route path="/hermes" element={<HermesPage />} />
         <Route path="/*" element={<DaRomaniaApp />} />
       </Routes>
     </BrowserRouter>

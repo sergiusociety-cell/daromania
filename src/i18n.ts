@@ -13,7 +13,7 @@ export const T: Record<Lang, Record<string, string>> = {
     nav_arsenal: '⚡ Arsenal API',
     nav_afacere: '💼 Afacere la Cheie',
     nav_find: 'Găsește-ți Meseria',
-    hero_title1: 'Te ajutăm să creezi cu ceea ce iubești,',
+    hero_title1: 'Transformăm orice idee în business',
     hero_title2: 'să nu mai simți că muncești o zi din viață.',
     hero_cta: 'Găsește-ți meseria',
     search_placeholder: 'Caută meseria ta...',

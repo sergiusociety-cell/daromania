@@ -1135,25 +1135,25 @@ export default function App() {
             <div className="relative">
               <button
                 onClick={() => setIsAgentsOpen(!isAgentsOpen)}
-                className="hover:scale-105 transition-all duration-200 font-black text-[15px] text-blue-700 flex items-center gap-1"
+                className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-slate-900 flex items-center gap-1"
               >
                 🤖 Agenți
-                <svg className={`w-3.5 h-3.5 text-blue-700 transition-transform ${isAgentsOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
+                <svg className={`w-3.5 h-3.5 text-slate-900 transition-transform ${isAgentsOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
               </button>
               {isAgentsOpen && (
                 <>
                   <div className="fixed inset-0 z-40" onClick={() => setIsAgentsOpen(false)} />
                   <div className="absolute left-0 top-8 bg-white border border-slate-200 rounded-xl shadow-xl overflow-hidden z-50 min-w-[200px]">
-                    <a href="https://sergiuclaw.daromania.online" target="_blank" rel="noopener noreferrer" onClick={() => setIsAgentsOpen(false)} className="block w-full text-left px-4 py-3 text-sm font-black text-blue-700 hover:bg-blue-50 transition-colors no-underline">🤖 SergiuClaw</a>
-                    <a href="https://nemoclaw.daromania.online" target="_blank" rel="noopener noreferrer" onClick={() => setIsAgentsOpen(false)} className="block w-full text-left px-4 py-3 text-sm font-black text-blue-700 hover:bg-blue-50 transition-colors no-underline">⚡ NemoClaw</a>
-                    <a href="https://hermes.daromania.online" target="_blank" rel="noopener noreferrer" onClick={() => setIsAgentsOpen(false)} className="block w-full text-left px-4 py-3 text-sm font-black text-blue-700 hover:bg-blue-50 transition-colors no-underline">🧠 Hermes</a>
-                    <button onClick={() => { pushHistoryState(); nav("/openclaw"); setIsAgentsOpen(false); }} className="w-full text-left px-4 py-3 text-sm font-black text-blue-700 hover:bg-blue-50 transition-colors">🤖 OpenClaw</button>
+                    <a href="https://sergiuclaw.daromania.online" target="_blank" rel="noopener noreferrer" onClick={() => setIsAgentsOpen(false)} className="block w-full text-left px-4 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50 transition-colors no-underline">🤖 SergiuClaw</a>
+                    <a href="https://nemoclaw.daromania.online" target="_blank" rel="noopener noreferrer" onClick={() => setIsAgentsOpen(false)} className="block w-full text-left px-4 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50 transition-colors no-underline">⚡ NemoClaw</a>
+                    <a href="https://hermes.daromania.online" target="_blank" rel="noopener noreferrer" onClick={() => setIsAgentsOpen(false)} className="block w-full text-left px-4 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50 transition-colors no-underline">🧠 HermesClaw</a>
+                    <button onClick={() => { pushHistoryState(); nav("/openclaw"); setIsAgentsOpen(false); }} className="w-full text-left px-4 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50 transition-colors">🤖 OpenClaw</button>
                   </div>
                 </>
               )}
             </div>
-            <button onClick={() => { pushHistoryState(); nav("/academy"); }} className="hover:scale-105 transition-all duration-200 font-black text-[15px] text-amber-600">🎓 Academy</button>
-            <button onClick={() => { pushHistoryState(); nav("/afacerelacheie"); }} className="hover:scale-105 transition-all duration-200 font-black text-[15px] text-blue-700">{t.nav_afacere}</button>
+            <button onClick={() => { pushHistoryState(); nav("/academy"); }} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-slate-900">🎓 Academy</button>
+            <button onClick={() => { pushHistoryState(); nav("/afacerelacheie"); }} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-slate-900">{t.nav_afacere}</button>
             
             {/* Auth Button Desktop */}
             {isAuthenticated ? (
@@ -1230,20 +1230,20 @@ export default function App() {
             >
               <div className="px-3 py-4 flex flex-col gap-2">
                 {/* Agenți dropdown mobile */}
-                <button onClick={() => setIsMobileAgentsOpen(!isMobileAgentsOpen)} className="text-left text-sm font-black text-blue-700 py-2.5 px-3 rounded-xl hover:bg-blue-50 transition-all duration-200 flex items-center justify-between">
+                <button onClick={() => setIsMobileAgentsOpen(!isMobileAgentsOpen)} className="text-left text-sm font-semibold text-slate-900 py-2.5 px-3 rounded-xl hover:bg-slate-50 transition-all duration-200 flex items-center justify-between">
                   🤖 Agenți
-                  <svg className={`w-3.5 h-3.5 text-blue-700 transition-transform ${isMobileAgentsOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
+                  <svg className={`w-3.5 h-3.5 text-slate-900 transition-transform ${isMobileAgentsOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
                 </button>
                 {isMobileAgentsOpen && (
                   <div className="pl-6 flex flex-col gap-1">
-                    <a href="https://sergiuclaw.daromania.online" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="block text-left text-sm font-black text-blue-700 py-2 px-3 rounded-xl hover:bg-blue-50 transition-all duration-200 no-underline">🤖 SergiuClaw</a>
-                    <a href="https://nemoclaw.daromania.online" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="block text-left text-sm font-black text-blue-700 py-2 px-3 rounded-xl hover:bg-blue-50 transition-all duration-200 no-underline">⚡ NemoClaw</a>
-                    <a href="https://hermes.daromania.online" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="block text-left text-sm font-black text-blue-700 py-2 px-3 rounded-xl hover:bg-blue-50 transition-all duration-200 no-underline">🧠 Hermes</a>
-                    <button onClick={() => { pushHistoryState(); nav("/openclaw"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-blue-700 py-2 px-3 rounded-xl hover:bg-blue-50 transition-all duration-200">🤖 OpenClaw</button>
+                    <a href="https://sergiuclaw.daromania.online" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="block text-left text-sm font-semibold text-slate-900 py-2 px-3 rounded-xl hover:bg-slate-50 transition-all duration-200 no-underline">🤖 SergiuClaw</a>
+                    <a href="https://nemoclaw.daromania.online" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="block text-left text-sm font-semibold text-slate-900 py-2 px-3 rounded-xl hover:bg-slate-50 transition-all duration-200 no-underline">⚡ NemoClaw</a>
+                    <a href="https://hermes.daromania.online" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="block text-left text-sm font-semibold text-slate-900 py-2 px-3 rounded-xl hover:bg-slate-50 transition-all duration-200 no-underline">🧠 HermesClaw</a>
+                    <button onClick={() => { pushHistoryState(); nav("/openclaw"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-semibold text-slate-900 py-2 px-3 rounded-xl hover:bg-slate-50 transition-all duration-200">🤖 OpenClaw</button>
                   </div>
                 )}
-                <button onClick={() => { pushHistoryState(); nav("/academy"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-amber-600 py-2.5 px-3 rounded-xl hover:bg-amber-50 hover:scale-105 transition-all duration-200">🎓 Academy</button>
-                <button onClick={() => { pushHistoryState(); nav("/afacerelacheie"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-blue-700 py-2.5 px-3 rounded-xl hover:bg-blue-50 hover:scale-105 transition-all duration-200">💼 Afacere la Cheie</button>
+                <button onClick={() => { pushHistoryState(); nav("/academy"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-semibold text-slate-900 py-2.5 px-3 rounded-xl hover:bg-slate-50 hover:scale-105 transition-all duration-200">🎓 Academy</button>
+                <button onClick={() => { pushHistoryState(); nav("/afacerelacheie"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-semibold text-slate-900 py-2.5 px-3 rounded-xl hover:bg-slate-50 hover:scale-105 transition-all duration-200">💼 Afacere la Cheie</button>
                 <div className="border-t border-slate-100 mt-1 pt-2 flex gap-2">
                   {(['ro','en','es'] as Lang[]).map(l => (
                     <button key={l} onClick={() => { setLang(l); setIsMobileMenuOpen(false); }}

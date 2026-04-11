@@ -1129,11 +1129,11 @@ export default function App() {
           
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-            <a href="http://agents.daromania.online" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-all duration-200 font-black text-[15px] text-slate-800 hover:text-slate-950">🤖 SergiuClaw</a>
-            <button onClick={() => { pushHistoryState(); nav("/arsenalapi"); }} className="hover:scale-105 transition-all duration-200 font-black text-[15px] text-slate-800 hover:text-slate-950">{t.nav_arsenal}</button>
-            <button onClick={() => { pushHistoryState(); nav("/openclaw"); }} className="hover:scale-105 transition-all duration-200 font-black text-[15px] text-slate-800 hover:text-slate-950">{t.nav_openclaw}</button>
-            <button onClick={() => { pushHistoryState(); nav("/academy"); }} className="hover:scale-105 transition-all duration-200 font-black text-[15px] text-slate-800 hover:text-slate-950">🎓 Academy</button>
-            <button onClick={() => { pushHistoryState(); nav("/afacerelacheie"); }} className="hover:scale-105 transition-all duration-200 font-black text-[15px] text-slate-800 hover:text-slate-950">{t.nav_afacere}</button>
+            <a href="http://agents.daromania.online" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-all duration-200 font-black text-[15px] text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">🤖 SergiuClaw</a>
+            <button onClick={() => { pushHistoryState(); nav("/arsenalapi"); }} className="hover:scale-105 transition-all duration-200 font-black text-[15px] text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">{t.nav_arsenal}</button>
+            <button onClick={() => { pushHistoryState(); nav("/openclaw"); }} className="hover:scale-105 transition-all duration-200 font-black text-[15px] text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">{t.nav_openclaw}</button>
+            <button onClick={() => { pushHistoryState(); nav("/academy"); }} className="hover:scale-105 transition-all duration-200 font-black text-[15px] text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">🎓 Academy</button>
+            <button onClick={() => { pushHistoryState(); nav("/afacerelacheie"); }} className="hover:scale-105 transition-all duration-200 font-black text-[15px] text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">{t.nav_afacere}</button>
             
             {/* Auth Button Desktop */}
             {isAuthenticated ? (
@@ -1209,11 +1209,11 @@ export default function App() {
               className="md:hidden bg-white border-b border-slate-200 overflow-hidden"
             >
               <div className="px-3 py-4 flex flex-col gap-2">
-                <a href="http://agents.daromania.online" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="text-left text-sm font-black text-slate-800 py-2.5 px-3 rounded-xl hover:bg-slate-100 hover:scale-105 transition-all duration-200">🤖 SergiuClaw</a>
-                <button onClick={() => { pushHistoryState(); nav("/arsenalapi"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-slate-800 py-2.5 px-3 rounded-xl hover:bg-slate-100 hover:scale-105 transition-all duration-200">⚡ Arsenal API</button>
-                <button onClick={() => { pushHistoryState(); nav("/openclaw"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-slate-800 py-2.5 px-3 rounded-xl hover:bg-slate-100 hover:scale-105 transition-all duration-200">🤖 OpenClaw</button>
-                <button onClick={() => { pushHistoryState(); nav("/academy"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-slate-800 py-2.5 px-3 rounded-xl hover:bg-slate-100 hover:scale-105 transition-all duration-200">🎓 Academy</button>
-                <button onClick={() => { pushHistoryState(); nav("/afacerelacheie"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-slate-800 py-2.5 px-3 rounded-xl hover:bg-slate-100 hover:scale-105 transition-all duration-200">💼 Afacere la Cheie</button>
+                <a href="http://agents.daromania.online" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="text-left text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 py-2.5 px-3 rounded-xl hover:bg-indigo-50 hover:scale-105 transition-all duration-200">🤖 SergiuClaw</a>
+                <button onClick={() => { pushHistoryState(); nav("/arsenalapi"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 py-2.5 px-3 rounded-xl hover:bg-indigo-50 hover:scale-105 transition-all duration-200">⚡ Arsenal API</button>
+                <button onClick={() => { pushHistoryState(); nav("/openclaw"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 py-2.5 px-3 rounded-xl hover:bg-indigo-50 hover:scale-105 transition-all duration-200">🤖 OpenClaw</button>
+                <button onClick={() => { pushHistoryState(); nav("/academy"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 py-2.5 px-3 rounded-xl hover:bg-indigo-50 hover:scale-105 transition-all duration-200">🎓 Academy</button>
+                <button onClick={() => { pushHistoryState(); nav("/afacerelacheie"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 py-2.5 px-3 rounded-xl hover:bg-indigo-50 hover:scale-105 transition-all duration-200">💼 Afacere la Cheie</button>
                 <div className="border-t border-slate-100 mt-1 pt-2 flex gap-2">
                   {(['ro','en','es'] as Lang[]).map(l => (
                     <button key={l} onClick={() => { setLang(l); setIsMobileMenuOpen(false); }}

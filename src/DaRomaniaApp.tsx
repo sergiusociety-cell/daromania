@@ -1144,8 +1144,8 @@ export default function App() {
                 <>
                   <div className="fixed inset-0 z-40" onClick={() => setIsAgentsOpen(false)} />
                   <div className="absolute left-0 top-8 bg-white border border-slate-200 rounded-xl shadow-xl overflow-hidden z-50 min-w-[200px]">
-                    <button onClick={() => { pushHistoryState(); nav("/sergiuclaw"); setIsAgentsOpen(false); }} className="w-full text-left px-4 py-3 text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 hover:bg-indigo-50 transition-colors">🤖 SergiuClaw</button>
-                    <button onClick={() => { pushHistoryState(); nav("/nemoclaw"); setIsAgentsOpen(false); }} className="w-full text-left px-4 py-3 text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 hover:bg-indigo-50 transition-colors">⚡ NemoClaw</button>
+                    <a href="https://sergiuclaw.daromania.online" target="_blank" rel="noopener noreferrer" onClick={() => setIsAgentsOpen(false)} className="block w-full text-left px-4 py-3 text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 hover:bg-indigo-50 transition-colors no-underline">🤖 SergiuClaw</a>
+                    <a href="https://nemoclaw.daromania.online" target="_blank" rel="noopener noreferrer" onClick={() => setIsAgentsOpen(false)} className="block w-full text-left px-4 py-3 text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 hover:bg-indigo-50 transition-colors no-underline">⚡ NemoClaw</a>
                     <button onClick={() => { pushHistoryState(); nav("/openclaw"); setIsAgentsOpen(false); }} className="w-full text-left px-4 py-3 text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 hover:bg-indigo-50 transition-colors">🤖 OpenClaw</button>
                   </div>
                 </>
@@ -1235,8 +1235,8 @@ export default function App() {
                 </button>
                 {isMobileAgentsOpen && (
                   <div className="pl-6 flex flex-col gap-1">
-                    <button onClick={() => { pushHistoryState(); nav("/sergiuclaw"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 py-2 px-3 rounded-xl hover:bg-indigo-50 transition-all duration-200">🤖 SergiuClaw</button>
-                    <button onClick={() => { pushHistoryState(); nav("/nemoclaw"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 py-2 px-3 rounded-xl hover:bg-indigo-50 transition-all duration-200">⚡ NemoClaw</button>
+                    <a href="https://sergiuclaw.daromania.online" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="block text-left text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 py-2 px-3 rounded-xl hover:bg-indigo-50 transition-all duration-200 no-underline">🤖 SergiuClaw</a>
+                    <a href="https://nemoclaw.daromania.online" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="block text-left text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 py-2 px-3 rounded-xl hover:bg-indigo-50 transition-all duration-200 no-underline">⚡ NemoClaw</a>
                     <button onClick={() => { pushHistoryState(); nav("/openclaw"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 py-2 px-3 rounded-xl hover:bg-indigo-50 transition-all duration-200">🤖 OpenClaw</button>
                   </div>
                 )}

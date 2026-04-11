@@ -1564,7 +1564,6 @@ export default function App() {
                   <span className="font-bold text-amber-700">Începi gratuit</span> cu Arsenal API. Când ești gata, lansezi cu <span className="font-bold">$9</span> (o singură dată) sau OpenClaw cu <span className="font-bold">$19/lună</span>. Simplu.
                 </p>
               </div>
-            </div>
           </div>
         </section>
 

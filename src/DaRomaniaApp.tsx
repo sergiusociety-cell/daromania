@@ -1252,37 +1252,8 @@ export default function App() {
               {t.hero_title1} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">să nu mai simți că muncești o zi din viață!</span>
             </h1>
-            <div className="max-w-4xl mx-auto mb-12 grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200/60 rounded-2xl p-5 flex gap-3 items-start">
-                <span className="text-2xl mt-0.5">🤖</span>
-                <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                  <span className="font-bold text-blue-700">85% din sarcini automatizate</span> — emailuri, rapoarte, programări, follow-up-uri. Tu te concentrezi pe cei <span className="font-bold">15% care contează</span>: relații, strategie, expertiză.
-                </p>
-              </div>
-              <div className="bg-gradient-to-br from-emerald-50 to-green-50 border border-emerald-200/60 rounded-2xl p-5 flex gap-3 items-start">
-                <span className="text-2xl mt-0.5">⚙️</span>
-                <div>
-                  <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                    <span className="font-bold text-emerald-700">Nu îți schimbăm cariera.</span> Îți dăm un sistem complet care lucrează <span className="font-bold">22h/zi</span> în locul tău, cu un cost real de <span className="font-bold text-emerald-700">$3–9/lună</span> în API-uri.
-                  </p>
-                  <button onClick={() => pivotRef.current?.scrollIntoView({ behavior: 'smooth' })} className="mt-3 inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold px-4 py-2 rounded-lg transition-colors">
-                    🔍 Vezi joburi
-                  </button>
-                </div>
-              </div>
-              <div className="bg-gradient-to-br from-violet-50 to-purple-50 border border-violet-200/60 rounded-2xl p-5 flex gap-3 items-start">
-                <span className="text-2xl mt-0.5">📈</span>
-                <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                  <span className="font-bold text-violet-700">Rezultatul?</span> Un business scalabil, fără angajați, cu venituri recurente <span className="font-bold">€2.000–€12.000/lună</span> — construit pe expertiza ta unică.
-                </p>
-              </div>
-              <div className="bg-gradient-to-br from-amber-50 to-yellow-50 border border-amber-200/60 rounded-2xl p-5 flex gap-3 items-start">
-                <span className="text-2xl mt-0.5">🚀</span>
-                <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                  <span className="font-bold text-amber-700">Începi gratuit</span> cu Arsenal API. Când ești gata, lansezi cu <span className="font-bold">$9</span> (o singură dată) sau OpenClaw cu <span className="font-bold">$19/lună</span>. Simplu.
-                </p>
-              </div>
-            </div>
+
+
             {/* ===== 5 SERVICII MARI ===== */}
             <div className="max-w-5xl w-full mx-auto mb-10 space-y-6">
 
@@ -1934,6 +1905,41 @@ export default function App() {
           </div>
         </section>
 
+        {/* 4 Info Cards before Index Automatizare */}
+        <section className="w-full bg-white py-16 px-4">
+          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200/60 rounded-2xl p-5 flex gap-3 items-start">
+              <span className="text-2xl mt-0.5">🤖</span>
+              <p className="text-slate-700 text-sm md:text-base leading-relaxed">
+                <span className="font-bold text-blue-700">85% din sarcini automatizate</span> — emailuri, rapoarte, programări, follow-up-uri. Tu te concentrezi pe cei <span className="font-bold">15% care contează</span>: relații, strategie, expertiză.
+              </p>
+            </div>
+            <div className="bg-gradient-to-br from-emerald-50 to-green-50 border border-emerald-200/60 rounded-2xl p-5 flex gap-3 items-start">
+              <span className="text-2xl mt-0.5">⚙️</span>
+              <div>
+                <p className="text-slate-700 text-sm md:text-base leading-relaxed">
+                  <span className="font-bold text-emerald-700">Nu îți schimbăm cariera.</span> Îți dăm un sistem complet care lucrează <span className="font-bold">22h/zi</span> în locul tău, cu un cost real de <span className="font-bold text-emerald-700">$3–9/lună</span> în API-uri.
+                </p>
+                <button onClick={() => pivotRef.current?.scrollIntoView({ behavior: 'smooth' })} className="mt-3 inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold px-4 py-2 rounded-lg transition-colors">
+                  🔍 Vezi joburi
+                </button>
+              </div>
+            </div>
+            <div className="bg-gradient-to-br from-violet-50 to-purple-50 border border-violet-200/60 rounded-2xl p-5 flex gap-3 items-start">
+              <span className="text-2xl mt-0.5">📈</span>
+              <p className="text-slate-700 text-sm md:text-base leading-relaxed">
+                <span className="font-bold text-violet-700">Rezultatul?</span> Un business scalabil, fără angajați, cu venituri recurente <span className="font-bold">€2.000–€12.000/lună</span> — construit pe expertiza ta unică.
+              </p>
+            </div>
+            <div className="bg-gradient-to-br from-amber-50 to-yellow-50 border border-amber-200/60 rounded-2xl p-5 flex gap-3 items-start">
+              <span className="text-2xl mt-0.5">🚀</span>
+              <p className="text-slate-700 text-sm md:text-base leading-relaxed">
+                <span className="font-bold text-amber-700">Începi gratuit</span> cu Arsenal API. Când ești gata, lansezi cu <span className="font-bold">$9</span> (o singură dată) sau OpenClaw cu <span className="font-bold">$19/lună</span>. Simplu.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <section ref={pivotRef} className="min-h-screen w-full bg-slate-50 snap-start relative overflow-hidden py-24 px-4">
           {!selectedJob ? (
             <div className="max-w-7xl mx-auto flex flex-col h-full">
@@ -2283,6 +2289,7 @@ export default function App() {
                             </div>
                           </div>
                         )}
+
 
 
                       </div>

@@ -815,6 +815,8 @@ export default function App() {
   const t = T[lang];
   const brand = BRANDS[lang];
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isAgentsOpen, setIsAgentsOpen] = useState(false);
+  const [isMobileAgentsOpen, setIsMobileAgentsOpen] = useState(false);
   const [showAuthModal, setShowAuthModal] = useState(false);
   const [authMode, setAuthMode] = useState<'signin' | 'signup'>('signin');
   const [showUserMenu, setShowUserMenu] = useState(false);
@@ -1129,9 +1131,26 @@ export default function App() {
           
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-            <a href="http://agents.daromania.online" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-all duration-200 font-black text-[15px] text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">🤖 SergiuClaw</a>
-            <button onClick={() => { pushHistoryState(); nav("/arsenalapi"); }} className="hover:scale-105 transition-all duration-200 font-black text-[15px] text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">{t.nav_arsenal}</button>
-            <button onClick={() => { pushHistoryState(); nav("/openclaw"); }} className="hover:scale-105 transition-all duration-200 font-black text-[15px] text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">{t.nav_openclaw}</button>
+            {/* Agenți Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setIsAgentsOpen(!isAgentsOpen)}
+                className="hover:scale-105 transition-all duration-200 font-black text-[15px] text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 flex items-center gap-1"
+              >
+                🤖 Agenți
+                <svg className={`w-3.5 h-3.5 text-indigo-600 transition-transform ${isAgentsOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
+              </button>
+              {isAgentsOpen && (
+                <>
+                  <div className="fixed inset-0 z-40" onClick={() => setIsAgentsOpen(false)} />
+                  <div className="absolute left-0 top-8 bg-white border border-slate-200 rounded-xl shadow-xl overflow-hidden z-50 min-w-[200px]">
+                    <button onClick={() => { pushHistoryState(); nav("/sergiuclaw"); setIsAgentsOpen(false); }} className="w-full text-left px-4 py-3 text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 hover:bg-indigo-50 transition-colors">🤖 SergiuClaw</button>
+                    <button onClick={() => { pushHistoryState(); nav("/nemoclaw"); setIsAgentsOpen(false); }} className="w-full text-left px-4 py-3 text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 hover:bg-indigo-50 transition-colors">⚡ NemoClaw</button>
+                    <button onClick={() => { pushHistoryState(); nav("/openclaw"); setIsAgentsOpen(false); }} className="w-full text-left px-4 py-3 text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 hover:bg-indigo-50 transition-colors">🤖 OpenClaw</button>
+                  </div>
+                </>
+              )}
+            </div>
             <button onClick={() => { pushHistoryState(); nav("/academy"); }} className="hover:scale-105 transition-all duration-200 font-black text-[15px] text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">🎓 Academy</button>
             <button onClick={() => { pushHistoryState(); nav("/afacerelacheie"); }} className="hover:scale-105 transition-all duration-200 font-black text-[15px] text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">{t.nav_afacere}</button>
             
@@ -1209,9 +1228,18 @@ export default function App() {
               className="md:hidden bg-white border-b border-slate-200 overflow-hidden"
             >
               <div className="px-3 py-4 flex flex-col gap-2">
-                <a href="http://agents.daromania.online" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="text-left text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 py-2.5 px-3 rounded-xl hover:bg-indigo-50 hover:scale-105 transition-all duration-200">🤖 SergiuClaw</a>
-                <button onClick={() => { pushHistoryState(); nav("/arsenalapi"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 py-2.5 px-3 rounded-xl hover:bg-indigo-50 hover:scale-105 transition-all duration-200">⚡ Arsenal API</button>
-                <button onClick={() => { pushHistoryState(); nav("/openclaw"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 py-2.5 px-3 rounded-xl hover:bg-indigo-50 hover:scale-105 transition-all duration-200">🤖 OpenClaw</button>
+                {/* Agenți dropdown mobile */}
+                <button onClick={() => setIsMobileAgentsOpen(!isMobileAgentsOpen)} className="text-left text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 py-2.5 px-3 rounded-xl hover:bg-indigo-50 transition-all duration-200 flex items-center justify-between">
+                  🤖 Agenți
+                  <svg className={`w-3.5 h-3.5 text-indigo-600 transition-transform ${isMobileAgentsOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
+                </button>
+                {isMobileAgentsOpen && (
+                  <div className="pl-6 flex flex-col gap-1">
+                    <button onClick={() => { pushHistoryState(); nav("/sergiuclaw"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 py-2 px-3 rounded-xl hover:bg-indigo-50 transition-all duration-200">🤖 SergiuClaw</button>
+                    <button onClick={() => { pushHistoryState(); nav("/nemoclaw"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 py-2 px-3 rounded-xl hover:bg-indigo-50 transition-all duration-200">⚡ NemoClaw</button>
+                    <button onClick={() => { pushHistoryState(); nav("/openclaw"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 py-2 px-3 rounded-xl hover:bg-indigo-50 transition-all duration-200">🤖 OpenClaw</button>
+                  </div>
+                )}
                 <button onClick={() => { pushHistoryState(); nav("/academy"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 py-2.5 px-3 rounded-xl hover:bg-indigo-50 hover:scale-105 transition-all duration-200">🎓 Academy</button>
                 <button onClick={() => { pushHistoryState(); nav("/afacerelacheie"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 py-2.5 px-3 rounded-xl hover:bg-indigo-50 hover:scale-105 transition-all duration-200">💼 Afacere la Cheie</button>
                 <div className="border-t border-slate-100 mt-1 pt-2 flex gap-2">

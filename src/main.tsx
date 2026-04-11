@@ -6,6 +6,8 @@ import ArsenalPage from "./ArsenalPage";
 import OpenClawPage from "./OpenClawPage";
 import AcademyPage from "./AcademyPage";
 import AfacereLaCheiePage from "./AfacereLaCheiePage";
+import SergiuClawPage from "./SergiuClawPage";
+import NemoClawPage from "./NemoClawPage";
 import { AuthProvider } from "./auth/AuthContext";
 
 createRoot(document.getElementById("root")!).render(
@@ -16,6 +18,8 @@ createRoot(document.getElementById("root")!).render(
         <Route path="/openclaw" element={<OpenClawPage />} />
         <Route path="/academy" element={<AcademyPage />} />
         <Route path="/afacerelacheie" element={<AfacereLaCheiePage />} />
+        <Route path="/sergiuclaw" element={<SergiuClawPage />} />
+        <Route path="/nemoclaw" element={<NemoClawPage />} />
         <Route path="/*" element={<DaRomaniaApp />} />
       </Routes>
     </BrowserRouter>

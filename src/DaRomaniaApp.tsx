@@ -1270,10 +1270,10 @@ export default function App() {
                       <span className="bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">GRATUIT</span>
                     </div>
                     <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-4">
-                      Alege din <strong>99 de meserii</strong> din 19 categorii profesionale. Pentru fiecare job primești instant un <strong>Business Blueprint complet</strong> cu 5 pipeline-uri de monetizare, proiecții financiare, strategii de marketing și un plan de acțiune pas cu pas. Totul personalizat pe răspunsurile tale la 3 întrebări despre stilul tău de lucru.
+                      Alege din <strong>109 de meserii</strong> din 19 categorii profesionale. Pentru fiecare job primești instant un <strong>Business Blueprint complet</strong> cu 5 pipeline-uri de monetizare, proiecții financiare, strategii de marketing și un plan de acțiune pas cu pas. Totul personalizat pe răspunsurile tale la 3 întrebări despre stilul tău de lucru.
                     </p>
                     <div className="flex flex-wrap gap-3">
-                      <span className="bg-indigo-100 text-indigo-700 text-xs font-bold px-3 py-1.5 rounded-full">✅ 99 meserii acoperite</span>
+                      <span className="bg-indigo-100 text-indigo-700 text-xs font-bold px-3 py-1.5 rounded-full">✅ 109 meserii acoperite</span>
                       <span className="bg-indigo-100 text-indigo-700 text-xs font-bold px-3 py-1.5 rounded-full">✅ 5 pipeline-uri per job</span>
                       <span className="bg-indigo-100 text-indigo-700 text-xs font-bold px-3 py-1.5 rounded-full">✅ Proiecții financiare</span>
                       <span className="bg-indigo-100 text-indigo-700 text-xs font-bold px-3 py-1.5 rounded-full">✅ 100% gratuit</span>
@@ -3036,7 +3036,7 @@ export default function App() {
           </div>
           <div className="text-center md:text-left">
             <p className="text-slate-500 text-sm font-medium mb-1">
-              © 2026 DaRomânia. 99 de meserii în pericol. 99 de business-uri posibile. Unul e al tău.
+              © 2026 DaRomânia. 109 de meserii în pericol. 109 de business-uri posibile. Unul e al tău.
             </p>
             <p className="text-slate-400 text-xs font-semibold uppercase tracking-wider">
               Powered by SSociety.eu

@@ -1129,6 +1129,7 @@ export default function App() {
           
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+            <a href="http://agents.daromania.online" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-red-500">🤖 SergiuClaw</a>
             <button onClick={() => { pushHistoryState(); nav("/arsenalapi"); }} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-amber-500">{t.nav_arsenal}</button>
             <button onClick={() => { pushHistoryState(); nav("/openclaw"); }} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-red-500">{t.nav_openclaw}</button>
             <button onClick={() => { pushHistoryState(); nav("/academy"); }} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-blue-600">🎓 Academy</button>
@@ -1210,6 +1211,7 @@ export default function App() {
               className="md:hidden bg-white border-b border-slate-200 overflow-hidden"
             >
               <div className="px-3 py-4 flex flex-col gap-2">
+                <a href="http://agents.daromania.online" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="text-left text-sm font-black text-red-500 py-2.5 px-3 rounded-xl hover:bg-red-50 hover:scale-105 transition-all duration-200">🤖 SergiuClaw</a>
                 <button onClick={() => { pushHistoryState(); nav("/arsenalapi"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-amber-500 py-2.5 px-3 rounded-xl hover:bg-amber-50 hover:scale-105 transition-all duration-200">⚡ Arsenal API</button>
                 <button onClick={() => { pushHistoryState(); nav("/openclaw"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-red-500 py-2.5 px-3 rounded-xl hover:bg-red-50 hover:scale-105 transition-all duration-200">🤖 OpenClaw</button>
                 <button onClick={() => { pushHistoryState(); nav("/academy"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-black text-blue-600 py-2.5 px-3 rounded-xl hover:bg-blue-50 hover:scale-105 transition-all duration-200">🎓 Academy</button>

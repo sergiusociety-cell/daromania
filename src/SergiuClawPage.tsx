@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import DaRomaniaBackButton from './components/DaRomaniaBackButton';
+import AgentPricingCard from './components/AgentPricingCard';
 
 export default function SergiuClawPage() {
   const navigate = useNavigate();
@@ -69,6 +70,9 @@ export default function SergiuClawPage() {
             </div>
           ))}
         </div>
+
+        {/* PRICING */}
+        <AgentPricingCard agentName="SergiuClaw" />
 
         {/* CTA */}
         <div className="text-center space-y-4 pb-8">

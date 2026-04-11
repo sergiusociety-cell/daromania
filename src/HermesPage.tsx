@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import DaRomaniaBackButton from './components/DaRomaniaBackButton';
+import AgentPricingCard from './components/AgentPricingCard';
 
 export default function HermesPage() {
   const navigate = useNavigate();
@@ -96,6 +97,9 @@ export default function HermesPage() {
             ))}
           </div>
         </div>
+
+        {/* PRICING */}
+        <AgentPricingCard agentName="HermesClaw" />
 
         {/* CTA */}
         <div className="text-center space-y-4 pb-8">

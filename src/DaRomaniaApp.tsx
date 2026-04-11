@@ -1254,147 +1254,143 @@ export default function App() {
             </h1>
 
 
-            {/* ===== 5 SERVICII MARI ===== */}
-            <div className="max-w-5xl w-full mx-auto mb-10 space-y-6">
+            <p className="text-slate-500 text-lg mb-6">Uite explicația clară, simplă și orientată pe rezultat 👇</p>
 
-              {/* CARD 0 — Indexul de Joburi (gratuit) */}
+            {/* ===== 6 CARDURI CLARE ===== */}
+            <div className="max-w-5xl w-full mx-auto mb-10 space-y-5">
+
+              {/* CARD 1 — Index de Joburi */}
               <div
                 onClick={() => pivotRef.current?.scrollIntoView({ behavior: 'smooth' })}
-                className="group cursor-pointer rounded-3xl border-2 border-indigo-200 bg-gradient-to-br from-indigo-50/80 to-white p-8 hover:shadow-2xl hover:border-indigo-400 transition-all duration-300"
+                className="group cursor-pointer rounded-2xl border-2 border-indigo-200 bg-gradient-to-br from-indigo-50/80 to-white p-6 md:p-8 hover:shadow-xl hover:border-indigo-400 transition-all duration-300"
               >
-                <div className="flex flex-col md:flex-row md:items-center gap-6">
-                  <div className="flex-shrink-0 text-5xl">🔍</div>
+                <div className="flex items-start gap-4">
+                  <span className="flex-shrink-0 w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center font-black text-lg">1</span>
                   <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <h3 className="text-xl md:text-2xl font-black text-slate-900">Index de Joburi — Găsește-ți meseria</h3>
-                      <span className="bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">GRATUIT</span>
-                    </div>
-                    <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-4">
-                      Alege din <strong>109 de meserii</strong> din 19 categorii profesionale. Pentru fiecare job primești instant un <strong>Business Blueprint complet</strong> cu 5 pipeline-uri de monetizare, proiecții financiare, strategii de marketing și un plan de acțiune pas cu pas. Totul personalizat pe răspunsurile tale la 3 întrebări despre stilul tău de lucru.
-                    </p>
-                    <div className="flex flex-wrap gap-3">
-                      <span className="bg-indigo-100 text-indigo-700 text-xs font-bold px-3 py-1.5 rounded-full">✅ 109 meserii acoperite</span>
-                      <span className="bg-indigo-100 text-indigo-700 text-xs font-bold px-3 py-1.5 rounded-full">✅ 5 pipeline-uri per job</span>
-                      <span className="bg-indigo-100 text-indigo-700 text-xs font-bold px-3 py-1.5 rounded-full">✅ Proiecții financiare</span>
-                      <span className="bg-indigo-100 text-indigo-700 text-xs font-bold px-3 py-1.5 rounded-full">✅ 100% gratuit</span>
-                    </div>
+                    <h3 className="text-lg md:text-xl font-black text-slate-900 mb-1">🔍 Index de Joburi — Îți dă direcția corectă</h3>
+                    <p className="text-indigo-600 font-semibold text-sm mb-3">👉 Te ajută să NU mai pierzi timp încercând idei la întâmplare.</p>
+                    <ul className="text-slate-600 text-sm space-y-1 mb-3">
+                      <li>• Alegi o meserie → primești exact cum faci bani din ea</li>
+                      <li>• Ai deja plan + strategii + pași concreți</li>
+                      <li>• Știi din start dacă merită sau nu</li>
+                    </ul>
+                    <p className="text-indigo-700 font-bold text-sm">✅ Rezultat: claritate totală + drum fără confuzie</p>
                   </div>
-                  <span className="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-indigo-100 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-all">
-                    <ArrowRight className="w-5 h-5" />
+                  <span className="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-indigo-100 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-all">
+                    <ArrowRight className="w-4 h-4" />
                   </span>
                 </div>
               </div>
 
-              {/* CARD 1 — Arsenal API */}
+              {/* CARD 2 — Arsenal API */}
               <div
                 onClick={() => { pushHistoryState(); nav("/arsenalapi"); }}
-                className="group cursor-pointer rounded-3xl border-2 border-blue-200 bg-gradient-to-br from-blue-50/80 to-white p-8 hover:shadow-2xl hover:border-blue-400 transition-all duration-300"
+                className="group cursor-pointer rounded-2xl border-2 border-blue-200 bg-gradient-to-br from-blue-50/80 to-white p-6 md:p-8 hover:shadow-xl hover:border-blue-400 transition-all duration-300"
               >
-                <div className="flex flex-col md:flex-row md:items-center gap-6">
-                  <div className="flex-shrink-0 text-5xl">⚡</div>
+                <div className="flex items-start gap-4">
+                  <span className="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-black text-lg">2</span>
                   <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <h3 className="text-xl md:text-2xl font-black text-slate-900">Arsenal API</h3>
-                      <span className="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">$9 o singură dată</span>
-                    </div>
-                    <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-4">
-                      Primești <strong>ghidul complet de automatizare</strong> pentru meseria ta: <strong>150+ API-uri gratuite</strong> organizate pe categorii, pași detaliați de implementare, estimări de venit și fluxuri complete de lucru. Arsenal API transformă fiecare meserie într-un <strong>sistem automatizat</strong> care lucrează non-stop — emailuri, rapoarte, facturare, marketing, programări — totul fără intervenție manuală. <strong>Plătești o singură dată, accesul e pe viață.</strong>
-                    </p>
-                    <div className="flex flex-wrap gap-3">
-                      <span className="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1.5 rounded-full">✅ 150+ API-uri incluse</span>
-                      <span className="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1.5 rounded-full">✅ Automatizări & integrări</span>
-                      <span className="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1.5 rounded-full">✅ Fluxuri complete de lucru</span>
-                      <span className="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1.5 rounded-full">✅ Acces pe viață</span>
-                    </div>
+                    <h3 className="text-lg md:text-xl font-black text-slate-900 mb-1">⚡ Arsenal API — Îți automatizează munca</h3>
+                    <p className="text-blue-600 font-semibold text-sm mb-3">👉 Transformă munca ta într-un sistem care rulează singur.</p>
+                    <ul className="text-slate-600 text-sm space-y-1 mb-3">
+                      <li>• Automatizezi emailuri, clienți, facturi, marketing</li>
+                      <li>• Nu mai faci task-uri repetitive</li>
+                      <li>• Creezi un „mini business" care merge non-stop</li>
+                    </ul>
+                    <p className="text-blue-700 font-bold text-sm">✅ Rezultat: mai puțină muncă + mai mult timp + venit scalabil</p>
                   </div>
-                  <span className="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all">
-                    <ArrowRight className="w-5 h-5" />
+                  <span className="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                    <ArrowRight className="w-4 h-4" />
                   </span>
                 </div>
               </div>
 
-              {/* CARD 2 — OpenClaw */}
+              {/* CARD 3 — OpenClaw AI */}
               <div
                 onClick={() => { pushHistoryState(); nav("/openclaw"); }}
-                className="group cursor-pointer rounded-3xl border-2 border-green-200 bg-gradient-to-br from-green-50/80 to-white p-8 hover:shadow-2xl hover:border-green-400 transition-all duration-300"
+                className="group cursor-pointer rounded-2xl border-2 border-green-200 bg-gradient-to-br from-green-50/80 to-white p-6 md:p-8 hover:shadow-xl hover:border-green-400 transition-all duration-300"
               >
-                <div className="flex flex-col md:flex-row md:items-center gap-6">
-                  <div className="flex-shrink-0 text-5xl">🤖</div>
+                <div className="flex items-start gap-4">
+                  <span className="flex-shrink-0 w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center font-black text-lg">3</span>
                   <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <h3 className="text-xl md:text-2xl font-black text-slate-900">OpenClaw AI</h3>
-                      <span className="bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">$19/lună</span>
-                    </div>
-                    <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-4">
-                      <strong>Agentul tău AI personal</strong> care execută task-uri reale 24/7 — trimite emailuri, scrie cod, controlează aplicații, răspunde pe <strong>WhatsApp și Telegram</strong>, gestionează calendarul, face research și monitorizează competiția. Practic ai o <strong>flotă de 3 agenți AI</strong> (CTO, CFO, CEO) care lucrează non-stop pentru tine. Sergiu îl configurează complet — tu nu faci nimic tehnic. <strong>Anulezi oricând dintr-un click.</strong>
-                    </p>
-                    <div className="flex flex-wrap gap-3">
-                      <span className="bg-green-100 text-green-700 text-xs font-bold px-3 py-1.5 rounded-full">✅ Agent AI 24/7</span>
-                      <span className="bg-green-100 text-green-700 text-xs font-bold px-3 py-1.5 rounded-full">✅ WhatsApp + Telegram</span>
-                      <span className="bg-green-100 text-green-700 text-xs font-bold px-3 py-1.5 rounded-full">✅ Execuție automată</span>
-                      <span className="bg-green-100 text-green-700 text-xs font-bold px-3 py-1.5 rounded-full">✅ Anulezi oricând</span>
-                    </div>
+                    <h3 className="text-lg md:text-xl font-black text-slate-900 mb-1">🤖 OpenClaw AI — Îți execută task-urile</h3>
+                    <p className="text-green-600 font-semibold text-sm mb-3">👉 Nu doar automatizezi — ai un AI care chiar lucrează pentru tine.</p>
+                    <ul className="text-slate-600 text-sm space-y-1 mb-3">
+                      <li>• Trimite mesaje, face research, gestionează task-uri</li>
+                      <li>• Practic ai o echipă (CEO, CFO, CTO) fără costuri mari</li>
+                      <li>• Tu doar decizi, el execută</li>
+                    </ul>
+                    <p className="text-green-700 font-bold text-sm">✅ Rezultat: execuție rapidă fără să angajezi oameni</p>
                   </div>
-                  <span className="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-green-100 text-green-600 group-hover:bg-green-600 group-hover:text-white transition-all">
-                    <ArrowRight className="w-5 h-5" />
+                  <span className="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-green-100 text-green-600 group-hover:bg-green-600 group-hover:text-white transition-all">
+                    <ArrowRight className="w-4 h-4" />
                   </span>
                 </div>
               </div>
 
-              {/* CARD 3 — Academy (Recomandat) */}
+              {/* CARD 4 — Academy */}
               <div
                 onClick={() => { pushHistoryState(); nav("/academy"); }}
-                className="group cursor-pointer rounded-3xl border-2 border-blue-400 bg-gradient-to-br from-blue-50/80 to-indigo-50/60 p-8 hover:shadow-2xl hover:border-blue-500 transition-all duration-300 relative ring-1 ring-blue-200"
+                className="group cursor-pointer rounded-2xl border-2 border-purple-200 bg-gradient-to-br from-purple-50/80 to-white p-6 md:p-8 hover:shadow-xl hover:border-purple-400 transition-all duration-300"
               >
-                <span className="absolute -top-3 left-8 bg-blue-600 text-white text-xs font-bold px-4 py-1 rounded-full">⭐ Recomandat</span>
-                <div className="flex flex-col md:flex-row md:items-center gap-6 mt-2">
-                  <div className="flex-shrink-0 text-5xl">🎓</div>
+                <div className="flex items-start gap-4">
+                  <span className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-600 text-white flex items-center justify-center font-black text-lg">4</span>
                   <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <h3 className="text-xl md:text-2xl font-black text-slate-900">Academy DaRomania</h3>
-                      <span className="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">$29/lună</span>
-                    </div>
-                    <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-4">
-                      <strong>Accesul complet la rețeaua de succes</strong> — include tot ce oferă OpenClaw ($19) plus acces la <strong>71 de proiecte practice</strong> cu tutoriale pas cu pas, webinarii live săptămânale, comunitatea de antreprenori, mentorat de grup și dashboard-ul cu <strong>succesul monetizat al întregii rețele</strong>. Vezi exact ce funcționează, ce venit generează alți membri și replicii strategiile câștigătoare. <strong>Cea mai bună investiție pentru creștere rapidă.</strong>
-                    </p>
-                    <div className="flex flex-wrap gap-3">
-                      <span className="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1.5 rounded-full">✅ Tot din OpenClaw inclus</span>
-                      <span className="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1.5 rounded-full">✅ 71 proiecte practice</span>
-                      <span className="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1.5 rounded-full">✅ Comunitate & mentorat</span>
-                      <span className="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1.5 rounded-full">✅ Dashboard rețea</span>
-                    </div>
+                    <h3 className="text-lg md:text-xl font-black text-slate-900 mb-1">🎓 Academy — Îți arată ce funcționează</h3>
+                    <p className="text-purple-600 font-semibold text-sm mb-3">👉 Nu mai înveți din teorie — vezi exact ce produce bani.</p>
+                    <ul className="text-slate-600 text-sm space-y-1 mb-3">
+                      <li>• Proiecte reale testate</li>
+                      <li>• Comunitate + mentorat</li>
+                      <li>• Vezi ce fac alții și copiezi ce merge</li>
+                    </ul>
+                    <p className="text-purple-700 font-bold text-sm">✅ Rezultat: crești rapid fără să reinventezi roata</p>
                   </div>
-                  <span className="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-blue-200 text-blue-700 group-hover:bg-blue-600 group-hover:text-white transition-all">
-                    <ArrowRight className="w-5 h-5" />
+                  <span className="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-purple-100 text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-all">
+                    <ArrowRight className="w-4 h-4" />
                   </span>
                 </div>
               </div>
 
-              {/* CARD 4 — Afacere la Cheie */}
+              {/* CARD 5 — Afacere la Cheie */}
               <div
                 onClick={() => { pushHistoryState(); nav("/afacerelacheie"); }}
-                className="group cursor-pointer rounded-3xl border-2 border-orange-200 bg-gradient-to-br from-orange-50/80 to-amber-50/60 p-8 hover:shadow-2xl hover:border-orange-400 transition-all duration-300"
+                className="group cursor-pointer rounded-2xl border-2 border-orange-200 bg-gradient-to-br from-orange-50/80 to-white p-6 md:p-8 hover:shadow-xl hover:border-orange-400 transition-all duration-300"
               >
-                <div className="flex flex-col md:flex-row md:items-center gap-6">
-                  <div className="flex-shrink-0 text-5xl">💼</div>
+                <div className="flex items-start gap-4">
+                  <span className="flex-shrink-0 w-10 h-10 rounded-full bg-orange-600 text-white flex items-center justify-center font-black text-lg">5</span>
                   <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <h3 className="text-xl md:text-2xl font-black text-slate-900">Afacere la Cheie</h3>
-                      <span className="bg-orange-600 text-white text-xs font-bold px-3 py-1 rounded-full">$99/lună</span>
-                    </div>
-                    <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-4">
-                      <strong>Business complet gata de lansare</strong> — include absolut tot (Academy + OpenClaw) plus: <strong>brand complet</strong> (logo, identitate vizuală, ghid de brand), <strong>website profesional</strong> live, toate automatizările configurate, strategia completă de monetizare, funnel de vânzări, conturi social media setate și <strong>primii clienți aduși</strong>. Tu alegi nișa și răspunzi la câteva întrebări — <strong>noi livrăm totul în 14 zile</strong>. Serviciul premium pentru cine vrea rezultate fără efort.
-                    </p>
-                    <div className="flex flex-wrap gap-3">
-                      <span className="bg-orange-100 text-orange-700 text-xs font-bold px-3 py-1.5 rounded-full">✅ Tot din Academy inclus</span>
-                      <span className="bg-orange-100 text-orange-700 text-xs font-bold px-3 py-1.5 rounded-full">✅ Brand + site complet</span>
-                      <span className="bg-orange-100 text-orange-700 text-xs font-bold px-3 py-1.5 rounded-full">✅ Strategie de monetizare</span>
-                      <span className="bg-orange-100 text-orange-700 text-xs font-bold px-3 py-1.5 rounded-full">✅ Livrat în 14 zile</span>
-                    </div>
+                    <h3 className="text-lg md:text-xl font-black text-slate-900 mb-1">💼 Afacere la Cheie — Primești totul gata</h3>
+                    <p className="text-orange-600 font-semibold text-sm mb-3">👉 Dacă nu vrei să construiești nimic, primești business complet.</p>
+                    <ul className="text-slate-600 text-sm space-y-1 mb-3">
+                      <li>• Brand, site, strategie, clienți</li>
+                      <li>• Totul deja făcut pentru tine</li>
+                      <li>• Tu doar administrezi și încasezi</li>
+                    </ul>
+                    <p className="text-orange-700 font-bold text-sm">✅ Rezultat: începi direct cu un business funcțional</p>
                   </div>
-                  <span className="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-orange-100 text-orange-600 group-hover:bg-orange-600 group-hover:text-white transition-all">
-                    <ArrowRight className="w-5 h-5" />
+                  <span className="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-orange-100 text-orange-600 group-hover:bg-orange-600 group-hover:text-white transition-all">
+                    <ArrowRight className="w-4 h-4" />
                   </span>
+                </div>
+              </div>
+
+              {/* CARD 6 — Concluzie */}
+              <div className="rounded-2xl border-2 border-slate-300 bg-gradient-to-br from-slate-50 to-white p-6 md:p-8">
+                <div className="flex items-start gap-4">
+                  <span className="flex-shrink-0 w-10 h-10 rounded-full bg-slate-800 text-white flex items-center justify-center font-black text-lg">6</span>
+                  <div className="flex-1">
+                    <h3 className="text-lg md:text-xl font-black text-slate-900 mb-3">🧠 Concluzie simplă</h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
+                      <p className="text-slate-700 text-sm"><strong>Index</strong> = îți arată CE să faci</p>
+                      <p className="text-slate-700 text-sm"><strong>Arsenal</strong> = îți arată CUM să automatizezi</p>
+                      <p className="text-slate-700 text-sm"><strong>AI</strong> = face treaba în locul tău</p>
+                      <p className="text-slate-700 text-sm"><strong>Academy</strong> = îți arată ce MERGE</p>
+                      <p className="text-slate-700 text-sm"><strong>Afacere la cheie</strong> = îți dă TOTUL gata</p>
+                    </div>
+                    <p className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 font-black text-base">
+                      ⚡ Pe scurt: De la idee → la automatizare → la execuție → la profit.
+                    </p>
+                  </div>
                 </div>
               </div>
 

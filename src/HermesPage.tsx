@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import DaRomaniaBackButton from './components/DaRomaniaBackButton';
+import AiBuddyFab from './components/AiBuddyFab';
 
 export default function HermesPage() {
   const navigate = useNavigate();
@@ -130,6 +131,7 @@ export default function HermesPage() {
           </div>
         </div>
       </div>
+      <AiBuddyFab />
     </div>
   );
 }

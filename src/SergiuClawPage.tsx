@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import DaRomaniaBackButton from './components/DaRomaniaBackButton';
+import AiBuddyFab from './components/AiBuddyFab';
 
 export default function SergiuClawPage() {
   const navigate = useNavigate();
@@ -124,6 +125,7 @@ export default function SergiuClawPage() {
           </div>
         </div>
       </div>
+      <AiBuddyFab />
     </div>
   );
 }

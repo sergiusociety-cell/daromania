@@ -3050,6 +3050,67 @@ export default function App() {
           </div>
         </section>
 
+        {/* 🤖 Flota noastră de Agenți AI */}
+        <section className="py-20 md:py-28" style={{ background: '#000' }}>
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-14">
+              <h2 className="text-3xl md:text-5xl font-black text-white mb-4">🤖 Flota noastră de Agenți AI</h2>
+              <p className="text-lg md:text-xl font-bold text-white mb-2">Alege agentul potrivit pentru tine</p>
+              <p className="text-gray-400 max-w-2xl mx-auto">Fiecare agent e specializat diferit — împreună formează cel mai puternic ecosistem AI privat.</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* OpenClaw */}
+              <div className="rounded-2xl p-6 md:p-8 flex flex-col" style={{ background: '#0a0a0a', border: '2px solid #22c55e' }}>
+                <span className="text-xs font-black tracking-widest uppercase px-3 py-1 rounded-full w-fit mb-4" style={{ color: '#22c55e', border: '1px solid #22c55e' }}>RUNTIME DE BAZĂ</span>
+                <h3 className="text-2xl md:text-3xl font-black text-white mb-3">OpenClaw</h3>
+                <p className="text-gray-400 mb-5 flex-1">Fundația pe care rulează toți ceilalți agenți. Runtime open-source cu sandbox izolat, plugin system și suport MCP.</p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {['Runtime', 'Plugin API', 'Multi-LLM', 'Open Source'].map(t => (
+                    <span key={t} className="text-xs px-3 py-1 rounded-full" style={{ color: '#22c55e', border: '1px solid #22c55e33' }}>{t}</span>
+                  ))}
+                </div>
+                <a href="https://openclaw.ai" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-xl w-fit transition-colors" style={{ color: '#22c55e', border: '1px solid #22c55e' }}>Află mai mult →</a>
+              </div>
+              {/* SergiuClaw */}
+              <div className="rounded-2xl p-6 md:p-8 flex flex-col" style={{ background: '#0a0a0a', border: '2px solid #60a5fa' }}>
+                <span className="text-xs font-black tracking-widest uppercase px-3 py-1 rounded-full w-fit mb-4" style={{ color: '#60a5fa', border: '1px solid #60a5fa' }}>ORCHESTRARE MULTI-AGENT</span>
+                <h3 className="text-2xl md:text-3xl font-black text-white mb-3">SergiuClaw</h3>
+                <p className="text-gray-400 mb-5 flex-1">Singurul agent cu interfață web completă pentru management. Coordonezi echipe întregi de agenți din browser, cu dashboard de costuri și rutine automate.</p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {['Task Management', 'Multi-user', 'Dashboard', 'Rutine'].map(t => (
+                    <span key={t} className="text-xs px-3 py-1 rounded-full" style={{ color: '#60a5fa', border: '1px solid #60a5fa33' }}>{t}</span>
+                  ))}
+                </div>
+                <a href="https://sergiuclaw.daromania.online" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-xl w-fit transition-colors" style={{ color: '#60a5fa', border: '1px solid #60a5fa' }}>Deschide →</a>
+              </div>
+              {/* NemoClaw */}
+              <div className="rounded-2xl p-6 md:p-8 flex flex-col" style={{ background: '#0a0a0a', border: '2px solid #c084fc' }}>
+                <span className="text-xs font-black tracking-widest uppercase px-3 py-1 rounded-full w-fit mb-4" style={{ color: '#c084fc', border: '1px solid #c084fc' }}>SECURITATE MAXIMĂ</span>
+                <h3 className="text-2xl md:text-3xl font-black text-white mb-3">NemoClaw</h3>
+                <p className="text-gray-400 mb-5 flex-1">Singurul agent cu izolare triple-layer la nivel kernel (Landlock + seccomp + netns). Rulează cod și accesează internetul fără niciun risc pentru sistemul host.</p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {['Sandbox', 'Landlock', 'Brave Search', 'Telegram'].map(t => (
+                    <span key={t} className="text-xs px-3 py-1 rounded-full" style={{ color: '#c084fc', border: '1px solid #c084fc33' }}>{t}</span>
+                  ))}
+                </div>
+                <a href="https://nemoclaw.daromania.online" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-xl w-fit transition-colors" style={{ color: '#c084fc', border: '1px solid #c084fc' }}>Deschide →</a>
+              </div>
+              {/* Hermes */}
+              <div className="rounded-2xl p-6 md:p-8 flex flex-col" style={{ background: '#0a0a0a', border: '2px solid #fbbf24' }}>
+                <span className="text-xs font-black tracking-widest uppercase px-3 py-1 rounded-full w-fit mb-4" style={{ color: '#fbbf24', border: '1px solid #fbbf24' }}>FULL-STACK AUTONOM</span>
+                <h3 className="text-2xl md:text-3xl font-black text-white mb-3">Hermes Agent</h3>
+                <p className="text-gray-400 mb-5 flex-1">Cel mai capabil agent din flotă — 28 tools și 74 skills specializate. Navighează web, scrie și rulează cod, gestionează fișiere, face research și postează pe social media autonom.</p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {['28 Tools', '74 Skills', 'Browser', 'Code Execution'].map(t => (
+                    <span key={t} className="text-xs px-3 py-1 rounded-full" style={{ color: '#fbbf24', border: '1px solid #fbbf2433' }}>{t}</span>
+                  ))}
+                </div>
+                <a href="https://hermes.daromania.online" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-xl w-fit transition-colors" style={{ color: '#fbbf24', border: '1px solid #fbbf24' }}>Deschide →</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
       </main>
 
       {/* Footer */}

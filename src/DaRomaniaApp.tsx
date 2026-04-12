@@ -1276,7 +1276,7 @@ export default function App() {
               <Rocket className="w-4 h-4 md:w-5 md:h-5" /> Călătoria succesului tău este motivația noastră!
             </span>
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-5 md:mb-8 tracking-tight leading-tight">
-              Automatizăm <span className="uppercase font-black text-emerald-500">COMPLET</span> orice business,<br />
+              Automatizăm <span className="text-emerald-500">complet</span> orice business,<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600 text-xl md:text-4xl lg:text-5xl">să nu mai simți că muncești o zi din viață!</span>
             </h1>
 

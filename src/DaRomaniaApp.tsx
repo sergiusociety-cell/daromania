@@ -3053,89 +3053,89 @@ export default function App() {
         </section>
 
         {/* 🤖 Flota noastră de Agenți AI */}
-        <section className="py-20 md:py-28" style={{ background: '#000' }}>
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-14">
-              <h2 className="text-3xl md:text-5xl font-black text-white mb-4">🤖 Flota noastră de Agenți AI</h2>
-              <p className="text-lg md:text-xl font-bold text-white mb-2">Alege agentul potrivit pentru tine</p>
-              <p className="text-gray-400 max-w-2xl mx-auto">Fiecare agent e specializat diferit — împreună formează cel mai puternic ecosistem AI privat.</p>
+        <section className="py-12 md:py-28" style={{ background: '#000' }}>
+          <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8">
+            <div className="text-center mb-8 md:mb-14">
+              <h2 className="text-2xl md:text-5xl font-black text-white mb-2 md:mb-4">🤖 Flota noastră de Agenți AI</h2>
+              <p className="text-sm md:text-xl font-bold text-white mb-1 md:mb-2">Alege agentul potrivit pentru tine</p>
+              <p className="text-gray-400 text-xs md:text-base max-w-2xl mx-auto">Fiecare agent e specializat diferit — împreună formează cel mai puternic ecosistem AI privat.</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               {/* OpenClaw */}
-              <div className="rounded-2xl p-6 md:p-8 flex flex-col" style={{ background: '#0a0a0a', border: '2px solid #22c55e' }}>
-                <span className="text-xs font-black tracking-widest uppercase px-3 py-1 rounded-full w-fit mb-4" style={{ color: '#22c55e', border: '1px solid #22c55e' }}>RUNTIME DE BAZĂ</span>
-                <h3 className="text-2xl md:text-3xl font-black text-white mb-3">OpenClaw</h3>
-                <p className="text-gray-400 mb-5 flex-1">Fundația pe care rulează toți ceilalți agenți. Runtime open-source cu sandbox izolat, plugin system și suport MCP.</p>
-                <div className="flex flex-wrap gap-2 mb-6">
+              <div className="rounded-xl md:rounded-2xl p-4 md:p-8 flex flex-col" style={{ background: '#0a0a0a', border: '2px solid #22c55e' }}>
+                <span className="text-[10px] md:text-xs font-black tracking-widest uppercase px-2 py-0.5 md:px-3 md:py-1 rounded-full w-fit mb-3 md:mb-4" style={{ color: '#22c55e', border: '1px solid #22c55e' }}>RUNTIME DE BAZĂ</span>
+                <h3 className="text-xl md:text-3xl font-black text-white mb-2 md:mb-3">OpenClaw</h3>
+                <p className="text-gray-400 text-xs md:text-base mb-3 md:mb-5 flex-1">Fundația pe care rulează toți ceilalți agenți. Runtime open-source cu sandbox izolat, plugin system și suport MCP.</p>
+                <div className="flex flex-wrap gap-1.5 md:gap-2 mb-4 md:mb-6">
                   {['Runtime', 'Plugin API', 'Multi-LLM', 'Open Source'].map(t => (
-                    <span key={t} className="text-xs px-3 py-1 rounded-full" style={{ color: '#22c55e', border: '1px solid #22c55e33' }}>{t}</span>
+                    <span key={t} className="text-[10px] md:text-xs px-2 py-0.5 md:px-3 md:py-1 rounded-full" style={{ color: '#22c55e', border: '1px solid #22c55e33' }}>{t}</span>
                   ))}
                 </div>
-                <a href="https://openclaw.ai" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-xl w-fit transition-colors" style={{ color: '#22c55e', border: '1px solid #22c55e' }}>Află mai mult →</a>
+                <a href="https://openclaw.ai" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-xs md:text-sm font-bold px-4 py-2 md:px-5 md:py-2.5 rounded-xl w-fit transition-colors no-underline" style={{ color: '#22c55e', border: '1px solid #22c55e' }}>Află mai mult →</a>
               </div>
               {/* SergiuClaw */}
-              <div className="rounded-2xl p-6 md:p-8 flex flex-col" style={{ background: '#0a0a0a', border: '2px solid #60a5fa' }}>
-                <span className="text-xs font-black tracking-widest uppercase px-3 py-1 rounded-full w-fit mb-4" style={{ color: '#60a5fa', border: '1px solid #60a5fa' }}>ORCHESTRARE MULTI-AGENT</span>
-                <h3 className="text-2xl md:text-3xl font-black text-white mb-3">SergiuClaw</h3>
-                <p className="text-gray-400 mb-5 flex-1">Singurul agent cu interfață web completă pentru management. Coordonezi echipe întregi de agenți din browser, cu dashboard de costuri și rutine automate.</p>
-                <div className="flex flex-wrap gap-2 mb-6">
+              <div className="rounded-xl md:rounded-2xl p-4 md:p-8 flex flex-col" style={{ background: '#0a0a0a', border: '2px solid #60a5fa' }}>
+                <span className="text-[10px] md:text-xs font-black tracking-widest uppercase px-2 py-0.5 md:px-3 md:py-1 rounded-full w-fit mb-3 md:mb-4" style={{ color: '#60a5fa', border: '1px solid #60a5fa' }}>ORCHESTRARE MULTI-AGENT</span>
+                <h3 className="text-xl md:text-3xl font-black text-white mb-2 md:mb-3">SergiuClaw</h3>
+                <p className="text-gray-400 text-xs md:text-base mb-3 md:mb-5 flex-1">Singurul agent cu interfață web completă pentru management. Coordonezi echipe de agenți din browser.</p>
+                <div className="flex flex-wrap gap-1.5 md:gap-2 mb-4 md:mb-6">
                   {['Task Management', 'Multi-user', 'Dashboard', 'Rutine'].map(t => (
-                    <span key={t} className="text-xs px-3 py-1 rounded-full" style={{ color: '#60a5fa', border: '1px solid #60a5fa33' }}>{t}</span>
+                    <span key={t} className="text-[10px] md:text-xs px-2 py-0.5 md:px-3 md:py-1 rounded-full" style={{ color: '#60a5fa', border: '1px solid #60a5fa33' }}>{t}</span>
                   ))}
                 </div>
-                <a href="https://sergiuclaw.daromania.online" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-xl w-fit transition-colors" style={{ color: '#60a5fa', border: '1px solid #60a5fa' }}>Deschide →</a>
+                <a href="https://sergiuclaw.daromania.online" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-xs md:text-sm font-bold px-4 py-2 md:px-5 md:py-2.5 rounded-xl w-fit transition-colors no-underline" style={{ color: '#60a5fa', border: '1px solid #60a5fa' }}>Deschide →</a>
               </div>
               {/* NemoClaw */}
-              <div className="rounded-2xl p-6 md:p-8 flex flex-col" style={{ background: '#0a0a0a', border: '2px solid #c084fc' }}>
-                <span className="text-xs font-black tracking-widest uppercase px-3 py-1 rounded-full w-fit mb-4" style={{ color: '#c084fc', border: '1px solid #c084fc' }}>SECURITATE MAXIMĂ</span>
-                <h3 className="text-2xl md:text-3xl font-black text-white mb-3">NemoClaw</h3>
-                <p className="text-gray-400 mb-5 flex-1">Singurul agent cu izolare triple-layer la nivel kernel (Landlock + seccomp + netns). Rulează cod și accesează internetul fără niciun risc pentru sistemul host.</p>
-                <div className="flex flex-wrap gap-2 mb-6">
+              <div className="rounded-xl md:rounded-2xl p-4 md:p-8 flex flex-col" style={{ background: '#0a0a0a', border: '2px solid #c084fc' }}>
+                <span className="text-[10px] md:text-xs font-black tracking-widest uppercase px-2 py-0.5 md:px-3 md:py-1 rounded-full w-fit mb-3 md:mb-4" style={{ color: '#c084fc', border: '1px solid #c084fc' }}>SECURITATE MAXIMĂ</span>
+                <h3 className="text-xl md:text-3xl font-black text-white mb-2 md:mb-3">NemoClaw</h3>
+                <p className="text-gray-400 text-xs md:text-base mb-3 md:mb-5 flex-1">Izolare triple-layer la nivel kernel (Landlock + seccomp + netns). Rulează cod fără risc pentru host.</p>
+                <div className="flex flex-wrap gap-1.5 md:gap-2 mb-4 md:mb-6">
                   {['Sandbox', 'Landlock', 'Brave Search', 'Telegram'].map(t => (
-                    <span key={t} className="text-xs px-3 py-1 rounded-full" style={{ color: '#c084fc', border: '1px solid #c084fc33' }}>{t}</span>
+                    <span key={t} className="text-[10px] md:text-xs px-2 py-0.5 md:px-3 md:py-1 rounded-full" style={{ color: '#c084fc', border: '1px solid #c084fc33' }}>{t}</span>
                   ))}
                 </div>
-                <a href="https://nemoclaw.daromania.online" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-xl w-fit transition-colors" style={{ color: '#c084fc', border: '1px solid #c084fc' }}>Deschide →</a>
+                <a href="https://nemoclaw.daromania.online" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-xs md:text-sm font-bold px-4 py-2 md:px-5 md:py-2.5 rounded-xl w-fit transition-colors no-underline" style={{ color: '#c084fc', border: '1px solid #c084fc' }}>Deschide →</a>
               </div>
               {/* Hermes */}
-              <div className="rounded-2xl p-6 md:p-8 flex flex-col" style={{ background: '#0a0a0a', border: '2px solid #fbbf24' }}>
-                <span className="text-xs font-black tracking-widest uppercase px-3 py-1 rounded-full w-fit mb-4" style={{ color: '#fbbf24', border: '1px solid #fbbf24' }}>FULL-STACK AUTONOM</span>
-                <h3 className="text-2xl md:text-3xl font-black text-white mb-3">Hermes Agent</h3>
-                <p className="text-gray-400 mb-5 flex-1">Cel mai capabil agent din flotă — 28 tools și 74 skills specializate. Navighează web, scrie și rulează cod, gestionează fișiere, face research și postează pe social media autonom.</p>
-                <div className="flex flex-wrap gap-2 mb-6">
+              <div className="rounded-xl md:rounded-2xl p-4 md:p-8 flex flex-col" style={{ background: '#0a0a0a', border: '2px solid #fbbf24' }}>
+                <span className="text-[10px] md:text-xs font-black tracking-widest uppercase px-2 py-0.5 md:px-3 md:py-1 rounded-full w-fit mb-3 md:mb-4" style={{ color: '#fbbf24', border: '1px solid #fbbf24' }}>FULL-STACK AUTONOM</span>
+                <h3 className="text-xl md:text-3xl font-black text-white mb-2 md:mb-3">Hermes Agent</h3>
+                <p className="text-gray-400 text-xs md:text-base mb-3 md:mb-5 flex-1">Cel mai capabil — 28 tools și 74 skills. Web, cod, fișiere, research și social media autonom.</p>
+                <div className="flex flex-wrap gap-1.5 md:gap-2 mb-4 md:mb-6">
                   {['28 Tools', '74 Skills', 'Browser', 'Code Execution'].map(t => (
-                    <span key={t} className="text-xs px-3 py-1 rounded-full" style={{ color: '#fbbf24', border: '1px solid #fbbf2433' }}>{t}</span>
+                    <span key={t} className="text-[10px] md:text-xs px-2 py-0.5 md:px-3 md:py-1 rounded-full" style={{ color: '#fbbf24', border: '1px solid #fbbf2433' }}>{t}</span>
                   ))}
                 </div>
-                <a href="https://hermes.daromania.online" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-xl w-fit transition-colors" style={{ color: '#fbbf24', border: '1px solid #fbbf24' }}>Deschide →</a>
+                <a href="https://hermes.daromania.online" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-xs md:text-sm font-bold px-4 py-2 md:px-5 md:py-2.5 rounded-xl w-fit transition-colors no-underline" style={{ color: '#fbbf24', border: '1px solid #fbbf24' }}>Deschide →</a>
               </div>
             </div>
           </div>
         </section>
 
         {/* 🚀 Instalare Ghidată — $9 */}
-        <section className="py-20 md:py-28" style={{ background: '#000' }}>
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-            <p className="text-sm font-bold tracking-widest uppercase" style={{ color: '#f59e0b' }}>🚀 Instalare Ghidată — $9</p>
-            <h2 className="text-3xl md:text-5xl font-black text-white">Un agent AI te ghidează pas cu pas</h2>
-            <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto">
+        <section className="py-12 md:py-28" style={{ background: '#000' }}>
+          <div className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 text-center space-y-4 md:space-y-6">
+            <p className="text-xs md:text-sm font-bold tracking-widest uppercase" style={{ color: '#f59e0b' }}>🚀 Instalare Ghidată — $9</p>
+            <h2 className="text-2xl md:text-5xl font-black text-white">Un agent AI te ghidează pas cu pas</h2>
+            <p className="text-sm md:text-xl text-slate-400 max-w-2xl mx-auto">
               Plătești $9 și primești un AI buddy care îți dă comenzile exacte să instalezi toți cei 4 agenți. Copy-paste în CMD sau VPS și gata.
             </p>
 
-            <div className="flex flex-col items-center gap-3 pt-4">
+            <div className="flex flex-col items-center gap-2 md:gap-3 pt-2 md:pt-4">
               {['Comenzi exacte gata de copy-paste', 'Debug automat când apare o eroare', 'De la zero la sistem complet în 30 minute'].map((item) => (
-                <div key={item} className="flex items-center gap-2 text-base text-slate-200">
+                <div key={item} className="flex items-center gap-2 text-xs md:text-base text-slate-200">
                   <span style={{ color: '#22c55e' }}>✅</span> {item}
                 </div>
               ))}
             </div>
 
-            <div className="pt-6 space-y-3">
+            <div className="pt-4 md:pt-6 space-y-3">
               <a
                 href="https://buy.stripe.com/bJe14o1Ht3ZCamfedh5os00"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block font-black text-lg px-10 py-4 rounded-2xl transition-all hover:scale-105 no-underline"
+                className="inline-block font-black text-base md:text-lg px-8 py-3 md:px-10 md:py-4 rounded-2xl transition-all hover:scale-105 no-underline"
                 style={{ background: '#f59e0b', color: '#000' }}
               >
                 Începe acum — $9 →
@@ -3145,7 +3145,7 @@ export default function App() {
                   href="https://wa.me/40768676141"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block text-sm transition-colors no-underline"
+                  className="inline-block text-xs md:text-sm transition-colors no-underline"
                   style={{ color: '#22c55e' }}
                 >
                   💬 Întrebări? WhatsApp →

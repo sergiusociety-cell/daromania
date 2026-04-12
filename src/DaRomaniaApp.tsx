@@ -1154,6 +1154,7 @@ export default function App() {
             </div>
             <button onClick={() => { pushHistoryState(); nav("/academy"); }} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-slate-900">🎓 Academy</button>
             <button onClick={() => { pushHistoryState(); nav("/afacerelacheie"); }} className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-slate-900">{t.nav_afacere}</button>
+            <a href="https://pascupas.daromania.online" target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-all duration-200 font-semibold text-[15px] text-slate-900 no-underline">🚀 Pas cu Pas</a>
             
             {/* Auth Button Desktop */}
             {isAuthenticated ? (
@@ -1244,6 +1245,7 @@ export default function App() {
                 )}
                 <button onClick={() => { pushHistoryState(); nav("/academy"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-semibold text-slate-900 py-2.5 px-3 rounded-xl hover:bg-slate-50 hover:scale-105 transition-all duration-200">🎓 Academy</button>
                 <button onClick={() => { pushHistoryState(); nav("/afacerelacheie"); setIsMobileMenuOpen(false); }} className="text-left text-sm font-semibold text-slate-900 py-2.5 px-3 rounded-xl hover:bg-slate-50 hover:scale-105 transition-all duration-200">💼 Afacere la Cheie</button>
+                <a href="https://pascupas.daromania.online" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="text-left text-sm font-semibold text-slate-900 py-2.5 px-3 rounded-xl hover:bg-slate-50 hover:scale-105 transition-all duration-200 no-underline block">🚀 Pas cu Pas</a>
                 <div className="border-t border-slate-100 mt-1 pt-2 flex gap-2">
                   {(['ro','en','es'] as Lang[]).map(l => (
                     <button key={l} onClick={() => { setLang(l); setIsMobileMenuOpen(false); }}
@@ -3106,6 +3108,48 @@ export default function App() {
                   ))}
                 </div>
                 <a href="https://hermes.daromania.online" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-xl w-fit transition-colors" style={{ color: '#fbbf24', border: '1px solid #fbbf24' }}>Deschide →</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 🚀 Instalare Ghidată — $9 */}
+        <section className="py-20 md:py-28" style={{ background: '#000' }}>
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <p className="text-sm font-bold tracking-widest uppercase" style={{ color: '#f59e0b' }}>🚀 Instalare Ghidată — $9</p>
+            <h2 className="text-3xl md:text-5xl font-black text-white">Un agent AI te ghidează pas cu pas</h2>
+            <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto">
+              Plătești $9 și primești un AI buddy care îți dă comenzile exacte să instalezi toți cei 4 agenți. Copy-paste în CMD sau VPS și gata.
+            </p>
+
+            <div className="flex flex-col items-center gap-3 pt-4">
+              {['Comenzi exacte gata de copy-paste', 'Debug automat când apare o eroare', 'De la zero la sistem complet în 30 minute'].map((item) => (
+                <div key={item} className="flex items-center gap-2 text-base text-slate-200">
+                  <span style={{ color: '#22c55e' }}>✅</span> {item}
+                </div>
+              ))}
+            </div>
+
+            <div className="pt-6 space-y-3">
+              <a
+                href="https://buy.stripe.com/bJe14o1Ht3ZCamfedh5os00"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block font-black text-lg px-10 py-4 rounded-2xl transition-all hover:scale-105 no-underline"
+                style={{ background: '#f59e0b', color: '#000' }}
+              >
+                Începe acum — $9 →
+              </a>
+              <div>
+                <a
+                  href="https://wa.me/40768676141"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block text-sm transition-colors no-underline"
+                  style={{ color: '#22c55e' }}
+                >
+                  💬 Întrebări? WhatsApp →
+                </a>
               </div>
             </div>
           </div>
